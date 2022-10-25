@@ -153,7 +153,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{route('suppliers.create')}}">
             <i class="bi bi-circle"></i><span>Add Suppliers</span>
             </a>
         </li>

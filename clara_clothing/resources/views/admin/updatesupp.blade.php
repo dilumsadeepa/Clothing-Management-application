@@ -19,41 +19,44 @@
 
         <div class="col-sm-12">
 
-            <form action="{{route('suppliers.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('suppliers.update',$supplier->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="mb-3 mt-3">
                   <label for="name" class="form-label">Full name:</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name">
+                  <input type="text" class="form-control" value="{{$supplier->fullname}}" id="name" placeholder="Enter Full Name" name="name">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="cname" class="form-label">Company name:</label>
-                    <input type="text" class="form-control" id="cname" placeholder="Enter Company Name" name="companyname">
+                    <input type="text" class="form-control" value="{{$supplier->companyname}}" id="cname" placeholder="Enter Company Name" name="companyname">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="address" class="form-label">Address:</label>
-                    <input type="text" class="form-control" id="address" placeholder="Enter Address" name="address">
+                    <input type="text" class="form-control" value="{{$supplier->address}}" id="address" placeholder="Enter Address" name="address">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="city" class="form-label">City:</label>
-                    <input type="text" class="form-control" id="city" placeholder="Enter City" name="city">
+                    <input type="text" class="form-control" value="{{$supplier->city}}" id="city" placeholder="Enter City" name="city">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="postalcode" class="form-label">Postal Code:</label>
-                    <input type="text" class="form-control" id="postalcode" placeholder="Enter Postal code" name="pcode">
+                    <input type="text" class="form-control" value="{{$supplier->postalcode}}" id="postalcode" placeholder="Enter Postal code" name="pcode">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="regno" class="form-label">Company Register Number:</label>
-                    <input type="text" class="form-control" id="regnum" placeholder="Enter Registation Number" name="regno">
+                    <input type="text" class="form-control" value="{{$supplier->regno}}" id="regnum" placeholder="Enter Registation Number" name="regno">
                 </div>
 
                 <div class="mb-3 mt-3">
                     <label for="des" class="form-label">Description:</label>
-                    <textarea class="form-control" rows="5" id="des" name="des"></textarea>
+                    <textarea class="form-control" rows="5" id="des" name="des">
+                        {{$supplier->des}}
+                    </textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

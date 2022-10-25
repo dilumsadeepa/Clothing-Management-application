@@ -37,7 +37,30 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'companyname' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'pcode' => 'required|max:255',
+            'regno' => 'required|max:255',
+            'des' => 'required|max:255',
+        ]);
+
+        $supplier = new Supplier();
+
+        $supplier->fullname = $request->name;
+        $supplier->companyname = $request->companyname;
+        $supplier->address = $request->address;
+        $supplier->city = $request->city;
+        $supplier->postalcode = $request->pcode;
+        $supplier->regno = $request->regno;
+        $supplier->des = $request->des;
+
+        $supplier->save();
+
+        return redirect()->route('suppliers.index')
+                        ->with('success','Supplier added successfully.');
     }
 
     /**
@@ -59,7 +82,7 @@ class SupplierController extends Controller
      */
     public function edit(Supplier $supplier)
     {
-        //
+        return view('admin.updatesupp',compact('supplier'));
     }
 
     /**
@@ -71,7 +94,20 @@ class SupplierController extends Controller
      */
     public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'companyname' => 'required|max:255',
+            'address' => 'required|max:255',
+            'city' => 'required|max:255',
+            'pcode' => 'required|max:255',
+            'regno' => 'required|max:255',
+            'des' => 'required|max:255',
+        ]);
+
+        $supplier->update($request->all());
+
+        return redirect()->route('suppliers.index')
+                        ->with('success','Supplier updated successfully');
     }
 
     /**
@@ -82,6 +118,9 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        //
+        $supplier->delete();
+
+        return redirect()->route('suppliers.index')
+                        ->with('success','Supplire deleted successfully');
     }
 }
