@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pages/index', function () {
+    return view('pages.index');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
