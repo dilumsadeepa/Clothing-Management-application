@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,16 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        if (Auth::user()->roll == 1){
+            return view('admin.admin');
+        }elseif(Auth::user()->roll == 2){
+            return view('admin.admin');
+        }elseif (Auth::user()->roll == 3){
+            return view('admin.admin');
+        }
+
     })->name('dashboard');
 });
+
+Route::resource('suppliers', SupplierController::class);
+
