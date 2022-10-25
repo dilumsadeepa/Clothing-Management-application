@@ -161,6 +161,25 @@
         </ul>
     </li><!-- End supplier Nav -->
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+            <a href="{{route('catagory.index')}}">
+            <i class="bi bi-circle"></i><span>All Catagory</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('catagory.create')}}">
+            <i class="bi bi-circle"></i><span>Add Catagory</span>
+            </a>
+        </li>
+
+        </ul>
+    </li><!-- End supplier Nav -->
+
 
     <title>Admin Dashboard</title>
 
