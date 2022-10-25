@@ -197,7 +197,7 @@
 
 
 
-    <title>Custumer Dashboard</title>
+    <title>Customer Dashboard</title>
 
 @endif
 
