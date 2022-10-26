@@ -15,7 +15,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.addstaff');
     }
 
     /**
@@ -36,7 +36,17 @@ class StaffController extends Controller
      */
     public function store(StoreStaffRequest $request)
     {
-        //
+        $staff= new staff();
+
+        $staff->fullname = $request->staffname;
+        $staff->tel = $request->stafftel;
+        $staff->address = $request->address;
+        $staff->nic = $request->nic;
+        
+        $staff->save();
+
+        return redirect()->route('staff.index')
+                        ->with('success','Staff added successfully.');
     }
 
     /**

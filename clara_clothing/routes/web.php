@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,4 @@ Route::middleware([
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
 Route::resource('catagory', CatagaoryController::class);
-
+Route::resource('staff', StaffController::class);
