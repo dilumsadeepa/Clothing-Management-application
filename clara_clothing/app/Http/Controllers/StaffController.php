@@ -45,7 +45,7 @@ class StaffController extends Controller
             'nic' => 'required|max:255',
             
         ]);
-        
+
         $staff= new staff();
 
         $staff->fullname = $request->staffname;
@@ -90,14 +90,7 @@ class StaffController extends Controller
      */
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
-        $request->validate([
-            'fullname' => 'required|max:255',
-            'tel' => 'required|max:255',
-            'address' => 'required|max:255',
-            'nic' => 'required|max:255',
-            
-        ]);
-
+        
 
         $staff->update($request->all());
 
