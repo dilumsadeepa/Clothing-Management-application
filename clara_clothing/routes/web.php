@@ -25,6 +25,10 @@ Route::get('/pages/index', function () {
     return view('pages.index');
 });
 
+Route::get('/pages/index2', function () {
+    return view('pages.index2');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
