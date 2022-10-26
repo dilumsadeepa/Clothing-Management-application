@@ -37,6 +37,15 @@ class StaffController extends Controller
      */
     public function store(StoreStaffRequest $request)
     {
+
+        $request->validate([
+            'fullname' => 'required|max:255',
+            'tel' => 'required|max:255',
+            'address' => 'required|max:255',
+            'nic' => 'required|max:255',
+            
+        ]);
+        
         $staff= new staff();
 
         $staff->fullname = $request->staffname;
@@ -69,7 +78,7 @@ class StaffController extends Controller
      */
     public function edit(Staff $staff)
     {
-        //
+        return view('admin.updatestafff',compact('staff'));
     }
 
     /**
@@ -81,7 +90,19 @@ class StaffController extends Controller
      */
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
-        //
+        $request->validate([
+            'fullname' => 'required|max:255',
+            'tel' => 'required|max:255',
+            'address' => 'required|max:255',
+            'nic' => 'required|max:255',
+            
+        ]);
+
+
+        $staff->update($request->all());
+
+        return redirect()->route('staff.index')
+                        ->with('success','Staff updated successfully');
     }
 
     /**
@@ -92,6 +113,6 @@ class StaffController extends Controller
      */
     public function destroy(Staff $staff)
     {
-        //
+        return $staff;
     }
 }
