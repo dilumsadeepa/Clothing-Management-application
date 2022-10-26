@@ -15,7 +15,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('admin.addstaff');
+        $staff = staff::all();
+        return view('admin.staff', compact('staff'));
     }
 
     /**
@@ -25,7 +26,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.addstaff');
     }
 
     /**
@@ -42,7 +43,7 @@ class StaffController extends Controller
         $staff->tel = $request->stafftel;
         $staff->address = $request->address;
         $staff->nic = $request->nic;
-        
+
         $staff->save();
 
         return redirect()->route('staff.index')
