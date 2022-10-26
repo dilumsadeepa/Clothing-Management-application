@@ -106,6 +106,9 @@ class StaffController extends Controller
      */
     public function destroy(Staff $staff)
     {
-        return $staff;
+        $staff->delete();
+
+        return redirect()->route('suppliers.index')
+                        ->with('success','Supplire deleted successfully');
     }
 }
