@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\catagaory;
 use App\Http\Requests\StorecatagaoryRequest;
 use App\Http\Requests\UpdatecatagaoryRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 
 class CatagaoryController extends Controller
 {
@@ -15,7 +17,8 @@ class CatagaoryController extends Controller
      */
     public function index()
     {
-        //
+        $catagory = catagaory::all();
+        return view('admin.catagory', compact('catagory'));
     }
 
     /**
@@ -25,7 +28,7 @@ class CatagaoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.catagoruadd');
     }
 
     /**
@@ -36,7 +39,18 @@ class CatagaoryController extends Controller
      */
     public function store(StorecatagaoryRequest $request)
     {
-        //
+        $request->validate([
+            'catagoryname' => 'required|max:255',
+        ]);
+
+        $catagory = new catagaory();
+
+        $catagory->catagoryname = $request->catagoryname;
+
+        $catagory->save();
+
+        return redirect()->route('catagory.index')
+                        ->with('success','Catagory added successfully.');
     }
 
     /**
@@ -58,7 +72,9 @@ class CatagaoryController extends Controller
      */
     public function edit(catagaory $catagaory)
     {
-        //
+        return $catagaory;
+        //$cat = DB::select('select * from catagaories where id = ?', [$catagaory]);
+        //return view('admin.catagoryedit', compact('cat'));
     }
 
     /**
@@ -79,8 +95,8 @@ class CatagaoryController extends Controller
      * @param  \App\Models\catagaory  $catagaory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(catagaory $catagaory)
+    public function destroy(Request $catagaory)
     {
-        //
+        return $catagaory;
     }
 }

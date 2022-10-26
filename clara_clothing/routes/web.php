@@ -44,4 +44,5 @@ Route::middleware([
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
+Route::resource('catagory', CatagaoryController::class);
 
