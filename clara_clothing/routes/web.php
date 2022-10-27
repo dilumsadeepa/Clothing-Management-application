@@ -28,6 +28,32 @@ Route::get('/pages/index2', function () {
     return view('pages.index2');
 });
 
+Route::get('/pages/cusTheme', function () {
+    return view('pages.cusTheme');
+})->name('cusTheme');
+
+Route::get('/pages/cus_dashboard', function () {
+    return view('pages.cus_dashboard');
+});
+
+Route::get('/pages/cart', function () {
+    return view('pages.cart');
+});
+
+Route::get('/pages/checkout', function () {
+    return view('pages.checkout');
+});
+
+Route::get('/pages/show', function () {
+    return view('pages.show');
+});
+
+Route::get('/components/layout', function () {
+    return view('components.layout');
+});
+
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
