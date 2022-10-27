@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\catagaory;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -79,7 +80,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+
     }
 
     /**
@@ -90,7 +91,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $catagory = catagaory::all();
+        return view('admin.productedit', compact('product','catagory'));
     }
 
     /**
@@ -102,7 +104,28 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'catagory' => 'required|max:255',
+            'image' => 'required|max:255',
+            'price' => 'required|max:255',
+            'size' => 'required|max:255',
+            'code' => 'required|max:255',
+            'des' => 'required|max:5000',
+            'status' => 'required|max:255',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = $request->fileup.'.'.$request->image->extension();
+
+            $request->image->move(public_path('uploads'), $imageName);
+
+        }
+
+        $product->update($request->all());
+
+        return redirect()->route('product.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
@@ -113,6 +136,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('product.index')
+                        ->with('success','Product deleted successfully');
     }
 }
