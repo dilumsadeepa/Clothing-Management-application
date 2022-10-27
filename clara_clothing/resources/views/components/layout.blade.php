@@ -6,6 +6,8 @@
     <title>Clara Clothing - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/swiper.css"/>
     <style>
         .search-bar{
             display: flex;
@@ -13,6 +15,8 @@
         .features{
           min-width: 22%;
         }
+
+
 
         /* --------------------------------Brands----------------------------------- */
         .brandswrapper{
@@ -97,6 +101,7 @@
                 <a class="nav-link active" aria-current="page" href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
+        </a>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -142,188 +147,19 @@
           {{-----------------------------------------NAVBAR END------------------------------------------------------------- --}}
 
 
-              {{-----------------------------------------Slider Start------------------------------------------------------------- --}}
-
-      <div class="clear-fix"></div>
-      <header>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
-
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{asset('/images/slider/1.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/2.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/3.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/4.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/5.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/6.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/images/slider/7.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-         </div>
-      </header>
-
-          {{-----------------------------------------Slider End------------------------------------------------------------- --}}
+          <main>
+            {{-- -------------------------------------------Main Content Goes Here------------------------------------ --}}
 
 
-           {{-----------------------------------------Category Section------------------------------------------------------------- --}}
-           <div class="container-fluid my-5">
-            <div class="row my-4 row row-cols-1 row-cols-sm-2 row-cols-md-4">
-              <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-truck-arrow-right fa-2x text-danger mx-3"></i> Island-Wide Delivery</div>
-              <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-money-bill-transfer fa-2x text-danger mx-3"></i> Cash on Delivery</div>
-              <div class="col features d-flex justify-content-center fw-bold"><i class="fa-regular fa-credit-card fa-2x text-danger mx-3"></i> Secure Payments</div>
-              <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-shirt fa-2x text-danger mx-3"></i> Unlimited Unique Designs</div>
-             </div>
-           </div>
-
-<div class="container my-5">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-          <div class="card card-image"
-            style="background-image: url({{asset('images/categories/men.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
-            <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fa-solid fa-shirt"></i> MEN</h5>
-                <h3 class="card-title pt-2"><strong>Mens Fashion</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-              </div>
-            </div>
-          </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-image"
-          style="background-image: url({{asset('images/categories/women.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
-          <!-- Content -->
-          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-            <div>
-              <h5 class="pink-text"><i class="fa-solid fa-person-dress"></i> WOMEN</h5>
-              <h3 class="card-title pt-2"><strong>Womens Fashion</strong></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                Odit sed qui, dolorum!.</p>
-              <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="col">
-      <div class="card card-image"
-        style="background-image: url({{asset('images/categories/kids.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
-        <!-- Content -->
-        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-          <div>
-            <h5 class="pink-text"><i class="fa-solid fa-child"></i> KIDS</h5>
-            <h3 class="card-title pt-2"><strong>Kids Fashion</strong></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-              Odit sed qui, dolorum!.</p>
-            <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-          </div>
-        </div>
-      </div>
-  </div>
-
- 
-  </div>
-</div>
+            {{$slot}}
 
 
 
 
 
+            {{-- -------------------------------------------Main Content Goes Here up------------------------------------ --}}
+          </main>
 
-           {{-- -------------------------------------------Category end--------------------------------------------------------------------- --}}
-
-
-
-    
-
-
-
-          {{-- -------------------------------------------Brands Section start--------------------------------------------------------------------- --}}
-        <div class="brandwrapper">
-          <div class="brands">
-            <div class="blogo"><img src="{{asset('/images/brands/1.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/2.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/3.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/4.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/5.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/6.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/7.png')}}" alt="" srcset=""></div>
-            <div class="blogo"><img src="{{asset('/images/brands/8.png')}}" alt="" srcset=""></div>
-          </div>
-        </div>
-
-
-
-
-          {{-- -------------------------------------------Brands Section start--------------------------------------------------------------------- --}}
 
            {{---------------------------------------------------Footer-------------------------------------------------- --}}
 
@@ -453,10 +289,18 @@
 
 
   <script>
-
-
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
   </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </body>
 </html>
