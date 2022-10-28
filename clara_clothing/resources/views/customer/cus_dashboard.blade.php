@@ -67,7 +67,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><b>Clara Clothing</b></a>
+      <a class="navbar-brand" href="/"><b>Clara Clothing</b></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -162,13 +162,7 @@
         <div class="text-white">
             <h1 class="mb-3">Clara Clothing</h1>
             <h4 class="mb-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#">User</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                    </ol>
-                  </nav>
+              {{ Breadcrumbs::render('cus_dashboard') }}
             </h4>
             <a class="btn btn-outline-light btn-lg shadow-none py-3" style="min-width: 150px;" href="#dash" role="button"><i class="fa-regular fa-circle-down fa-2x"></i></a>
         </div>
