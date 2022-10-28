@@ -1,9 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\CatagaoryController;
+use App\Http\Controllers\CustomersController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -16,36 +23,41 @@ use App\Http\Controllers\SupplierController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//----------------------------------Home Page-------------------------------------------------
+
+Route::get('/',[CustomersController::class, 'index'])->name('home');
+
+
+Route::get('/customer/cus_dashboard', [CustomersController::class, 'manage'])->name('cus_dashboard');
+
+Route::get('/customer/index2', function () {
+    return view('customer.index2');
 });
 
-Route::get('/pages/index', function () {
-    return view('pages.index');
+Route::get('/customer/contactus', function () {
+    return view('customer.contactus');
 });
 
-Route::get('/pages/index2', function () {
-    return view('pages.index2');
-});
-
-Route::get('/pages/cusTheme', function () {
-    return view('pages.cusTheme');
+Route::get('/customer/cusTheme', function () {
+    return view('customer.cusTheme');
 })->name('cusTheme');
 
-Route::get('/pages/cus_dashboard', function () {
-    return view('pages.cus_dashboard');
+// Route::get('/customer/cus_dashboard', function () {
+//     return view('customer.cus_dashboard');
+// });
+
+Route::get('/customer/cart', function () {
+    return view('customer.cart');
 });
 
-Route::get('/pages/cart', function () {
-    return view('pages.cart');
+
+
+Route::get('/customer/checkout', function () {
+    return view('customer.checkout');
 });
 
-Route::get('/pages/checkout', function () {
-    return view('pages.checkout');
-});
-
-Route::get('/pages/show', function () {
-    return view('pages.show');
+Route::get('/customer/show', function () {
+    return view('customer.show');
 });
 
 Route::get('/components/layout', function () {

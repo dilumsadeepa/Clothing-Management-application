@@ -23,7 +23,8 @@ return [
     |
     */
 
-    'view' => 'breadcrumbs::tailwind',
+    'view' => 'breadcrumbs::bootstrap5',
+    
     // 'view' => 'partials/breadcrumbs',
 
 

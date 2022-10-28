@@ -149,13 +149,7 @@
             <div class="text-white">
                 <h1 class="mb-3">Clara Clothing</h1>
                 <h4 class="mb-3">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Category</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">Frocks</li>
-                        </ol>
-                      </nav>
+                    <a href="" class="text-decoration-none">{{ Breadcrumbs::render('cusTheme') }}</a>
                 </h4>
                 <a class="btn btn-outline-light btn-lg shadow-none py-3" style="min-width: 150px;" href="#!" role="button"><i class="fa-regular fa-circle-down fa-2x"></i></a>
             </div>
@@ -165,7 +159,7 @@
 
 
 
-        {{-- {{ Breadcrumbs::render() }} --}}
+        
 
 
 
