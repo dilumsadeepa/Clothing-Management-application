@@ -6,11 +6,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
-<<<<<<< Updated upstream
-=======
+
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
->>>>>>> Stashed changes
+
+use App\Http\Controllers\CatagaoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StaffController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +87,8 @@ Route::middleware([
 });
 
 Route::resource('suppliers', SupplierController::class);
+Route::resource('catagory', CatagaoryController::class);
+Route::resource('catagory', CatagaoryController::class);
+Route::resource('product', ProductController::class);
 
+Route::resource('staff', StaffController::class);
