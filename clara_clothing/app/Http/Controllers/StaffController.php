@@ -40,16 +40,25 @@ class StaffController extends Controller
     {
 
         $request->validate([
-            'fullname' => 'required|max:255',
-            'tel' => 'required|max:255',
+            'staffname' => 'required|max:255',
+            'staffemail' => 'required|max:255',
+            'stafftel' => 'required|max:255',
             'address' => 'required|max:255',
             'nic' => 'required|max:255',
 
         ]);
 
+        $email = $request->staffemail;
+        $user = DB::select('select id from users where email = ?',[$email]);
+
+        foreach($user as $u){
+            $uid = $u->id;
+        }
+
         $staff= new staff();
 
         $staff->fullname = $request->staffname;
+        $staff->uid = $uid;
         $staff->tel = $request->stafftel;
         $staff->address = $request->address;
         $staff->nic = $request->nic;
@@ -58,11 +67,17 @@ class StaffController extends Controller
 
         $affected = DB::update(
             'update users set roll = 2 where id = ?',
-            ['Anita']
+            [$uid]
         );
 
-        return redirect()->route('staff.index')
-                        ->with('success','Staff added successfully.');
+        if ($affected == true) {
+            return redirect()->route('staff.index')
+                        ->with('success','Staff notadded to users. Try again first delete this added user');
+        }else{
+
+        }
+
+
     }
 
     /**
