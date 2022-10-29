@@ -6,72 +6,9 @@
     <title>Clara Clothing - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
  
-    <style>
-        .search-bar{
-            display: flex;
-        }
-        .features{
-          min-width: 22%;
-        }
-
-                 
-        .btn-grad {
-            background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
-            margin: 10px;
-            padding: 15px 45px;
-            text-align: center;
-            text-transform: uppercase;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;            
-            box-shadow: 0 0 20px #eee;
-            border-radius: 10px;
-            display: block;
-          }
-
-          .btn-grad:hover {
-            background-position: right center; /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
-          }
-         
-
-
-
-        /* --------------------------------Brands----------------------------------- */
-        .brandswrapper{
-          display: flex;
-          justify-content: center;
-        }
-        .brands{
-          display: grid;
-          grid-gap: 10px;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          grid-template-rows: 1fr;
-
-        }
-
-        .blogo{
-          justify-self: center;
-        }
-
-
-
-
-
-
-
-        /* --------------------------------End Brands----------------------------------- */
-
-
-        @media only screen and (max-width: 1200px){
-            .search-bar{
-                display: display;
-            }
-}
-      
-    </style>
   </head>
   <body>
 
@@ -350,18 +287,7 @@
 
 
 
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
+<script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

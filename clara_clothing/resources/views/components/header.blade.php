@@ -3,8 +3,12 @@
         <div class="mask d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.4); min-width:90%">
             <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
-                <h1 class="mb-3">Hi, {{ucfirst(auth()->user()->name)}}</h1>
+                @auth
+                <h1 class="mb-3">Hi, {{ucfirst(auth()->user()->name)}} </h1>
                 <h2 class="mb-3">Welcome to Clara Clothing</h2>
+                @else
+                <h1 class="mb-3">Welcome to Clara Clothing</h1>
+                @endauth
                 <h4 class="mb-3 d-flex justify-content-center">
                     {{$slot}}
                 </h4>
