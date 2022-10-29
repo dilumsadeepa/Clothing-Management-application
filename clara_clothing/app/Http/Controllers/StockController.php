@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\Supplier;
 use App\Http\Requests\StoreStockRequest;
 use App\Http\Requests\UpdateStockRequest;
 
@@ -15,7 +16,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        //
+        $stockes = Stock::all();
+        return view('admin.stock', compact('stockes'));
     }
 
     /**
@@ -25,7 +27,8 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        $supp = Supplier::all();
+        return view('admin.stockadd',compact('supp'));
     }
 
     /**
@@ -36,7 +39,27 @@ class StockController extends Controller
      */
     public function store(StoreStockRequest $request)
     {
-        //
+        $request->validate([
+            'supid' => 'required|max:255',
+            'qun' => 'required|max:255',
+            'price' => 'required|max:255',
+            'date' => 'required|max:255',
+            'des' => 'required|max:5000',
+        ]);
+
+        $stock = new Stock();
+
+        $stock->supid = $request->supid;
+        $stock->quntity = $request->qun;
+        $stock->price = $request->price;
+        $stock->date = $request->date;
+        $stock->des = $request->des;
+
+        $stock->save();
+
+        return redirect()->route('stocke.index')
+                        ->with('success','Stockes Added successfully.');
+
     }
 
     /**

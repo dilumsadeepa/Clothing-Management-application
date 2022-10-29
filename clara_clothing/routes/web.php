@@ -6,12 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
-
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
-
-
-
+use App\Http\Controllers\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,5 +85,7 @@ Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
 Route::resource('catagory', CatagaoryController::class);
 Route::resource('product', ProductController::class);
+Route::resource('stocke', StockController::class);
 
 Route::resource('staff', StaffController::class);
+

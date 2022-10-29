@@ -199,6 +199,8 @@
 
         </ul>
     </li><!-- End supplier Nav -->
+
+    <li>
       <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
       <i class="bi bi-menu-button-wide"></i><span>Staff</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
@@ -215,8 +217,45 @@
       </li>
 
       </ul>
-  </li><!-- End supplier Nav -->
+    </li><!-- End supplier Nav -->
 
+    <li><!-- End supplier Nav -->
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+      <i class="bi bi-menu-button-wide"></i><span>Staff</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <li>
+          <a href="{{route('staff.index')}}">
+          <i class="bi bi-circle"></i><span>All Staff</span>
+          </a>
+      </li>
+      <li>
+          <a href="{{route('staff.create')}}">
+          <i class="bi bi-circle"></i><span>Add Staff</span>
+          </a>
+      </li>
+
+      </ul>
+    </li><!-- End supplier Nav -->
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Stockes</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+            <a href="{{route('stocke.index')}}">
+            <i class="bi bi-circle"></i><span>All Stockes</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('stocke.create')}}">
+            <i class="bi bi-circle"></i><span>Add Stockes</span>
+            </a>
+        </li>
+
+        </ul>
+    </li><!-- End supplier Nav -->
 
     <title>Admin Dashboard</title>
 
