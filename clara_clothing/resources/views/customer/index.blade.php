@@ -97,6 +97,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -216,10 +217,10 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col category-box">
           <div class="card card-image rounded-0" style="
-            background:rgba(0, 0, 0, 0.6)url({{asset('images/categories/men.jpg')}}); 
-            background-size: cover; 
-            background-position: center center; 
-            width: 100%; 
+            background:rgba(0, 0, 0, 0.6)url({{asset('images/categories/men.jpg')}});
+            background-size: cover;
+            background-position: center center;
+            width: 100%;
             height: 100%;
             background-blend-mode: darken;">
             <!-- Content -->
@@ -227,7 +228,7 @@
 
             </div>
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
-                <h3><strong>MEN'S</strong></h3>            
+                <h3><strong>MEN'S</strong></h3>
             </div>
           </div>
       </div>
@@ -236,13 +237,22 @@
         <div class="card card-image rounded-0"
           style="background:rgba(0, 0, 0, 0.6)url({{asset('images/categories/women.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%; background-blend-mode: darken;">
           <div class="inner-line">
-                
+
         </div>
           <!-- Content -->
           <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
-   
+
               <h3><strong>WOMEN'S</strong></h3>
-           
+
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div>
+              <h5 class="pink-text"><i class="fa-solid fa-person-dress"></i> WOMEN</h5>
+              <h3 class="card-title pt-2"><strong>Womens Fashion</strong></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+                optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+                Odit sed qui, dolorum!.</p>
+              <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
+            </div>
           </div>
         </div>
     </div>
@@ -251,7 +261,7 @@
       <div class="card card-image rounded-0"
         style="background-image: url({{asset('images/categories/kids.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
         <div class="inner-line">
-                
+
         </div>
         <!-- Content -->
         <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">

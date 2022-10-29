@@ -1,10 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
+
 use App\Http\Controllers\CatagaoryController;
+use App\Http\Controllers\CustomersController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +24,48 @@ use App\Http\Controllers\CatagaoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//----------------------------------Home Page-------------------------------------------------
+
+Route::get('/',[CustomersController::class, 'index'])->name('home');
+
+
+Route::get('/customer/cus_dashboard', [CustomersController::class, 'manage'])->name('cus_dashboard');
+
+Route::get('/customer/index2', function () {
+    return view('customer.index2');
 });
 
-Route::get('/pages/index', function () {
-    return view('pages.index');
+Route::get('/customer/contactus', function () {
+    return view('customer.contactus');
 });
 
-Route::get('/pages/index2', function () {
-    return view('pages.index2');
+Route::get('/customer/cusTheme', function () {
+    return view('customer.cusTheme');
+})->name('cusTheme');
+
+// Route::get('/customer/cus_dashboard', function () {
+//     return view('customer.cus_dashboard');
+// });
+
+Route::get('/customer/cart', function () {
+    return view('customer.cart');
 });
+
+
+
+Route::get('/customer/checkout', function () {
+    return view('customer.checkout');
+});
+
+Route::get('/customer/show', function () {
+    return view('customer.show');
+});
+
+Route::get('/components/layout', function () {
+    return view('components.layout');
+});
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -48,4 +86,7 @@ Route::middleware([
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
+Route::resource('catagory', CatagaoryController::class);
+Route::resource('product', ProductController::class);
 
+Route::resource('staff', StaffController::class);

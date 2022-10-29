@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\catagaory;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -15,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('admin.product',compact('products'));
     }
 
     /**
@@ -25,7 +28,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $catagory = catagaory::all();
+        return view('admin.productadd', compact('catagory'));
     }
 
     /**
@@ -36,7 +40,36 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8000',
+            'name' => 'required|max:255',
+            'catagory' => 'required|max:255',
+            'price' => 'required|max:255',
+            'size' => 'required|max:255',
+            'code' => 'required|max:255',
+            'des' => 'required|max:5000',
+            'status' => 'required|max:255',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('uploads'), $imageName);
+
+        $product = new Product();
+
+        $product->name = $request->name;
+        $product->catagory = $request->catagory;
+        $product->image = $imageName;
+        $product->price = $request->price;
+        $product->size = $request->size;
+        $product->code = $request->code;
+        $product->des = $request->des;
+        $product->status = $request->status;
+
+        $product->save();
+
+        return redirect()->route('product.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**
@@ -47,7 +80,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+
     }
 
     /**
@@ -58,7 +91,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $catagory = catagaory::all();
+        return view('admin.productedit', compact('product','catagory'));
     }
 
     /**
@@ -70,7 +104,28 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'catagory' => 'required|max:255',
+            'image' => 'required|max:255',
+            'price' => 'required|max:255',
+            'size' => 'required|max:255',
+            'code' => 'required|max:255',
+            'des' => 'required|max:5000',
+            'status' => 'required|max:255',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = $request->fileup.'.'.$request->image->extension();
+
+            $request->image->move(public_path('uploads'), $imageName);
+
+        }
+
+        $product->update($request->all());
+
+        return redirect()->route('product.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
@@ -81,6 +136,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('product.index')
+                        ->with('success','Product deleted successfully');
     }
 }

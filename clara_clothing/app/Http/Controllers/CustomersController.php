@@ -15,7 +15,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        //
+        return view('customer.index');
     }
 
     /**
@@ -82,5 +82,10 @@ class CustomersController extends Controller
     public function destroy(Customers $customers)
     {
         //
+    }
+
+    public function manage()
+    {
+        return view('customer.cus_dashboard');
     }
 }
