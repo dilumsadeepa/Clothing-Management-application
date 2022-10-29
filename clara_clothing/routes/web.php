@@ -10,9 +10,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 
-use App\Http\Controllers\CatagaoryController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StaffController;
+
 
 
 /*
