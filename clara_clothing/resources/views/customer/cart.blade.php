@@ -41,7 +41,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                       <!-- Quantity -->
                       <div class="d-flex mb-4" style="max-width: 300px">
-                        <button class="btn btn-primary px-3 me-2"
+                        <button class="btn btn-primary px-1 me-2" style="max-height: 36px;"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
                         </button>
@@ -51,7 +51,7 @@
                           <label class="form-label" for="form1">Quantity</label>
                         </div>
       
-                        <button class="btn btn-primary px-3 ms-2"
+                        <button class="btn btn-primary px-1 ms-2" style="max-height: 36px;"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
                         </button>
@@ -103,7 +103,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                       <!-- Quantity -->
                       <div class="d-flex mb-4" style="max-width: 300px">
-                        <button class="btn btn-primary px-3 me-2"
+                        <button class="btn btn-primary px-1 me-2" style="max-height: 36px"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
                         </button>
@@ -113,7 +113,7 @@
                           <label class="form-label" for="form1">Quantity</label>
                         </div>
       
-                        <button class="btn btn-primary px-3 ms-2"
+                        <button class="btn btn-primary px-1 ms-2" style="max-height: 36px;"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
                         </button>
@@ -182,7 +182,7 @@
                     </li>
                   </ul>
       
-                  <button type="button" class="btn btn-primary btn-lg btn-block">
+                  <button type="button" class="btn btn-primary btn-md btn-block">
                     Go to checkout
                   </button>
                 </div>

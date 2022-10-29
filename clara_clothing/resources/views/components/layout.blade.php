@@ -134,6 +134,7 @@
                   <li><a class="dropdown-item" href="#">Nightwear</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">All Girls</a></li>
+                  <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">T-Shirts</a></li>
                   <li><a class="dropdown-item" href="#">Dresses</a></li>
                   <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
@@ -145,7 +146,7 @@
               @auth
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="cart.html">
+                <a class="nav-link active" aria-current="page" href="/customer/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
         </a>
@@ -160,7 +161,8 @@
                 <img
                     src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
                     class="rounded-circle"
-                    height="25"
+                    height="30"
+                    width="auto"
                     alt="Black and White Portrait of a Man"
                     loading="lazy"
                 />

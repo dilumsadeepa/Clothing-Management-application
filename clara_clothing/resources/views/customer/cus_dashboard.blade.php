@@ -37,8 +37,40 @@
           justify-self: center;
         }
 
+      /* ------------------------------------------------Order Tracking --------------------------------------------------------------- */
+       
+        @media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+
+.horizontal-timeline .items {
+border-top: 2px solid #ddd;
+}
+
+.horizontal-timeline .items .items-list {
+position: relative;
+margin-right: 0;
+}
+
+.horizontal-timeline .items .items-list:before {
+content: "";
+position: absolute;
+height: 8px;
+width: 8px;
+border-radius: 50%;
+background-color: #ddd;
+top: 0;
+margin-top: -5px;
+}
+
+.horizontal-timeline .items .items-list {
+padding-top: 15px;
+}
 
 
+      /* ------------------------------------------------End of Order Tracking --------------------------------------------------------------- */
 
 
 
@@ -122,6 +154,7 @@
             <li><a class="dropdown-item" href="#">Nightwear</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">All Girls</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">T-Shirts</a></li>
             <li><a class="dropdown-item" href="#">Dresses</a></li>
             <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
@@ -133,7 +166,7 @@
         @auth
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="cart.html">
+          <a class="nav-link active" aria-current="page" href="/customer/cart">
               <i class="fa-solid fa-cart-shopping"></i>
               <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
   </a>
@@ -148,7 +181,7 @@
           <img
               src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
               class="rounded-circle"
-              height="25"
+              height="30"
               alt="Black and White Portrait of a Man"
               loading="lazy"
           />
@@ -219,8 +252,102 @@
     </nav>
     <section>
       <div class="content content-1" id="orderdashbord">
-        <div class="title">This is Custormer Dashboard</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero aspernatur nobis provident dolores molestias quia quisquam laborum, inventore quis, distinctioa, fugit repudiandae delectus sunt ipsam! Odio illo at quia doloremque fugit iops, asperiores? Consectetur esse officia labore voluptatum blanditiis molestias dic voluptas est, minima unde sequi, praesentium dicta suscipit quisquam iure sed, nemo.</p>
+        
+        <div class="container-fluid">
+          <section>
+            <div class="row">
+              <div class="col-12 mt-3 mb-1">
+                <h5 class="text-uppercase">Statistics</h5>
+                <p>Statistics on {{date('Y-m-d')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-md-12 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between p-md-1">
+                      <div class="d-flex flex-row">
+                        <div class="align-self-center">
+                          <i class="fa-solid fa-cart-shopping text-info fa-3x me-4"></i>
+                        </div>
+                        <div>
+                          <h4>Total Orders</h4>
+                          <p class="mb-0">Total Orders upto now</p>
+                        </div>
+                      </div>
+                      <div class="align-self-center">
+                        <h2 class="h1 mb-0">18</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-12 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between p-md-1">
+                      <div class="d-flex flex-row">
+                        <div class="align-self-center">
+                          <i class="fa-solid fa-cart-shopping text-success fa-3x me-4"></i>
+                        </div>
+                        <div>
+                          <h4>Completed Orders</h4>
+                          <p class="mb-0">Total Completed Orders</p>
+                        </div>
+                      </div>
+                      <div class="align-self-center">
+                        <h2 class="h1 mb-0">14</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6 col-md-12 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between p-md-1">
+                      <div class="d-flex flex-row">
+                        <div class="align-self-center">
+                          <h2 class="h1 mb-0 me-4">4</h2>
+                        </div>
+                        <div>
+                          <h4>On The Way Deliveries</h4>
+                          <p class="mb-0">Total Uncompleted Orders</p>
+                        </div>
+                      </div>
+                      <div class="align-self-center">
+                        <i class="fa-solid fa-truck-fast text-danger fa-3x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-12 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between p-md-1">
+                      <div class="d-flex flex-row">
+                        <div class="align-self-center">
+                          <h2 class="h1 mb-0 me-4">24</h2>
+                        </div>
+                        <div>
+                          <h4>Total Ordered Items</h4>
+                          <p class="mb-0">No of items ordered all the time</p>
+                        </div>
+                      </div>
+                      <div class="align-self-center">
+                        <i class="fa-solid fa-gifts text-warning fa-3x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
       </div>
       <div class="content content-2">
         <div class="title">This is Orders</div>
@@ -372,6 +499,134 @@
                 </tr>
             </tfoot>
         </table>
+
+
+        {{-- ------------------------------------------------Order Receipt With Tracking Functionality------------------------------------------------------------------ --}}
+
+        <div class="container my-5">
+          <div class="row row-cols-1 row-cols-md-2 g-3">
+
+       
+
+         <div class="col">
+           <div class="card h-100 p-2">
+             <div class="card-body">
+             <!-- <div class="card border-top border-bottom border-3" style="border-color: #352e69 !important;"> -->
+
+               <div class="d-flex justify-content-between">
+                 <div class="flexitem"><p class="lead fw-bold mb-5" style="color: #352e69;">Purchase Reciept</p></div>
+                 <div class="flexitem"><p class="lead  mb-5" style="color: #352e69;">Clara Clothing</p></div>
+                 </div>
+             
+                 <div class="row">
+                   <div class="col mb-3">
+                     <p class="small text-muted mb-1">Date</p>
+                     <p>2022-Oct-29 16:42:41</p>
+                   </div>
+                   <div class="col mb-3">
+                     <p class="small text-muted mb-1">Order No</p>
+                     <p>52</p>
+                   </div>
+                   <div class="col mb-3">
+                       <p class="small text-muted mb-1">User Name</p>
+                       <p>peter pan</p>
+                     </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col mb-3">
+                     <p class="small text-muted mb-1">Contact No</p>
+                     <p>0701234567</p>
+                   </div>
+                   <div class="col mb-3">
+                     <p class="small text-muted mb-1">Address</p>
+                     <p>House no. 123, horana, colombo</p>
+                   </div>
+                   <div class="col mb-3">
+                       <p class="small text-muted mb-1">Payment Method</p>
+                       <p> Cash on delivery</p>
+                     </div>
+                 </div>
+     
+                 <div class="mx-n5 px-5 py-4" style="background-color: #f2f2f2;">
+                   <div class="row">
+                                           <div class="col-md-8 col-lg-9">
+                       <p>Blue Blouse (1) , White Shorts (3) </p>
+                     </div>
+                     <div class="col-md-4 col-lg-3">
+                       <p>Rs. 3900/-</p>
+                     </div>
+                     
+                   </div>
+
+                   </div>
+                   <div class="row">
+                       <div class="col-md-8 col-lg-9">
+                         <p class="mb-0">Total Discount</p>
+                       </div>
+                       <div class="col-md-4 col-lg-3">
+                         <p class="mb-0 text-left">Rs. 300/-</p>
+                       </div>
+                     </div>
+                 </div>
+                 
+     
+                 <div class="row my-4">
+                   <div class="col-md-4 offset-md-8 col-lg-3 offset-lg-9">
+                     <p class="lead fw-bold mb-0" style="color: #352e69;">Grand Total <span class="grand">Rs. 3600/-</span> </p>
+                   </div>
+                 </div>
+     
+
+                 <div class="d-flex justify-content-between">
+                
+                 <div class="flexit">
+                                        <p class="lead fw-bold mb-4 pb-2" style="color: #352e69;">Order Status: <span class="text-danger fs-6"> Pending</span> </p>
+                 </div>
+               </div>
+
+               <p class="lead fw-bold mb-4 pb-2" style="color: #352e69;">Tracking Order</p>
+
+            <div class="row">
+              <div class="col-lg-12">
+
+                <div class="horizontal-timeline">
+
+                  <ul class="list-inline items d-flex justify-content-between">
+                    <li class="list-inline-item items-list">
+                      <p class="py-1 px-2 rounded text-white" style="background-color: #2f2293;">Ordered</p
+                        class="py-1 px-2 rounded text-white" style="background-color: #352e69;">
+                    </li>
+                    <li class="list-inline-item items-list">
+                      <p class="py-1 px-2 rounded text-white" style="background-color: #352e69;">Ready To Go</p
+                        class="py-1 px-2 rounded text-white" style="background-color: #352e69;">
+                    </li>
+                    <li class="list-inline-item items-list">
+                      <p class="py-1 px-2 rounded text-white" style="background-color: #2f2293;">On the way
+                      </p>
+                    </li>
+                    <li class="list-inline-item items-list text-end" style="margin-right: 8px;">
+                      <p style="margin-right: -8px;">Delivered</p>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+     
+                 <p class="mt-4 pt-2 mb-0">Want any help? <a href="contactus.php" style="color: #352e69;">Please contact
+                     us</a></p>
+
+           </div>
+         </div>
+
+         
+       </div>
+       </div>
+
+
+
       </div>
 
       {{----------------------------------------------------End Of Order dashboard------------------------------------------------------------------------------ --}}
@@ -383,9 +638,248 @@
         <div class="title">This is Messages</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim reprehenderit null itaq, odio repellat asperiores vel voluptatem magnam praesentium, eveniet iure ab facere officiis. Quod sequi vel, rem quam provident soluta nihil, eos. Illo oditu omnis cumque praesentium voluptate maxime voluptatibus facilis nulla ipsam quidem mollitia! Veniam, fuga, possimus. Commodi, fugiat aut ut quorioms stu necessitatibus, cumque laborum rem provident tenetur.</p>
       </div>
+
+
       <div class="content content-5">
-        <div class="title">This is a Manage Profile</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur officia sequi aliquam. Voluptatem distinctio nemo culpa veritatis nostrum fugit rem adipisci ea ipsam, non veniam ut aspernatur aperiam assumenda quis esse soluta vitae, placeat quasi. Iste dolorum asperiores hic impedit nesciunt atqu, officia magnam commodi iusto aliquid eaque, libero.</p>
+       
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1">
+              <a class="btn btn-outline-dark" data-mdb-ripple-color="dark" href="/user/profile"
+                style="z-index: 1;">
+                Edit profile
+              </a>
+            </div>
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5>{{auth()->user()->name}}</h5>
+              <p>{{auth()->user()->email}}</p>
+            </div>
+          </div>
+          <div class="p-4 text-black" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div>
+                <p class="mb-1 h5">15</p>
+                <p class="small text-muted mb-0">Total Ordered Items</p>
+              </div>
+              <div class="px-3">
+                <p class="mb-1 h5">3</p>
+                <p class="small text-muted mb-0">No Of Orders</p>
+              </div>
+              <div>
+                <p class="mb-1 h5">{{date('Y-m-d', strtotime(auth()->user()->created_at))}}</p>
+                <p class="small text-muted mb-0">Member Since</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">Status</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <p class="font-italic mb-1">Regular Customer</p>
+                <p class="font-italic mb-1">No Of Finished Deliveries : 1</p>
+                <p class="font-italic mb-0">On the Way : 2</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0">Recent Ordered items</p>
+              <p class="mb-0"><a href="/custormer/orders" class="text-muted">Show all</a></p>
+            </div>
+            
+
+            <section style="background-color: #eee;">
+              <div class="py-5">
+                <div class="row justify-content-center mb-3">
+                  <div class="col-md-12 col-xl-10">
+                    <div class="card shadow-0 border rounded-3">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                            <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+                                class="w-100" />
+                              <a href="#!">
+                                <div class="hover-overlay">
+                                  <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-lg-6 col-xl-6">
+                            <h5>Quant trident shirts</h5>
+                            <div class="d-flex flex-row">
+                              <div class="text-danger mb-1 me-2">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                              </div>
+                              <span>22</span>
+                            </div>
+                            <div class="mt-1 mb-0 text-muted small">
+                              <span>
+                                @php
+                                $des="There are many variations of passages of Lorem Ipsum available, but the
+                              majority have suffered alteration in some form"  
+                              @endphp
+                              {{Str::limit($des, 100)}}
+                              </span>
+                            </div>
+
+                            <p class="text-truncate mb-4 mb-md-0">
+                             Quantity : 3
+                            </p>
+                          </div>
+                          <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                            <div class="d-flex flex-row align-items-center mb-1">
+                              <h4 class="mb-1 me-1">Order Status</h4>
+                            </div>
+                            <h6 class="text-success">On The Way</h6>
+                            <div class="d-flex flex-column mt-4">
+                              <button class="btn btn-primary btn-sm" type="button">Details</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center mb-3">
+                  <div class="col-md-12 col-xl-10">
+                    <div class="card shadow-0 border rounded-3">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                            <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+                                class="w-100" />
+                              <a href="#!">
+                                <div class="hover-overlay">
+                                  <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-lg-6 col-xl-6">
+                            <h5>Quant trident shirts</h5>
+                            <div class="d-flex flex-row">
+                              <div class="text-danger mb-1 me-2">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                              </div>
+                              <span>22</span>
+                            </div>
+                            <div class="mt-1 mb-0 text-muted small">
+                              <span>
+                                @php
+                                $des="There are many variations of passages of Lorem Ipsum available, but the
+                              majority have suffered alteration in some form"  
+                              @endphp
+                              {{Str::limit($des, 100)}}
+                              </span>
+                            </div>
+
+                            <p class="text-truncate mb-4 mb-md-0">
+                             Quantity : 3
+                            </p>
+                          </div>
+                          <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                            <div class="d-flex flex-row align-items-center mb-1">
+                              <h4 class="mb-1 me-1">Order Status</h4>
+                            </div>
+                            <h6 class="text-success">On The Way</h6>
+                            <div class="d-flex flex-column mt-4">
+
+
+                              {{-- -----------------------------------------Order Details Modal--------------------------------------------------------------- --}}
+                              
+
+                              <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa-solid fa-circle-info"></i> Details
+                              </button>
+
+                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header border-bottom-0 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"><i class="fa-solid fa-x"></i></button>
+                                      </div>
+                                      <div class="modal-body text-start text-black p-4">
+                                        <h5 class="modal-title text-uppercase mb-5" id="exampleModalLabel"> {{auth()->user()->name}}, </h5>
+                                        <h4 class="mb-2" style="color: #35558a;">Thanks for your order</h4>
+                                        <h6 class="mb-0" style="color: #35558a;">Order No : 0001</h6>
+                                        <h6 class="mb-4" style="color: #35558a;">Order Date : 2022-10-28</h6>
+                                        <p class="mb-0" style="color: #35558a;">Payment summary</p>
+                                        <hr class="mt-2 mb-4"
+                                          style="height: 0; background-color: transparent; opacity: .75; border-top: 2px dashed #9e9e9e;">
+                        
+
+
+                                        <div class="d-flex justify-content-between">
+                                          <p class="fw-bold mb-0">Red Blouse(Qty:1)</p>
+                                          <p class="text-muted mb-0">Rs.1750.00</p>
+                                        </div>
+                        
+                                        <div class="d-flex justify-content-between">
+                                          <p class="fw-bold mb-0">Blue Skirts(Qty:1)</p>
+                                          <p class="text-muted mb-0">Rs.1750.00</p>
+                                        </div>
+                        
+                                        <div class="d-flex justify-content-between pb-1">
+                                          <p class="small">Delivery Charges</p>
+                                          <p class="small">Rs.200.00</p>
+                                        </div>
+                        
+                                        <div class="d-flex justify-content-between">
+                                          <p class="fw-bold">Total</p>
+                                          <p class="fw-bold" style="color: #35558a;">Rs.2125.00</p>
+                                        </div>
+                        
+                                      </div>
+                                      <div class="modal-footer d-flex justify-content-center border-top-0 py-4">
+                                        <button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
+                                          Track your order
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <button class="btn btn-primary btn-sm" type="button" onClick="window.location = '#orders';">Track Order</button>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       </div>
     </section>
   </div>
@@ -396,130 +890,132 @@
 {{-- --------------------------------------------------End of Custormer Dashboard------------------------------------------------- --}}
 
 
-          {{---------------------------------------------------Footer-------------------------------------------------- --}}
+           {{---------------------------------------------------Footer-------------------------------------------------- --}}
 
            <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted my-3">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Clara Clothing
-            </h6>
-            <p>
-               Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Mens Wear</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Womens Wear</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Kids wear</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Other</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3"></i> Port City, Colombo</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              info@example.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Claraclothing.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+           <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+              <!-- Left -->
+              <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+              </div>
+              <!-- Left -->
+          
+              <!-- Right -->
+              <div>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+              <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+          
+            <!-- Section: Links  -->
+            <section class="">
+              <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      <i class="fas fa-gem me-3"></i>Clara Clothing
+                    </h6>
+                    <p>
+                       Lorem ipsum
+                      dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      Products
+                    </h6>
+                    <p>
+                      <a href="/shopping/allmen" class="text-reset">Mens Wear</a>
+                    </p>
+                    <p>
+                      <a href="/shopping/allwomen" class="text-reset">Womens Wear</a>
+                    </p>
+                    <p>
+                      <a href="/shopping/allkids" class="text-reset">Kids wear</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Home & Living</a>
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                      Useful links
+                    </h6>
+                    <p>
+                      <a href="#!" class="text-reset">Contact</a>
+                    </p>
+                    @auth
+                    <p>
+                      <a href="/dashboard" class="text-reset">Dashboard</a>
+                    </p>
+                    <p>
+                      <a href="/dashboard/#orderdashbord" class="text-reset">Orders</a>
+                    </p>
+                    <p>
+                    @endauth
+                      <a href="#!" class="text-reset">Help</a>
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p><i class="fas fa-home me-3"></i> Port City, Colombo</p>
+                    <p>
+                      <i class="fas fa-envelope me-3"></i>
+                      info@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> + 94 234 567 88</p>
+                    <p><i class="fas fa-print me-3"></i> + 94 234 567 89</p>
+                  </div>
+                  <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+              </div>
+            </section>
+            <!-- Section: Links  -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+              © {{ date('Y') }} Copyright:
+              <a class="text-reset fw-bold" href="/">claraclothing.com</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
 
 
 
