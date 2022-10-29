@@ -15,8 +15,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $staff = staff::all();
-        return view('admin.staff', compact('staff'));
+        //
     }
 
     /**
@@ -26,7 +25,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('admin.addstaff');
+        //
     }
 
     /**
@@ -37,26 +36,7 @@ class StaffController extends Controller
      */
     public function store(StoreStaffRequest $request)
     {
-
-        $request->validate([
-            'fullname' => 'required|max:255',
-            'tel' => 'required|max:255',
-            'address' => 'required|max:255',
-            'nic' => 'required|max:255',
-            
-        ]);
-
-        $staff= new staff();
-
-        $staff->fullname = $request->staffname;
-        $staff->tel = $request->stafftel;
-        $staff->address = $request->address;
-        $staff->nic = $request->nic;
-
-        $staff->save();
-
-        return redirect()->route('staff.index')
-                        ->with('success','Staff added successfully.');
+        //
     }
 
     /**
@@ -78,7 +58,7 @@ class StaffController extends Controller
      */
     public function edit(Staff $staff)
     {
-        return view('admin.updatestafff',compact('staff'));
+        //
     }
 
     /**
@@ -90,12 +70,7 @@ class StaffController extends Controller
      */
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
-        
-
-        $staff->update($request->all());
-
-        return redirect()->route('staff.index')
-                        ->with('success','Staff updated successfully');
+        //
     }
 
     /**
@@ -106,9 +81,6 @@ class StaffController extends Controller
      */
     public function destroy(Staff $staff)
     {
-        $staff->delete();
-
-        return redirect()->route('suppliers.index')
-                        ->with('success','Supplire deleted successfully');
+        //
     }
 }
