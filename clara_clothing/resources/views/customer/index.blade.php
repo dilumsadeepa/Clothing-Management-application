@@ -62,7 +62,7 @@
 
 
            {{-----------------------------------------Category Section------------------------------------------------------------- --}}
-           <div class="container-fluid my-5">
+           <div class="container-fluid mb-5">
             <div class="row my-4 row row-cols-1 row-cols-sm-2 row-cols-md-4">
               <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-truck-arrow-right fa-2x text-danger mx-3"></i> Island-Wide Delivery</div>
               <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-money-bill-transfer fa-2x text-danger mx-3"></i> Cash on Delivery</div>
@@ -70,6 +70,10 @@
               <div class="col features d-flex justify-content-center fw-bold"><i class="fa-solid fa-shirt fa-2x text-danger mx-3"></i> Unlimited Unique Designs</div>
              </div>
            </div>
+
+           <div class="eleven">
+            <h1>Shop By Category</h1>
+          </div>
 
 <div class="container my-5 d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -128,8 +132,11 @@
            {{-- -------------------------------------------Category end--------------------------------------------------------------------- --}}
 
           {{------------------------------------------------Product Section--------------------------------------------------------------------}}
-<div class="container">
-    <div class="row">
+<div class="container mys-5">
+  <div class="eleven">
+    <h1>New Arrivals</h1>
+  </div>
+    <div class="row mt-5">
 
     </div>
     <div class="row">

@@ -6,36 +6,39 @@
             <div class="row mt-5">
                 <div class="col-lg-6">
                     <div class="row mx-2">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                        <div id="carouselExampleIndicators"  class="carousel slide megagallery"  data-bs-ride="true">
                             <div class="carousel-inner px-2">
                               <div class="carousel-item active">
-                                <img src="{{asset('images/slider/1.jpg')}}" class="d-block w-100" alt="...">
+                                <img src="{{asset('images/products/1.jpg')}}" class="d-block w-100"  alt="...">
                               </div>
                               <div class="carousel-item">
-                                <img src="{{asset('images/slider/2.jpg')}}" class="d-block w-100" alt="...">
+                                <img src="{{asset('images/products/2.jpg')}}" class="d-block w-100"  alt="...">
                               </div>
                               <div class="carousel-item">
-                                <img src="{{asset('images/slider/3.jpg')}}" class="d-block w-100" alt="...">
+                                <img src="{{asset('images/products/3.jpg')}}" class="d-block w-100"  alt="...">
                               </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                               <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                               <span class="carousel-control-next-icon" aria-hidden="true"></span>
                               <span class="visually-hidden">Next</span>
-                            </button>
-                            <div class="d-flex px-2 my-1" style="min-width: 80px; height:auto;">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="{{asset('images/slider/1.jpg')}}" class="d-block w-100" alt="..."></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="{{asset('images/slider/2.jpg')}}" class="d-block w-100" alt="..."></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="{{asset('images/slider/3.jpg')}}" class="d-block w-100" alt="..."></button>
+                            </button> --}}
+                            <div class="px-2 my-1 thumbnailgallery">
+                                <div class="wrap"><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="{{asset('images/products/1.jpg')}}" class="d-block w-100" alt="..."></button></div>
+                                <div class="wrap"><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="{{asset('images/products/2.jpg')}}" class="d-block w-100" alt="..."></button></div>
+                                <div class="wrap"><button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="{{asset('images/products/3.jpg')}}" class="d-block w-100" alt="..."></button></div>
+                                
+                                
                               </div>
                           </div>
                     </div>
 
-                
                 </div>
+
+
                 <div class="col-lg-5 mr-3 text-center text-md-left">
                     <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
                         <strong>Blouse </strong>
