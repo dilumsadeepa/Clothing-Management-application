@@ -1,0 +1,13 @@
+.product-img .preview img{
+    width: 430px;
+    height: 546px;
+
+}
+
+
+.thumbnail img{
+    margin-bottom: 1.1rem;
+    width: 120px;
+    height: 170px;
+    background-size: auto;
+}
