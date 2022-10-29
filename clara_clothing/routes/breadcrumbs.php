@@ -19,6 +19,11 @@ Breadcrumbs::for('cus_dashboard', function ($trail){
     $trail->push('Customer Dashboard', route( name:'cus_dashboard'));
 });
 
+Breadcrumbs::for('contactus', function ($trail){
+    $trail->parent('home');
+    $trail->push('Contact Us', route( name:'contactus'));
+});
+
 Breadcrumbs::for('cusTheme', function ($trail){
     $trail->push('Customer', route( name:'cusTheme'));
 });

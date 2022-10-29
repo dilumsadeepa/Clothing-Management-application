@@ -66,109 +66,137 @@
 {{-- --------------------------------------------------Custormer Dashboard------------------------------------------------- --}}
 
 <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/"><b>Clara Clothing</b></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Men
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Women
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Kids
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="cart.html">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
-    </a>
-            </a>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><b>Clara Clothing</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item dropdown">
-            <a
-            class="btn btn-secondary-outline dropdown-toggle hidden-arrow"
-            href="#"
-            type="button" data-bs-toggle="dropdown" aria-expanded="false"
-            >
-            <img
-                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                class="rounded-circle"
-                height="25"
-                alt="Black and White Portrait of a Man"
-                loading="lazy"
-            />
-            </a>
-                <ul
-                class="dropdown-menu dropdown-menu-start"
-                >
-                    <li>
-                        <a class="dropdown-item" href="#">My profile</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Settings</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </li>
-                </ul>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Men
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Clothing</a></li>
+            <li><a class="dropdown-item" href="#">T-shirt</a></li>
+            <li><a class="dropdown-item" href="#">Formal Shirts</a></li>
+            <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
+            <li><a class="dropdown-item" href="#">Formal Trousers</a></li>
+            <li><a class="dropdown-item" href="#">Casual Trousers</a></li>
+            <li><a class="dropdown-item" href="#">Shorts</a></li>
+            <li><a class="dropdown-item" href="#">Shoes</a></li>
+          </ul>
         </li>
-        </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Women
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Clothing</a></li>
+            <li><a class="dropdown-item" href="#">Dresses</a></li>
+            <li><a class="dropdown-item" href="#">Tops</a></li>
+            <li><a class="dropdown-item" href="#">pants</a></li>
+            <li><a class="dropdown-item" href="#">Jeans</a></li>
+            <li><a class="dropdown-item" href="#">Shorts</a></li>
+            <li><a class="dropdown-item" href="#">Skirts</a></li>
+            <li><a class="dropdown-item" href="#">Overcoats</a></li>
+            <li><a class="dropdown-item" href="#">Shoes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kids
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Kids</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">All Boys</a></li>
+            <li><a class="dropdown-item" href="#">Shirts</a></li>
+            <li><a class="dropdown-item" href="#">T-shirts</a></li>
+            <li><a class="dropdown-item" href="#">Pants</a></li>
+            <li><a class="dropdown-item" href="#">shorts</a></li>
+            <li><a class="dropdown-item" href="#">Nightwear</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">All Girls</a></li>
+            <li><a class="dropdown-item" href="#">T-Shirts</a></li>
+            <li><a class="dropdown-item" href="#">Dresses</a></li>
+            <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
+            <li><a class="dropdown-item" href="#">Shorts</a></li>
+            <li><a class="dropdown-item" href="#">Nightwear</a></li>
+          </ul>
+        </li>
 
-              <form role="search" class="d-flex" action="search.html">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-        </div>
+        @auth
 
-            
-    </div>
-  </nav>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
+  </a>
+          </a>
+      </li>
+      <li class="nav-item dropdown">
+          <a
+          class="btn btn-secondary-outline dropdown-toggle hidden-arrow"
+          href="#"
+          type="button" data-bs-toggle="dropdown" aria-expanded="false"
+          >
+          <img
+              src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
+              class="rounded-circle"
+              height="25"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+          />
+          </a>
+              <ul
+              class="dropdown-menu dropdown-menu-start"
+              >
+                  <li>
+                      <a class="dropdown-item" href="/user/profile">My profile</a>
+                  </li>
+                  <li>
+                      <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                  </li>
+                  <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                      <button type="submit" class="dropdown-item">Logout</button>
+                    </form>
+                  </li>
+              </ul>
+      </li>
+
+      @else
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+      </li>
+      @endauth
+
+      </ul>
+
+            <form role="search" class="d-flex" action="search.html">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+      </div>
+
+   
+          
+  </div>
+</nav>
 
       {{-----------------------------------------NAVBAR END------------------------------------------------------------- --}}
 
     {{-----------------------------------------------Header Banner-------------------------------------------------------  --}}
-    <div class="p-5 text-center bg-image rounded-3 d-flex align-content-center justify-content-center" style="background-image: url('{{asset('/images/headers/header.jpg')}}'); height: 500px;">
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4); min-width:90%">
-        <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-white">
-            <h1 class="mb-3">Clara Clothing</h1>
-            <h4 class="mb-3">
-              {{ Breadcrumbs::render('cus_dashboard') }}
-            </h4>
-            <a class="btn btn-outline-light btn-lg shadow-none py-3" style="min-width: 150px;" href="#dash" role="button"><i class="fa-regular fa-circle-down fa-2x"></i></a>
-        </div>
-        </div>
-    </div>
-    </div>
+<x-header href="#dash">
+  {{ Breadcrumbs::render('cus_dashboard') }}
+
+</x-header>
 
 
 {{-- --------------------------------------------------End of Header Section------------------------------------------------- --}}
@@ -190,7 +218,7 @@
       <div class="slider"></div>
     </nav>
     <section>
-      <div class="content content-1">
+      <div class="content content-1" id="orderdashbord">
         <div class="title">This is Custormer Dashboard</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero aspernatur nobis provident dolores molestias quia quisquam laborum, inventore quis, distinctioa, fugit repudiandae delectus sunt ipsam! Odio illo at quia doloremque fugit iops, asperiores? Consectetur esse officia labore voluptatum blanditiis molestias dic voluptas est, minima unde sequi, praesentium dicta suscipit quisquam iure sed, nemo.</p>
       </div>

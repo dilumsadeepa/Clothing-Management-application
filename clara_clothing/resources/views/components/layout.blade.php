@@ -86,16 +86,21 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Men
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  <li><a class="dropdown-item" href="#">T-shirt</a></li>
+                  <li><a class="dropdown-item" href="#">Formal Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Formal Trousers</a></li>
+                  <li><a class="dropdown-item" href="#">Casual Trousers</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -103,9 +108,15 @@
                   Women
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">pants</a></li>
+                  <li><a class="dropdown-item" href="#">Jeans</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Skirts</a></li>
+                  <li><a class="dropdown-item" href="#">Overcoats</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -113,11 +124,26 @@
                   Kids
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Kids</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All Boys</a></li>
+                  <li><a class="dropdown-item" href="#">Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Pants</a></li>
+                  <li><a class="dropdown-item" href="#">shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All Girls</a></li>
+                  <li><a class="dropdown-item" href="#">T-Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+                  <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
                 </ul>
               </li>
+
+              @auth
+
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -132,7 +158,7 @@
                 type="button" data-bs-toggle="dropdown" aria-expanded="false"
                 >
                 <img
-                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                    src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
                     class="rounded-circle"
                     height="25"
                     alt="Black and White Portrait of a Man"
@@ -143,16 +169,26 @@
                     class="dropdown-menu dropdown-menu-start"
                     >
                         <li>
-                            <a class="dropdown-item" href="#">My profile</a>
+                            <a class="dropdown-item" href="/user/profile">My profile</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Logout</a>
+                          <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                          </form>
                         </li>
                     </ul>
             </li>
+
+            @else
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/login">Login</a>
+            </li>
+            @endauth
+
             </ul>
  
                   <form role="search" class="d-flex" action="search.html">
@@ -161,6 +197,7 @@
                   </form>
             </div>
 
+         
                 
         </div>
       </nav>
@@ -244,16 +281,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Mens Wear</a>
+              <a href="/shopping/allmen" class="text-reset">Mens Wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Womens Wear</a>
+              <a href="/shopping/allwomen" class="text-reset">Womens Wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Kids wear</a>
+              <a href="/shopping/allkids" class="text-reset">Kids wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Other</a>
+              <a href="#!" class="text-reset">Home & Living</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -265,15 +302,17 @@
               Useful links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Pricing</a>
+              <a href="#!" class="text-reset">Contact</a>
+            </p>
+            @auth
+            <p>
+              <a href="/dashboard" class="text-reset">Dashboard</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Settings</a>
+              <a href="/dashboard/#orderdashbord" class="text-reset">Orders</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
+            @endauth
               <a href="#!" class="text-reset">Help</a>
             </p>
           </div>
@@ -288,8 +327,8 @@
               <i class="fas fa-envelope me-3"></i>
               info@example.com
             </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-3"></i> + 94 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 94 234 567 89</p>
           </div>
           <!-- Grid column -->
         </div>
@@ -300,8 +339,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Claraclothing.com</a>
+      © {{ date('Y') }} Copyright:
+      <a class="text-reset fw-bold" href="/">claraclothing.com</a>
     </div>
     <!-- Copyright -->
   </footer>
