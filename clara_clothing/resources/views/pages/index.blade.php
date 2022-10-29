@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Clara Clothing - Home</title>
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -45,7 +46,7 @@
                 display: display;
             }
 }
-      
+
     </style>
   </head>
   <body>
@@ -127,14 +128,14 @@
                     </ul>
             </li>
             </ul>
- 
+
                   <form role="search" class="d-flex" action="search.html">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
             </div>
 
-                
+
         </div>
       </nav>
 
@@ -159,52 +160,31 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="{{asset('/images/slider/1.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/2.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/3.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/4.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/5.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/6.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
               </div>
               <div class="carousel-item">
                 <img src="{{asset('/images/slider/7.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
+
               </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -234,74 +214,113 @@
 
 <div class="container my-5">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-          <div class="card card-image"
-            style="background-image: url({{asset('images/categories/men.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
+      <div class="col category-box">
+          <div class="card card-image rounded-0" style="
+            background:rgba(0, 0, 0, 0.6)url({{asset('images/categories/men.jpg')}}); 
+            background-size: cover; 
+            background-position: center center; 
+            width: 100%; 
+            height: 100%;
+            background-blend-mode: darken;">
             <!-- Content -->
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div>
-                <h5 class="pink-text"><i class="fa-solid fa-shirt"></i> MEN</h5>
-                <h3 class="card-title pt-2"><strong>Mens Fashion</strong></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                  optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                  Odit sed qui, dolorum!.</p>
-                <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-              </div>
+            <div class="inner-line">
+
+            </div>
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
+                <h3><strong>MEN'S</strong></h3>            
             </div>
           </div>
       </div>
 
-      <div class="col">
-        <div class="card card-image"
-          style="background-image: url({{asset('images/categories/women.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
+      <div class="col category-box">
+        <div class="card card-image rounded-0"
+          style="background:rgba(0, 0, 0, 0.6)url({{asset('images/categories/women.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%; background-blend-mode: darken;">
+          <div class="inner-line">
+                
+        </div>
           <!-- Content -->
-          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-            <div>
-              <h5 class="pink-text"><i class="fa-solid fa-venus"></i> WOMEN</h5>
-              <h3 class="card-title pt-2"><strong>Womens Fashion</strong></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                Odit sed qui, dolorum!.</p>
-              <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-            </div>
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
+   
+              <h3><strong>WOMEN'S</strong></h3>
+           
           </div>
         </div>
     </div>
 
-    <div class="col">
-      <div class="card card-image"
+    <div class="col category-box">
+      <div class="card card-image rounded-0"
         style="background-image: url({{asset('images/categories/kids.jpg')}}); background-size: cover; background-position: center center; width: 100%; height: 100%;">
-
+        <div class="inner-line">
+                
+        </div>
         <!-- Content -->
-        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-          <div>
-            <h5 class="pink-text"><i class="fa-solid fa-child"></i> KIDS</h5>
-            <h3 class="card-title pt-2"><strong>Kids Fashion</strong></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-              Odit sed qui, dolorum!.</p>
-            <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-          </div>
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
+
+            <h3><strong>KID'S</strong></h3>
+
         </div>
       </div>
   </div>
 
- 
+
   </div>
+</div>
+
+           {{-- -------------------------------------------Category end--------------------------------------------------------------------- --}}
+
+          {{------------------------------------------------Product Section--------------------------------------------------------------------}}
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="product-box position-relative">
+                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+
+                <div class="card-btn">
+                    <button class="btn btn-white rounded-pill">View</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <div class="product-box position-relative">
+                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+
+                <div class="card-btn">
+                    <button class="btn btn-white rounded-pill">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="product-box position-relative">
+                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+
+                <div class="card-btn">
+                    <button class="btn btn-white rounded-pill">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="product-box position-relative">
+                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+
+                <div class="card-btn">
+                    <button class="btn btn-white rounded-pill">View</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
 
-
-
-
-           {{-- -------------------------------------------Category end--------------------------------------------------------------------- --}}
-
-
-
-    
+          {{------------------------------------------------Product Section End--------------------------------------------------------------------}}
 
 
 
@@ -335,7 +354,7 @@
         <span>Get connected with us on social networks:</span>
       </div>
       <!-- Left -->
-  
+
       <!-- Right -->
       <div>
         <a href="" class="me-4 text-reset">
@@ -360,7 +379,7 @@
       <!-- Right -->
     </section>
     <!-- Section: Social media -->
-  
+
     <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
@@ -378,7 +397,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -399,7 +418,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -420,7 +439,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
@@ -439,7 +458,7 @@
       </div>
     </section>
     <!-- Section: Links  -->
-  
+
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © 2022 Copyright:
@@ -450,12 +469,7 @@
   <!-- Footer -->
 
 
-
-  <script>
-
-
-  </script>
-
+  <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
