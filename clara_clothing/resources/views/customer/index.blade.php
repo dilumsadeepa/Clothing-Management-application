@@ -145,7 +145,7 @@
                 <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
 
                 <div class="card-btn">
-                    <button class="btn btn-white rounded-pill">View</button>
+                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
                 </div>
             </div>
 
@@ -167,7 +167,7 @@
                 <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
 
                 <div class="card-btn">
-                    <button class="btn btn-white rounded-pill">View</button>
+                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
                 </div>
             </div>
 
@@ -187,7 +187,7 @@
             <div class="product-box position-relative">
                 <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
                 <div class="card-btn">
-                    <button class="btn btn-white rounded-pill">View</button>
+                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
                 </div>
             </div>
 
@@ -208,7 +208,7 @@
                 <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
 
                 <div class="card-btn">
-                    <button class="btn btn-white rounded-pill">View</button>
+                    <a class="btn btn-white rounded-pill" href="customer/show">View</a>
                 </div>
             </div>
 
@@ -234,7 +234,7 @@
 
 
           {{-- -------------------------------------------Brands Section start--------------------------------------------------------------------- --}}
-        <div class="brandwrapper">
+        <div class="brandwrapper mt-5">
           <div class="brands">
             <div class="blogo"><img src="{{asset('/images/brands/1.png')}}" alt="" srcset=""></div>
             <div class="blogo"><img src="{{asset('/images/brands/2.png')}}" alt="" srcset=""></div>
