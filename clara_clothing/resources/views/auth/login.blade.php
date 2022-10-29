@@ -43,6 +43,22 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
+
+            <div class="block mt-5" style="display: flex; justify-content:center">
+                <label for="remember_me" class="flex items-center">
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Don\'t You Have an Account Yet?') }}</span>
+                </label>
+            </div>
         </form>
+
+        <div style="display: flex; justify-content:center" class="mt-2">
+        <form method="GET" action="{{ route('register') }}">
+            @csrf
+        <x-jet-button class="ml-4">
+            {{ __('Register') }}
+        </x-jet-button>
+        </form>
+    </div>
+
     </x-jet-authentication-card>
 </x-guest-layout>

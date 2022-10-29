@@ -6,72 +6,9 @@
     <title>Clara Clothing - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
  
-    <style>
-        .search-bar{
-            display: flex;
-        }
-        .features{
-          min-width: 22%;
-        }
-
-                 
-        .btn-grad {
-            background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
-            margin: 10px;
-            padding: 15px 45px;
-            text-align: center;
-            text-transform: uppercase;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;            
-            box-shadow: 0 0 20px #eee;
-            border-radius: 10px;
-            display: block;
-          }
-
-          .btn-grad:hover {
-            background-position: right center; /* change the direction of the change here */
-            color: #fff;
-            text-decoration: none;
-          }
-         
-
-
-
-        /* --------------------------------Brands----------------------------------- */
-        .brandswrapper{
-          display: flex;
-          justify-content: center;
-        }
-        .brands{
-          display: grid;
-          grid-gap: 10px;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          grid-template-rows: 1fr;
-
-        }
-
-        .blogo{
-          justify-self: center;
-        }
-
-
-
-
-
-
-
-        /* --------------------------------End Brands----------------------------------- */
-
-
-        @media only screen and (max-width: 1200px){
-            .search-bar{
-                display: display;
-            }
-}
-      
-    </style>
   </head>
   <body>
 
@@ -86,16 +23,21 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Men
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  <li><a class="dropdown-item" href="#">T-shirt</a></li>
+                  <li><a class="dropdown-item" href="#">Formal Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Formal Trousers</a></li>
+                  <li><a class="dropdown-item" href="#">Casual Trousers</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -103,9 +45,15 @@
                   Women
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+                  <li><a class="dropdown-item" href="#">Tops</a></li>
+                  <li><a class="dropdown-item" href="#">pants</a></li>
+                  <li><a class="dropdown-item" href="#">Jeans</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Skirts</a></li>
+                  <li><a class="dropdown-item" href="#">Overcoats</a></li>
+                  <li><a class="dropdown-item" href="#">Shoes</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -113,13 +61,29 @@
                   Kids
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">All Kids</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All Boys</a></li>
+                  <li><a class="dropdown-item" href="#">Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Pants</a></li>
+                  <li><a class="dropdown-item" href="#">shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">All Girls</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">T-Shirts</a></li>
+                  <li><a class="dropdown-item" href="#">Dresses</a></li>
+                  <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
+                  <li><a class="dropdown-item" href="#">Shorts</a></li>
+                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
                 </ul>
               </li>
+
+              @auth
+
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="cart.html">
+                <a class="nav-link active" aria-current="page" href="/customer/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
         </a>
@@ -132,9 +96,10 @@
                 type="button" data-bs-toggle="dropdown" aria-expanded="false"
                 >
                 <img
-                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                    src="{{auth()->user()->profile_photo_path ? asset('storage/' . auth()->user()->profile_photo_path) : asset('/images/user/duser.png')}}"
                     class="rounded-circle"
-                    height="25"
+                    height="30"
+                    width="auto"
                     alt="Black and White Portrait of a Man"
                     loading="lazy"
                 />
@@ -143,16 +108,26 @@
                     class="dropdown-menu dropdown-menu-start"
                     >
                         <li>
-                            <a class="dropdown-item" href="#">My profile</a>
+                            <a class="dropdown-item" href="/user/profile">My profile</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Logout</a>
+                          <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">Logout</button>
+                          </form>
                         </li>
                     </ul>
             </li>
+
+            @else
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/login">Login</a>
+            </li>
+            @endauth
+
             </ul>
  
                   <form role="search" class="d-flex" action="search.html">
@@ -161,6 +136,7 @@
                   </form>
             </div>
 
+         
                 
         </div>
       </nav>
@@ -244,16 +220,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Mens Wear</a>
+              <a href="/shopping/allmen" class="text-reset">Mens Wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Womens Wear</a>
+              <a href="/shopping/allwomen" class="text-reset">Womens Wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Kids wear</a>
+              <a href="/shopping/allkids" class="text-reset">Kids wear</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Other</a>
+              <a href="#!" class="text-reset">Home & Living</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -265,15 +241,17 @@
               Useful links
             </h6>
             <p>
-              <a href="#!" class="text-reset">Pricing</a>
+              <a href="#!" class="text-reset">Contact</a>
+            </p>
+            @auth
+            <p>
+              <a href="/dashboard" class="text-reset">Dashboard</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Settings</a>
+              <a href="/dashboard/#orderdashbord" class="text-reset">Orders</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
+            @endauth
               <a href="#!" class="text-reset">Help</a>
             </p>
           </div>
@@ -288,8 +266,8 @@
               <i class="fas fa-envelope me-3"></i>
               info@example.com
             </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-3"></i> + 94 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 94 234 567 89</p>
           </div>
           <!-- Grid column -->
         </div>
@@ -300,8 +278,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Claraclothing.com</a>
+      © {{ date('Y') }} Copyright:
+      <a class="text-reset fw-bold" href="/">claraclothing.com</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -309,18 +287,7 @@
 
 
 
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
+<script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

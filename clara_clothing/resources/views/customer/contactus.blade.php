@@ -1,10 +1,13 @@
 <x-layout>
 
-<x-header>
-
-
+<x-header href="#contact">
+{{ Breadcrumbs::render('contactus') }}
 </x-header>
-      <div class="container-fluid mb-5">
+
+
+
+
+      <div class="container-fluid mb-5" id="contact">
   
         <!--Grid row-->
         <div class="row" style="margin-top: 80px;">
@@ -30,14 +33,14 @@
                     <div class="row pt-5">
   
                       <!--Grid column-->
-                      <div class="col-md-7 col-xl-8">
+                      <div class="col-md-8 col-xl-9">
                         <form>
   
                           <!--Grid row-->
                           <div class="row">
   
                             <!--Grid column-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                               <div class="md-form">
                                 <input type="text" id="contact-name" class="form-control">
                                 <label for="contact-name" class="">Your name</label>
@@ -46,7 +49,7 @@
                             <!--Grid column-->
   
                             <!--Grid column-->
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                               <div class="md-form">
                                 <input type="text" id="contact-email" class="form-control">
                                 <label for="contact-email" class="">Your email</label>
@@ -58,7 +61,7 @@
                           <!--Grid row-->
   
                           <!--Grid row-->
-                          <div class="row">
+                          <div class="row my-2">
                             <div class="col-md-12">
                               <div class="md-form">
                                 <input type="text" id="contact-Subject" class="form-control">
@@ -85,8 +88,8 @@
   
                         </form>
   
-                        <div class="text-center text-md-left my-4">
-                          <a class="btn-grad">Send</a>
+                        <div class="text-center text-md-left my-4 fw-bold">
+                          <a class="btn-grad text-decoration-none">Send</a>
                         </div>
                       </div>
                       <!--Grid column-->
@@ -95,7 +98,7 @@
                       <div class="col-md-4 col-xl-3">
                         <ul class="contact-icons text-center list-unstyled">
                           <li>
-                            <i class="fas fa-map-marker fa-2x text-primary"></i>
+                            <i class="fa-solid fa-location-dot fa-2x text-primary"></i>
                             <p>San Francisco, CA 94126, USA</p>
                           </li>
   

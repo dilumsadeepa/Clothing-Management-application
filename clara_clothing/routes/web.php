@@ -28,13 +28,15 @@ Route::get('/',[CustomersController::class, 'index'])->name('home');
 
 Route::get('/customer/cus_dashboard', [CustomersController::class, 'manage'])->name('cus_dashboard');
 
+Route::get('/customer/contactus', [CustomersController::class, 'contact'])->name('contactus');
+
 Route::get('/customer/index2', function () {
     return view('customer.index2');
 });
 
-Route::get('/customer/contactus', function () {
-    return view('customer.contactus');
-});
+// Route::get('/customer/contactus', function () {
+//     return view('customer.contactus');
+// });
 
 Route::get('/customer/cusTheme', function () {
     return view('customer.cusTheme');

@@ -88,4 +88,9 @@ class CustomersController extends Controller
     {
         return view('customer.cus_dashboard');
     }
+
+    public function contact()
+    {
+        return view('customer.contactus');
+    }
 }
