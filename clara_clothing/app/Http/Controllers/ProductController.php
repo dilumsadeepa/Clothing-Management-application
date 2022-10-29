@@ -41,7 +41,8 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8000',
+            'images' => 'required',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8000',
             'name' => 'required|max:255',
             'catagory' => 'required|max:255',
             'price' => 'required|max:255',
@@ -51,15 +52,39 @@ class ProductController extends Controller
             'status' => 'required|max:255',
         ]);
 
-        $imageName = time().'.'.$request->image->extension();
+        $images = [];
+        if ($request->images){
+            foreach($request->images as $key => $image)
+            {
+                $imageName = time().rand(1,99).'.'.$image->extension();
+                $image->move(public_path('uploads'), $imageName);
 
-        $request->image->move(public_path('uploads'), $imageName);
+                $images[]['name'] = $imageName;
+            }
+        }
+
+
+        $count = 0;
+        foreach ($images as $img) {
+            if ($count == 0) {
+                $image1 = $img['name'];
+            }elseif ($count == 1) {
+                $image2 = $img['name'];
+            }elseif ($count == 2) {
+                $image3 = $img['name'];
+            }
+            $count = $count + 1;
+        }
+
+
 
         $product = new Product();
 
         $product->name = $request->name;
         $product->catagory = $request->catagory;
-        $product->image = $imageName;
+        $product->image1 = $image1;
+        $product->image2 = $image2;
+        $product->image3 = $image3;
         $product->price = $request->price;
         $product->size = $request->size;
         $product->code = $request->code;

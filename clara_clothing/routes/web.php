@@ -78,7 +78,7 @@ Route::middleware([
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){
-            return view('admin.admin');
+            return view('customer.cus_dashboard');
         }
 
     })->name('dashboard');

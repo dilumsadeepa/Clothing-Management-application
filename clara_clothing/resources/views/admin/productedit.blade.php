@@ -39,8 +39,10 @@
                   <div class="mb-3 mt-3">
                     <label for="image" class="form-label">Select image:</label>
                     <!--input type="file" class="form-control" id="image" name="image" accept="image/*"-->
-                    <input type="hidden" value="{{$product->image}}" name="image">
-                    <img src="{{asset('uploads/'.$product->image)}}" class="img-fluid" style="width: 50px;">
+                    <input type="hidden" value="{{$product->image1}}" name="image1">
+                    <input type="hidden" value="{{$product->image2}}" name="image2">
+                    <input type="hidden" value="{{$product->image3}}" name="image3">
+                    <img src="{{asset('uploads/'.$product->image1)}}" class="img-fluid" style="width: 50px;">
                   </div>
 
                   <div class="mb-3 mt-3">

@@ -37,9 +37,11 @@
                   </div>
 
                   <div class="mb-3 mt-3">
-                    <label for="image" class="form-label">Select image:</label>
-                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                    <label for="image" class="form-label">Select first image:</label>
+                    <input type="file" class="form-control" id="image1" name="images[]" multiple accept="image/*">
                   </div>
+
+
 
                   <div class="mb-3 mt-3">
                     <label for="price" class="form-label">Product Price:</label>

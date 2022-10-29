@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Staff;
 use App\Http\Requests\StoreStaffRequest;
 use App\Http\Requests\UpdateStaffRequest;
+use Illuminate\Support\Facades\DB;
 
 class StaffController extends Controller
 {
@@ -43,7 +44,7 @@ class StaffController extends Controller
             'tel' => 'required|max:255',
             'address' => 'required|max:255',
             'nic' => 'required|max:255',
-            
+
         ]);
 
         $staff= new staff();
@@ -54,6 +55,11 @@ class StaffController extends Controller
         $staff->nic = $request->nic;
 
         $staff->save();
+
+        $affected = DB::update(
+            'update users set roll = 2 where id = ?',
+            ['Anita']
+        );
 
         return redirect()->route('staff.index')
                         ->with('success','Staff added successfully.');
@@ -90,7 +96,7 @@ class StaffController extends Controller
      */
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
-        
+
 
         $staff->update($request->all());
 
