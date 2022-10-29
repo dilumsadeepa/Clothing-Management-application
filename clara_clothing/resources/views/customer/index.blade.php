@@ -97,7 +97,6 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -244,15 +243,6 @@
 
               <h3><strong>WOMEN'S</strong></h3>
 
-          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-            <div>
-              <h5 class="pink-text"><i class="fa-solid fa-person-dress"></i> WOMEN</h5>
-              <h3 class="card-title pt-2"><strong>Womens Fashion</strong></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                Odit sed qui, dolorum!.</p>
-              <a class="btn btn-pink"><i class="fas fa-clone left"></i> View Collection</a>
-            </div>
           </div>
         </div>
     </div>
