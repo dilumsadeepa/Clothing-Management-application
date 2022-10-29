@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('catagory');
-            $table->string('image');
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
             $table->string('price');
             $table->string('size');
             $table->string('code');
