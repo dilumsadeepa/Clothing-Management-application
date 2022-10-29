@@ -129,7 +129,7 @@ class StaffController extends Controller
     {
         $staff->delete();
 
-        return redirect()->route('suppliers.index')
+        return redirect()->route('staff.index')
                         ->with('success','Supplire deleted successfully');
     }
 }
