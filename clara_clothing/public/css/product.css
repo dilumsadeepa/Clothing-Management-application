@@ -18,6 +18,11 @@
     opacity: 1;
 }
 
+.product-box .btn{
+    color: white;
+    font-weight: bold;
+}
+
 .product-box .card-btn{
     background-color: #FCA3B9;
 }
