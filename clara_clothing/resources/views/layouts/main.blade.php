@@ -11,8 +11,8 @@
     <title>Admin Dashboard</title>
 @elseif(Auth::user()->roll == 2)
     <title>Staff Dashboard</title>
-@elseif (Auth::user()->roll == 3)
-    <title>Custumer Dashboard</title>
+@else
+    <title>Un athorized access</title>
 @endif
 
   <meta content="" name="description">
@@ -72,7 +72,7 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>{{ Auth::user()->name }}</h6>
-              <span>Web Designer</span>
+
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -89,7 +89,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.show') }}">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -257,23 +257,92 @@
         </ul>
     </li><!-- End supplier Nav -->
 
-    <title>Admin Dashboard</title>
+
 
 @elseif(Auth::user()->roll == 2)
 
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-menu-button-wide"></i><span>Suppliers</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="{{route('suppliers.index')}}">
+        <i class="bi bi-circle"></i><span>All Sppliers</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('suppliers.create')}}">
+        <i class="bi bi-circle"></i><span>Add Suppliers</span>
+        </a>
+    </li>
+
+    </ul>
+</li><!-- End supplier Nav -->
+
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-menu-button-wide"></i><span>Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="{{route('catagory.index')}}">
+        <i class="bi bi-circle"></i><span>All Catagory</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('catagory.create')}}">
+        <i class="bi bi-circle"></i><span>Add Catagory</span>
+        </a>
+    </li>
+
+    </ul>
+</li><!-- End supplier Nav -->
+
+
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-menu-button-wide"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="{{route('product.index')}}">
+        <i class="bi bi-circle"></i><span>All Products</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('product.create')}}">
+        <i class="bi bi-circle"></i><span>Add product</span>
+        </a>
+    </li>
+
+    </ul>
+</li><!-- End supplier Nav -->
+
+<li class="nav-item">
+    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+    <i class="bi bi-menu-button-wide"></i><span>Stockes</span><i class="bi bi-chevron-down ms-auto"></i>
+    </a>
+    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <li>
+        <a href="{{route('stocke.index')}}">
+        <i class="bi bi-circle"></i><span>All Stockes</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{route('stocke.create')}}">
+        <i class="bi bi-circle"></i><span>Add Stockes</span>
+        </a>
+    </li>
+
+    </ul>
+</li><!-- End supplier Nav -->
 
 
 
+@else
 
-    <title>Staff Dashboard</title>
-
-@elseif (Auth::user()->roll == 3)
-
-
-
-
-
-    <title>Customer Dashboard</title>
+    <a href="{{route('login')}}" class="btn btn-info">Get Access to your Dashbord</a>
 
 @endif
 
@@ -341,5 +410,40 @@
 </body>
 
 </html>
+
+@else
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Access Denided</title>
+    </head>
+    <body>
+        <div class="box">
+            <h1><b>You have no Access for this area or your login sesson was expired.... </b><br> Goto login page and login again</h1>
+            <br>
+            <a href="{{route('login')}}" class="btn">Go TO Login page</a>
+        </div>
+
+
+
+        <style>
+            .box{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                transform: translate(-50%,-50%);
+                padding: 20px;
+                margin: 20px;
+                color: white;
+                background-color: #353935;
+            }
+        </style>
+    </body>
+    </html>
 
 @endauth

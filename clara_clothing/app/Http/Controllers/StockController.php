@@ -6,6 +6,7 @@ use App\Models\Stock;
 use App\Models\Supplier;
 use App\Http\Requests\StoreStockRequest;
 use App\Http\Requests\UpdateStockRequest;
+use Illuminate\Support\Facades\DB;
 
 class StockController extends Controller
 {
@@ -79,9 +80,11 @@ class StockController extends Controller
      * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stock $stock)
+    public function edit($id)
     {
-        //
+        $stock = Stock::find($id);
+        $supp = Supplier::all();
+        return view('admin.stockedit',compact('stock','supp'));
     }
 
     /**
@@ -93,7 +96,18 @@ class StockController extends Controller
      */
     public function update(UpdateStockRequest $request, Stock $stock)
     {
-        //
+        $request->validate([
+            'supid' => 'required|max:255',
+            'qun' => 'required|max:255',
+            'price' => 'required|max:255',
+            'date' => 'required|max:255',
+            'des' => 'required|max:5000',
+        ]);
+
+        $stock->update($request->all());
+
+        return redirect()->route('stocke.index')
+                        ->with('success','Stock updated successfully');
     }
 
     /**
@@ -104,6 +118,9 @@ class StockController extends Controller
      */
     public function destroy(Stock $stock)
     {
-        //
+        $deleted = DB::delete('delete from stocks where id = ?',[$stock]);
+
+        return redirect()->route('stocke.index')
+                        ->with('success','stock deleted successfully');
     }
 }
