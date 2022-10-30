@@ -49,7 +49,9 @@ class CustormerproductsController extends Controller
      */
     public function show(Product $product)
     {
-        
+        return view('customer.show', [
+            'product' => $product
+        ]);
     }
 
     /**

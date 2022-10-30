@@ -35,7 +35,7 @@ Route::get('/customer/index2', function () {
     return view('customer.index2');
 });
 
-Route::get('/customer/shop',[CustormerproductsController::class, 'index']);
+Route::get('/shop',[CustormerproductsController::class, 'index']);
 
 // Route::get('/customer/shop', function () {
 //     return view('customer.shop');
@@ -89,6 +89,10 @@ Route::middleware([
 
     })->name('dashboard');
 });
+
+
+
+Route::get('/shop/product/{product}',[CustormerproductsController::class, 'show']);
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);

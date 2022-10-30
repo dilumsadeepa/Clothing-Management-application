@@ -4,7 +4,7 @@
         <img src="{{$product->image1 ? asset('/uploads/' . $product->image1) : asset('/images/logos/clara.png')}}" alt="" srcset="">
 
         <div class="card-btn">
-          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+          <a class="btn btn-white rounded-pill" href="/product/{{$product->id}}">View</a>
         </div>
     </div>
 
