@@ -1,10 +1,10 @@
 @props(['product'])
 <div class="col-md-4 mb-5">
     <div class="product-box position-relative">
-        <img src="{{$product->image1 ? asset('/uploads/' . $product->image1) : asset('/images/logos/clara.png')}}" alt="" srcset="">
+        <img src="{{$product->image1 ? asset('/uploads/'. $product->image1) : asset('/images/logos/clara.png')}}" alt="" srcset="">
 
         <div class="card-btn">
-          <a class="btn btn-white rounded-pill" href="/product/{{$product->id}}">View</a>
+          <a class="btn btn-white rounded-pill" href="{{route('cproduct.show',$product->id)}}">View</a>
         </div>
     </div>
 

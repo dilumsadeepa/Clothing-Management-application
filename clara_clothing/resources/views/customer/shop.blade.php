@@ -18,19 +18,16 @@
             <!-- Section: Categories -->
             <section>
 
-              <h5>Subcategories</h5>
+              <h5>Categories</h5>
 
               <div class="text-muted small text-uppercase mb-5">
-                <p class="mb-4">return to <a href="#!" class="card-link-secondary"><strong>Clothing, Shoes,
-                      Accessories</strong></a></p>
+                {{-- <p class="mb-4">return to <a href="#!" class="card-link-secondary"><strong>Clothing, Shoes,
+                      Accessories</strong></a></p> --}}
 
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
-                <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">Dresses</a></p>
+                @foreach ($cat as $c)
+                    <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">{{$c->catagoryname}}</a></p>
+                @endforeach
+
               </div>
 
             </section>
@@ -53,7 +50,7 @@
               </section>
 
               <!-- Section: Condition -->
-              <section class="mb-4">
+              {{-- <section class="mb-4">
 
                 <h6 class="font-weight-bold mb-3">Brand</h6>
 
@@ -68,20 +65,11 @@
                     <div class="blogo"><img src="{{asset('/images/brands/8.png')}}" alt="" srcset=""></div>
                   </div>
 
-              </section>
+              </section> --}}
               <!-- Section: Condition -->
 
-              <!-- Section: Average -->
-              <section class="mb-4">
 
-                <h6 class="font-weight-bold mb-3">Avg. Customer Review</h6>
-
-            
-
-              </section>
-              <!-- Section: Average -->
-
-              <!-- Section: Price -->
+              {{-- <!-- Section: Price -->
               <section class="mb-4">
 
                 <h6 class="font-weight-bold mb-3">Price</h6>
@@ -150,7 +138,7 @@
                   aria-expanded="false" aria-controls="collapseExample">
                   More
                 </a> --}}
-                <div class="collapse pt-3" id="collapseExample">
+                {{-- <div class="collapse pt-3" id="collapseExample">
                   <div class="form-check pl-0 mb-3">
                     <input type="checkbox" class="form-check-input filled-in" id="42">
                     <label class="form-check-label small text-uppercase card-link-secondary" for="42">42</label>
@@ -170,7 +158,7 @@
                 </div>
 
               </section>
-              <!-- Section: Size -->
+              <!-- Section: Size -->  --}}
 
             </section>
             <!-- Section: Filters -->
@@ -209,149 +197,17 @@
               <!-- Grid column -->
 
                 <!-- Card -->
-                @foreach($products as $product) 
+                @foreach($products as $product)
                 {{-- Access listings by componenets --}}
-                <x-card :product="$product" />    
+                <x-card :product="$product" />
                 @endforeach
                 <!-- Card -->
-{{-- 
-              <!-- Grid column -->
-
-                            <!-- Grid column -->
-
-                <!-- Card -->
-                <div class="col-md-4 mb-5">
-                    <div class="product-box position-relative">
-                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-        
-                        <div class="card-btn">
-                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                        </div>
-                    </div>
-        
-                    <div class="product-info">
-                        <div class="product-name">
-                            <h6>Givo sheila tiered sleeveless
-                                maxi dress
-                                </h6>
-                        </div>
-                        <div class="product-price">
-                            <h5>Rs 2850.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-
-              <!-- Grid column -->
-
-                            <!-- Grid column -->
-
-                <!-- Card -->
-                <div class="col-md-4 mb-5">
-                    <div class="product-box position-relative">
-                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-        
-                        <div class="card-btn">
-                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                        </div>
-                    </div>
-        
-                    <div class="product-info">
-                        <div class="product-name">
-                            <h6>Givo sheila tiered sleeveless
-                                maxi dress
-                                </h6>
-                        </div>
-                        <div class="product-price">
-                            <h5>Rs 2850.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-                
-
-                                <!-- Card -->
-                                <div class="col-md-4 mb-5">
-                                    <div class="product-box position-relative">
-                                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-                        
-                                        <div class="card-btn">
-                                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="product-info">
-                                        <div class="product-name">
-                                            <h6>Givo sheila tiered sleeveless
-                                                maxi dress
-                                                </h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h5>Rs 2850.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card -->
-
-
-                                                <!-- Card -->
-                <div class="col-md-4 mb-5">
-                    <div class="product-box position-relative">
-                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-        
-                        <div class="card-btn">
-                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                        </div>
-                    </div>
-        
-                    <div class="product-info">
-                        <div class="product-name">
-                            <h6>Givo sheila tiered sleeveless
-                                maxi dress
-                                </h6>
-                        </div>
-                        <div class="product-price">
-                            <h5>Rs 2850.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-
-                                <!-- Card -->
-                                <div class="col-md-4 mb-5">
-                                    <div class="product-box position-relative">
-                                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-                        
-                                        <div class="card-btn">
-                                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="product-info">
-                                        <div class="product-name">
-                                            <h6>Givo sheila tiered sleeveless
-                                                maxi dress
-                                                </h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h5>Rs 2850.00</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card --> --}}
-
-              <!-- Grid column -->
 
 
 
-            </div>
-            <!-- Grid row -->
 
-  
-            <!-- Grid row -->
 
-          </section>
-          <!--Section: Block Content-->
+
 
           <!-- Section: Block Content -->
           <section>
@@ -368,7 +224,7 @@
       <!--Grid row-->
 
     </div>
- 
+
 
 
 </x-layout>

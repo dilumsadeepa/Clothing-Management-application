@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -15,7 +17,12 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $cart = DB::table('products')
+                    ->join('carts', 'products.id', '=', 'carts.productid')
+                    ->select('products.*', 'carts.*')
+                    ->get();
+        return view('customer.cart',compact('cart'));
     }
 
     /**
@@ -36,7 +43,15 @@ class CartController extends Controller
      */
     public function store(StoreCartRequest $request)
     {
-        //
+        $cart = new Cart();
+
+        $cart->cusid = $request->cid;
+        $cart->productid = $request->pid;
+        $cart->qun = $request->qun;
+
+        $cart->save();
+
+        return redirect()->route('cart.index');
     }
 
     /**

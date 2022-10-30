@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customers;
 use App\Models\Product;
+use App\Models\catagaory;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
 use Illuminate\Support\Facades\DB;
@@ -17,8 +18,9 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
-        return view('customer.index', compact('product'));
+        $products = Product::latest()->filter(request(['search']))->paginate(3);
+        $cat = catagaory::all();
+        return view('customer.shop', compact('products','cat'));
     }
 
     /**
@@ -50,7 +52,7 @@ class CustomersController extends Controller
      */
     public function show(Customers $customers)
     {
-        //
+
     }
 
     /**

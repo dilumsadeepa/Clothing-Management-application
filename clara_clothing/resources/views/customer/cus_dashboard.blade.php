@@ -38,7 +38,7 @@
         }
 
       /* ------------------------------------------------Order Tracking --------------------------------------------------------------- */
-       
+
         @media (min-width: 1025px) {
 .h-custom {
 height: 100vh !important;
@@ -83,7 +83,7 @@ padding-top: 15px;
                 display: display;
             }
 }
-      
+
     </style>
   </head>
   <body>
@@ -95,7 +95,7 @@ padding-top: 15px;
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    
+
 
 
     {{-----------------------------------------NAVBAR Start------------------------------------------------------------- --}}
@@ -113,7 +113,7 @@ padding-top: 15px;
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -225,8 +225,8 @@ padding-top: 15px;
             </form>
       </div>
 
-   
-          
+
+
   </div>
 </nav>
 
@@ -259,7 +259,7 @@ padding-top: 15px;
     </nav>
     <section>
       <div class="content content-1" id="orderdashbord">
-        
+
         <div class="container-fluid">
           <section>
             <div class="row">
@@ -513,7 +513,7 @@ padding-top: 15px;
         <div class="container my-5">
           <div class="row row-cols-1 row-cols-md-2 g-3">
 
-       
+
 
          <div class="col">
            <div class="card h-100 p-2">
@@ -524,7 +524,7 @@ padding-top: 15px;
                  <div class="flexitem"><p class="lead fw-bold mb-5" style="color: #352e69;">Purchase Reciept</p></div>
                  <div class="flexitem"><p class="lead  mb-5" style="color: #352e69;">Clara Clothing</p></div>
                  </div>
-             
+
                  <div class="row">
                    <div class="col mb-3">
                      <p class="small text-muted mb-1">Date</p>
@@ -554,7 +554,7 @@ padding-top: 15px;
                        <p> Cash on delivery</p>
                      </div>
                  </div>
-     
+
                  <div class="mx-n5 px-5 py-4" style="background-color: #f2f2f2;">
                    <div class="row">
                                            <div class="col-md-8 col-lg-9">
@@ -563,7 +563,7 @@ padding-top: 15px;
                      <div class="col-md-4 col-lg-3">
                        <p>Rs. 3900/-</p>
                      </div>
-                     
+
                    </div>
 
                    </div>
@@ -576,17 +576,17 @@ padding-top: 15px;
                        </div>
                      </div>
                  </div>
-                 
-     
+
+
                  <div class="row my-4">
                    <div class="col-md-4 offset-md-8 col-lg-3 offset-lg-9">
                      <p class="lead fw-bold mb-0" style="color: #352e69;">Grand Total <span class="grand">Rs. 3600/-</span> </p>
                    </div>
                  </div>
-     
+
 
                  <div class="d-flex justify-content-between">
-                
+
                  <div class="flexit">
                                         <p class="lead fw-bold mb-4 pb-2" style="color: #352e69;">Order Status: <span class="text-danger fs-6"> Pending</span> </p>
                  </div>
@@ -621,14 +621,14 @@ padding-top: 15px;
 
               </div>
             </div>
-     
+
                  <p class="mt-4 pt-2 mb-0">Want any help? <a href="contactus.php" style="color: #352e69;">Please contact
                      us</a></p>
 
            </div>
          </div>
 
-         
+
        </div>
        </div>
 
@@ -648,7 +648,7 @@ padding-top: 15px;
 
 
       <div class="content content-5">
-       
+
 <section class="h-100 gradient-custom-2">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -698,7 +698,7 @@ padding-top: 15px;
               <p class="lead fw-normal mb-0">Recent Ordered items</p>
               <p class="mb-0"><a href="/custormer/orders" class="text-muted">Show all</a></p>
             </div>
-            
+
 
             <section style="background-color: #eee;">
               <div class="py-5">
@@ -733,7 +733,7 @@ padding-top: 15px;
                               <span>
                                 @php
                                 $des="There are many variations of passages of Lorem Ipsum available, but the
-                              majority have suffered alteration in some form"  
+                              majority have suffered alteration in some form"
                               @endphp
                               {{Str::limit($des, 100)}}
                               </span>
@@ -789,7 +789,7 @@ padding-top: 15px;
                               <span>
                                 @php
                                 $des="There are many variations of passages of Lorem Ipsum available, but the
-                              majority have suffered alteration in some form"  
+                              majority have suffered alteration in some form"
                               @endphp
                               {{Str::limit($des, 100)}}
                               </span>
@@ -808,7 +808,7 @@ padding-top: 15px;
 
 
                               {{-- -----------------------------------------Order Details Modal--------------------------------------------------------------- --}}
-                              
+
 
                               <button type="button" class="btn btn-primary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <i class="fa-solid fa-circle-info"></i> Details
@@ -829,29 +829,29 @@ padding-top: 15px;
                                         <p class="mb-0" style="color: #35558a;">Payment summary</p>
                                         <hr class="mt-2 mb-4"
                                           style="height: 0; background-color: transparent; opacity: .75; border-top: 2px dashed #9e9e9e;">
-                        
+
 
 
                                         <div class="d-flex justify-content-between">
                                           <p class="fw-bold mb-0">Red Blouse(Qty:1)</p>
                                           <p class="text-muted mb-0">Rs.1750.00</p>
                                         </div>
-                        
+
                                         <div class="d-flex justify-content-between">
                                           <p class="fw-bold mb-0">Blue Skirts(Qty:1)</p>
                                           <p class="text-muted mb-0">Rs.1750.00</p>
                                         </div>
-                        
+
                                         <div class="d-flex justify-content-between pb-1">
                                           <p class="small">Delivery Charges</p>
                                           <p class="small">Rs.200.00</p>
                                         </div>
-                        
+
                                         <div class="d-flex justify-content-between">
                                           <p class="fw-bold">Total</p>
                                           <p class="fw-bold" style="color: #35558a;">Rs.2125.00</p>
                                         </div>
-                        
+
                                       </div>
                                       <div class="modal-footer d-flex justify-content-center border-top-0 py-4">
                                         <button type="button" class="btn btn-primary btn-lg mb-1" style="background-color: #35558a;">
@@ -874,7 +874,7 @@ padding-top: 15px;
                 </div>
 
 
-                
+
 
 
 
@@ -908,7 +908,7 @@ padding-top: 15px;
                 <span>Get connected with us on social networks:</span>
               </div>
               <!-- Left -->
-          
+
               <!-- Right -->
               <div>
                 <a href="" class="me-4 text-reset">
@@ -933,7 +933,7 @@ padding-top: 15px;
               <!-- Right -->
             </section>
             <!-- Section: Social media -->
-          
+
             <!-- Section: Links  -->
             <section class="">
               <div class="container text-center text-md-start mt-5">
@@ -951,7 +951,7 @@ padding-top: 15px;
                     </p>
                   </div>
                   <!-- Grid column -->
-          
+
                   <!-- Grid column -->
                   <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                     <!-- Links -->
@@ -972,7 +972,7 @@ padding-top: 15px;
                     </p>
                   </div>
                   <!-- Grid column -->
-          
+
                   <!-- Grid column -->
                   <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                     <!-- Links -->
@@ -995,7 +995,7 @@ padding-top: 15px;
                     </p>
                   </div>
                   <!-- Grid column -->
-          
+
                   <!-- Grid column -->
                   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <!-- Links -->
@@ -1014,7 +1014,7 @@ padding-top: 15px;
               </div>
             </section>
             <!-- Section: Links  -->
-          
+
             <!-- Copyright -->
             <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
               © {{ date('Y') }} Copyright:
@@ -1027,7 +1027,7 @@ padding-top: 15px;
 
 
 
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
@@ -1049,7 +1049,7 @@ padding-top: 15px;
               ]
           } );
       } );
-      
+
         </script>
 
   </body>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,8 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\CustormerproductsController;
+
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +27,12 @@ use App\Http\Controllers\CustormerproductsController;
 
 //----------------------------------Home Page-------------------------------------------------
 
-Route::get('/',[CustomersController::class, 'index'])->name('home');
+// Route::get('/',[CustomersController::class, 'index'])->name('home');
+
+Route::get('/', function(){
+    $product = Product::all();
+    return view('customer.index', compact('product'));
+})->name('home');
 
 
 Route::get('/customer/cus_dashboard', [CustomersController::class, 'manage'])->name('cus_dashboard');
@@ -101,4 +109,7 @@ Route::resource('product', ProductController::class);
 Route::resource('stocke', StockController::class);
 
 Route::resource('staff', StaffController::class);
+Route::resource('customer', CustomersController::class);
+Route::resource('cproduct', CustormerproductsController::class);
+Route::resource('cart', CartController::class);
 

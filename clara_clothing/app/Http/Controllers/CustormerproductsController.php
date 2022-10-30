@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CustormerproductsController extends Controller
 {
@@ -14,10 +15,7 @@ class CustormerproductsController extends Controller
      */
     public function index()
     {
-        return view('customer.shop', [  //listings.index' view folder name & view page name
-            'products' => Product::latest()->filter(request(['search']))->paginate(3) 
-            
-        ]); 
+
     }
 
     /**
@@ -47,11 +45,11 @@ class CustormerproductsController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        return view('customer.show', [
-            'product' => $product
-        ]);
+        $product = Product::find($id);
+        $all = DB::select('select * from products limit 10');
+        return view('customer.show', compact('product','all'));
     }
 
     /**

@@ -150,7 +150,7 @@
                 <img src="{{ asset('uploads/'.$p->image1) }}" alt="" srcset="">
 
                 <div class="card-btn">
-                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                  <a class="btn btn-white rounded-pill" href="{{route('cproduct.show',$p->id)}}">View</a>
                 </div>
             </div>
 
@@ -171,7 +171,7 @@
 </div>
 
 <div class="d-flex justify-content-center" style="margin: 80px 0">
-  <input type="button" class="btn-grad-black" value="View Collection">
+    <a href="{{route('customer.index')}}" class="btn-grad-black">VIEW COLLECTION</a>
 </div>
 
 
