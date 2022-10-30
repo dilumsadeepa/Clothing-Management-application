@@ -143,9 +143,11 @@
 
     </div>
     <div class="row">
+        @foreach ($product as $p)
+
         <div class="col-md-3">
             <div class="product-box position-relative">
-                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+                <img src="{{ asset('uploads/'.$p->image1) }}" alt="" srcset="">
 
                 <div class="card-btn">
                   <a class="btn btn-white rounded-pill" href="customer/show">View</a>
@@ -154,78 +156,16 @@
 
             <div class="product-info">
                 <div class="product-name">
-                    <h6>Givo sheila tiered sleeveless
-                        maxi dress
-                        </h6>
+                    <h6>{{$p->name}}</h6>
                 </div>
                 <div class="product-price">
-                    <h5>Rs 2850.00</h5>
+                    <h5>{{$p->price}}</h5>
                 </div>
             </div>
 
         </div>
+        @endforeach
 
-        <div class="col-md-3">
-            <div class="product-box position-relative">
-                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-
-                <div class="card-btn">
-                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                </div>
-            </div>
-
-            <div class="product-info">
-                <div class="product-name">
-                    <h6>Givo sheila tiered sleeveless
-                        maxi dress
-                        </h6>
-                </div>
-                <div class="product-price">
-                    <h5>Rs 2850.00</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="product-box position-relative">
-                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-                <div class="card-btn">
-                  <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                </div>
-            </div>
-
-            <div class="product-info">
-                <div class="product-name">
-                    <h6>Givo sheila tiered sleeveless
-                        maxi dress
-                        </h6>
-                </div>
-                <div class="product-price">
-                    <h5>Rs 2850.00</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="product-box position-relative">
-                <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-
-                <div class="card-btn">
-                    <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                </div>
-            </div>
-
-            <div class="product-info">
-                <div class="product-name">
-                    <h6>Givo sheila tiered sleeveless
-                        maxi dress
-                        </h6>
-                </div>
-                <div class="product-price">
-                    <h5>Rs 2850.00</h5>
-                </div>
-            </div>
-        </div>
 
     </div>
 </div>

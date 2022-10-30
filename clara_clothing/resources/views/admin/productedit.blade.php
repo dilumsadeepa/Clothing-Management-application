@@ -42,7 +42,9 @@
                     <input type="hidden" value="{{$product->image1}}" name="image1">
                     <input type="hidden" value="{{$product->image2}}" name="image2">
                     <input type="hidden" value="{{$product->image3}}" name="image3">
-                    <img src="{{asset('uploads/'.$product->image1)}}" class="img-fluid" style="width: 50px;">
+                    <img src="{{asset('uploads/'.$product->image1)}}" class="img-fluid dgri" style="width: 50px;">
+                    <img src="{{asset('uploads/'.$product->image2)}}" class="img-fluid dgri" style="width: 50px;">
+                    <img src="{{asset('uploads/'.$product->image3)}}" class="img-fluid dgri" style="width: 50px;">
                   </div>
 
                   <div class="mb-3 mt-3">
@@ -85,6 +87,12 @@
               </form>
         </div>
     </div>
+
+    <style>
+        .dgri{
+            display: grid;
+        }
+    </style>
 
 
 @endsection

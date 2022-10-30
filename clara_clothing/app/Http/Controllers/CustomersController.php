@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customers;
+use App\Models\Product;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
+use Illuminate\Support\Facades\DB;
 
 class CustomersController extends Controller
 {
@@ -15,7 +17,8 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        return view('customer.index');
+        $product = Product::all();
+        return view('customer.index', compact('product'));
     }
 
     /**
