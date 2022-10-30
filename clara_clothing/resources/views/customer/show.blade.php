@@ -118,4 +118,169 @@
     </section>
 
 
+
+              {{------------------------------------------------Similar Product Section--------------------------------------------------------------------}}
+<div class="container my-5">
+    <div class="eleven">
+      <h1>Similar Products</h1>
+    </div>
+     
+  </div>
+
+
+  <div class="swiperwrap">
+    <div class="sliderbox">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                    <div class="product-box position-relative">
+                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
+                        <div class="card-btn">
+                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                        </div>
+                    </div>
+        
+                    <div class="product-info">
+                        <div class="product-name">
+                            <h6>Givo sheila tiered sleeveless
+                                maxi dress
+                                </h6>
+                        </div>
+                        <div class="product-price">
+                            <h5>Rs 2850.00</h5>
+                        </div>
+                    </div>
+
+
+              </div>
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/3.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/1.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/5.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/1.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/2.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="product-box position-relative">
+                    <img src="{{ asset('images/products/1.jpg') }}" alt="" srcset="">
+                    <div class="card-btn">
+                      <a class="btn btn-white rounded-pill" href="customer/show">View</a>
+                    </div>
+                </div>
+    
+                <div class="product-info">
+                    <div class="product-name">
+                        <h6>Givo sheila tiered sleeveless
+                            maxi dress
+                            </h6>
+                    </div>
+                    <div class="product-price">
+                        <h5>Rs 2850.00</h5>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+    </div>
+  </div>
+
+  
+
+
+
 </x-layout>
