@@ -89,8 +89,9 @@
             <div class="inner-line">
 
             </div>
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
+            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
                 <h3><strong>MEN'S</strong></h3>
+                <div><button type="button" class="btn btn-outline-light">View Collection</button></div>
             </div>
           </div>
       </div>
@@ -102,11 +103,10 @@
 
         </div>
           <!-- Content -->
-          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
-
-              <h3><strong>WOMEN'S</strong></h3>
-
-          </div>
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
+            <h3><strong>WOMEN'S</strong></h3>
+            <div><button type="button" class="btn btn-outline-light">View Collection</button></div>
+        </div>
         </div>
     </div>
 
@@ -117,16 +117,19 @@
 
         </div>
         <!-- Content -->
-        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title">
-
-            <h3><strong>KID'S</strong></h3>
-
-        </div>
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
+          <h3><strong>KID'S</strong></h3>
+          <div><button type="button" class="btn btn-outline-light">View Collection</button></div>
+      </div>
       </div>
   </div>
 
 
   </div>
+</div>
+
+<div class="d-flex justify-content-center" style="margin: 80px 0">
+  <input type="button" class="btn-grad-black" value="View Collection">
 </div>
 
            {{-- -------------------------------------------Category end--------------------------------------------------------------------- --}}
@@ -227,6 +230,10 @@
     </div>
 </div>
 
+<div class="d-flex justify-content-center" style="margin: 80px 0">
+  <input type="button" class="btn-grad-black" value="View Collection">
+</div>
+
 
 
           {{------------------------------------------------Product Section End--------------------------------------------------------------------}}
@@ -251,5 +258,9 @@
 
 
           {{-- -------------------------------------------Brands Section start--------------------------------------------------------------------- --}}
+
+
+
+
 
 </x-layout>

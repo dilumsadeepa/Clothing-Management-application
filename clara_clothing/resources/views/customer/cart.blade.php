@@ -182,9 +182,9 @@
                     </li>
                   </ul>
       
-                  <button type="button" class="btn btn-primary btn-md btn-block">
+                  <a type="button" class="btn btn-primary btn-md btn-block" href="/customer/checkout">
                     Go to checkout
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
