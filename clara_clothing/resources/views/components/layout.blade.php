@@ -12,9 +12,16 @@
   </head>
   <body>
 
+    {{-- --------------------------------------Scroll Back to top Button---------------------------------------------------------- --}}
+
+    <button type="button" class="btn btn-danger btn-floating btn-lg rounded-circle" id="btn-back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+
     {{-----------------------------------------NAVBAR Start------------------------------------------------------------- --}}
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/"><b>Clara Clothing</b></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,6 +148,9 @@
         </div>
       </nav>
 
+        {{-- ----------------------------------------------Scroll to top button -------------------------------------------------------- --}}
+
+
           {{-----------------------------------------NAVBAR END------------------------------------------------------------- --}}
 
 
@@ -156,6 +166,9 @@
 
             {{-- -------------------------------------------Main Content Goes Here up------------------------------------ --}}
           </main>
+
+
+
 
 
            {{---------------------------------------------------Footer-------------------------------------------------- --}}
@@ -286,8 +299,12 @@
   <!-- Footer -->
 
 
+          
+
+
 
 <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
   </body>
 </html>
