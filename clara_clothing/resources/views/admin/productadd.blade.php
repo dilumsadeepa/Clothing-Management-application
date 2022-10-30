@@ -50,13 +50,7 @@
 
                   <div class="mb-3 mt-3">
                     <label for="name" class="form-label">Product Size:</label>
-                    <select class="form-select" name="size">
-                        <option value="Small">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
-                        <option value="XL">XL</option>
-                        <option value="XXL">XXL</option>
-                      </select>
+                    <input type="text" class="form-control" id="size" placeholder="Enter Product Size" name="size">
                   </div>
 
                   <div class="mb-3 mt-3">

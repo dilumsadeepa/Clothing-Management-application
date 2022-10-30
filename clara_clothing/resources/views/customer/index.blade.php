@@ -159,7 +159,7 @@
                     <h6>{{$p->name}}</h6>
                 </div>
                 <div class="product-price">
-                    <h5>{{$p->price}}</h5>
+                    <h5>RS. {{$p->price}}</h5>
                 </div>
             </div>
 
