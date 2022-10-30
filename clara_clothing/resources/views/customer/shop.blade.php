@@ -44,8 +44,10 @@
               <section class="mb-4">
 
                 <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                  <input type="text" id="search12" class="form-control mb-0" placeholder="Search...">
-                  <a href="#!" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></a>
+                    <form action="/" class="d-flex">
+                        <input type="text" id="search12" class="form-control mb-0" placeholder="Search..." name="psearch">
+                        <button type="submit" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></button>
+                    </form>
                 </div>
 
               </section>
@@ -207,28 +209,12 @@
               <!-- Grid column -->
 
                 <!-- Card -->
-                <div class="col-md-4 mb-5">
-                    <div class="product-box position-relative">
-                        <img src="{{ asset('images/Categories/women.jpg') }}" alt="" srcset="">
-        
-                        <div class="card-btn">
-                          <a class="btn btn-white rounded-pill" href="customer/show">View</a>
-                        </div>
-                    </div>
-        
-                    <div class="product-info">
-                        <div class="product-name">
-                            <h6>Givo sheila tiered sleeveless
-                                maxi dress
-                                </h6>
-                        </div>
-                        <div class="product-price">
-                            <h5>Rs 2850.00</h5>
-                        </div>
-                    </div>
-                </div>
+                @foreach($products as $product) 
+                {{-- Access listings by componenets --}}
+                <x-card :product="$product" />    
+                @endforeach
                 <!-- Card -->
-
+{{-- 
               <!-- Grid column -->
 
                             <!-- Grid column -->
@@ -352,7 +338,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Card -->
+                                <!-- Card --> --}}
 
               <!-- Grid column -->
 
@@ -369,17 +355,7 @@
 
           <!-- Section: Block Content -->
           <section>
-              <div class="col-12 col-md-4 text-center">
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination pagination-circle justify-content-center float-md-right mb-0">
-                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
-                    <li class="page-item active"><a class="page-link">1</a></li>
-                    <li class="page-item"><a class="page-link">2</a></li>
-                    <li class="page-item"><a class="page-link">3</a></li>
-                    <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
-                  </ul>
-                </nav>
-              </div>
+            {{$products->links('pagination::bootstrap-5')}}
             </div>
 
           </section>

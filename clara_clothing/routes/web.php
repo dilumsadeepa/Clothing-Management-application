@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
-use App\Http\Controllers\StockController;
+use App\Http\Controllers\CustormerproductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +35,11 @@ Route::get('/customer/index2', function () {
     return view('customer.index2');
 });
 
-Route::get('/customer/shop', function () {
-    return view('customer.shop');
-});
+Route::get('/shop',[CustormerproductsController::class, 'index']);
+
+// Route::get('/customer/shop', function () {
+//     return view('customer.shop');
+// });
 
 // Route::get('/customer/contactus', function () {
 //     return view('customer.contactus');
@@ -86,6 +89,10 @@ Route::middleware([
 
     })->name('dashboard');
 });
+
+
+
+Route::get('/shop/product/{product}',[CustormerproductsController::class, 'show']);
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
