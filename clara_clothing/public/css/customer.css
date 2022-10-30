@@ -64,6 +64,14 @@
 
 }
 
+.brandsm{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 1fr;
+
+}
+
 .blogo{
   justify-self: center;
 }
@@ -131,7 +139,7 @@ text-align: center;
 
 
 .eleven h1 {
-  font-size:30px;text-align:center; line-height:1.5em; padding-bottom:45px; font-family:"Playfair Display", serif; text-transform:uppercase;letter-spacing: 2px; color:#111;
+  font-size:35px;text-align:center; line-height:1.5em; padding-bottom:45px; font-family:"Playfair Display", serif; text-transform:uppercase;letter-spacing: 2px; color:rgb(78, 76, 76);
 }
 
 
@@ -155,6 +163,8 @@ text-align: center;
 }
 
 
+
+
 /* -------------------------------------End of Headings------------------------------------------- */
 
 /* --------------------------------------Scroll button ----------------------------------------------------------- */
@@ -166,4 +176,38 @@ text-align: center;
   display: none;
 }
 
+
+/* --------------------------------------------- swiper slider---------------------------------------------------------- */
+
+.swiperwrap, .sliderbox{
+  position: relative;
+  height: 100%;
+}
+
+.sliderbox {
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 30px 0;
+  padding: 40px 0 80px 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
 

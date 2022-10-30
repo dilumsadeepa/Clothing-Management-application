@@ -34,6 +34,10 @@ Route::get('/customer/index2', function () {
     return view('customer.index2');
 });
 
+Route::get('/customer/shop', function () {
+    return view('customer.shop');
+});
+
 // Route::get('/customer/contactus', function () {
 //     return view('customer.contactus');
 // });
