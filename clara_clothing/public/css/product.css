@@ -61,14 +61,23 @@
 
 .thumbnailgallery{
     max-width: 230px; 
+    width: auto;
     height:auto; 
     display:flex; 
-    flex-direction:column; 
+    flex-direction:column;
+    justify-content: space-around; 
 }
 
 .carousel-item img{
     max-height: 760px;
     width: auto;
+}
+
+@media only screen and (max-width: 1440px){
+    .thumbnailgallery img{
+        height: auto !important;
+        max-width: 180px;
+    }
 }
 
 @media only screen and (max-width: 991px){

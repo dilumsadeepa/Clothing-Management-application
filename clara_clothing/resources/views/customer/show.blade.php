@@ -4,8 +4,8 @@
         <!--News card-->
         <div class="card mt-5 hoverable">
             <div class="row mt-5">
-                <div class="col-lg-8">
-                    <div class="row mx-2">
+                <div class="col-lg-6">
+                    {{-- <div class="row mx-2"> --}}
                         <div id="carouselExampleIndicators"  class="carousel slide megagallery"  data-bs-ride="true">
                             <div class="carousel-inner px-2">
                               <div class="carousel-item active">
@@ -34,12 +34,13 @@
 
                               </div>
                           </div>
-                    </div>
+                    {{-- </div> --}}
 
                 </div>
 
 
-                <div class="col-lg-4 mr-3 text-center text-md-left">
+
+                <div class="col-lg-6 mr-3 text-center text-md-left">
                     <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
                         <strong>{{$product->name}} </strong>
                     </h2>
@@ -57,8 +58,12 @@
                     <p class="ml-xl-0 ml-4">{{$product->des}}</p>
                     {{-- <p class="ml-xl-0 ml-4">
                         <strong>Color Available: </strong>Black, Blue, White</p> --}}
-                    <p class="ml-xl-0 ml-4">
-                        <strong>Size: </strong>{{$product->size}}</p>
+                    <div class="ml-xl-0 ml-4 mt-4 d-inline-flex">
+                        <strong>Size:</strong><x-size-tags :tagsCsv="$product->size" /></div>
+
+                    <div class="ml-xl-0 ml-4 mt-4 ">
+                        <strong>Size:</strong><x-size-radio :sizetagsCsv="$product->size" /></div>
+                        
                     <p class="ml-xl-0 ml-4">
                         <strong>Availability: </strong>{{$product->status}}</p>
 
