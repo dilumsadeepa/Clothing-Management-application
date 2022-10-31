@@ -35,6 +35,8 @@ Route::get('/', function(){
 })->name('home');
 
 
+Route::get('/custormer', [CustomersController::class, 'index'])->name('shop');
+
 Route::get('/customer/cus_dashboard', [CustomersController::class, 'manage'])->name('cus_dashboard');
 
 Route::get('/customer/contactus', [CustomersController::class, 'contact'])->name('contactus');
@@ -44,6 +46,7 @@ Route::get('/customer/index2', function () {
 });
 
 Route::get('/shop',[CustormerproductsController::class, 'index']);
+
 
 // Route::get('/customer/shop', function () {
 //     return view('customer.shop');
@@ -108,8 +111,11 @@ Route::resource('catagory', CatagaoryController::class);
 Route::resource('product', ProductController::class);
 Route::resource('stocke', StockController::class);
 
+
 Route::resource('staff', StaffController::class);
 Route::resource('customer', CustomersController::class);
 Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
+
+
 
