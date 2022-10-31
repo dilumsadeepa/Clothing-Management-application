@@ -14,7 +14,7 @@
             
         </div>
         <div class="product-price d-flex justify-content-between">
-            <h5>Rs. {{$product->price}}</h5>
+            <h5>{{$product->price}}</h5>
             <span><x-size-tags :tagsCsv="$product->size" /></span>
         </div>
     </div>

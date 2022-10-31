@@ -30,6 +30,12 @@ class Product extends Model
                     // ->orWhere('tags', 'like', '%' . request('search') .'%');
         }
 
+        if($filters['sizes'] ??  false){
+            $query->where('size', 'like', '%' . request('sizes') .'%' );
+                    // ->Where('price', '>',  request('pmin'));
+                    // ->orWhere('tags', 'like', '%' . request('search') .'%');
+        }
+
         if($filters['pmin'] ??  false){
             $query->where('price', '>=', request('pmin') )
                     ->Where('price', '<',  request('pmax'));
@@ -42,10 +48,6 @@ class Product extends Model
                     // ->orWhere('tags', 'like', '%' . request('search') .'%');
         }
 
-        if($filters['sizes'] ??  false){
-            $query->where('size', 'like', '%' . request('sizes') .'%' );
-                    // ->Where('price', '>',  request('pmin'));
-                    // ->orWhere('tags', 'like', '%' . request('search') .'%');
-        }
+
     }
 }

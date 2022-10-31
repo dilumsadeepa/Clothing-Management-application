@@ -95,16 +95,18 @@
                   <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
                   <label class="form-check-label small text-uppercase card-link-secondary" for="200above">Rs.5000 & Above</label>
                 </div> --}}
+
+                
                 <form action="/customer/">
                   <div class="d-flex align-items-center mt-4 pb-1 ">
                     <div class="md-form md-outline my-0">
                       <input id="from" type="text" class="form-control mb-0" name="pmin" style="max-width: 90px">
-                      <label for="form">$ Min</label>
+                      <label for="form">Rs. Min</label>
                     </div>
                     <p class="px-2 mb-0 text-muted mb-4"> - </p>
                     <div class="md-form md-outline my-0">
                       <input id="to" type="text" class="form-control mb-0" name="pmax" style="max-width: 90px">
-                      <label for="to">$ Max</label>
+                      <label for="to">Rs. Max</label>
                     </div>
                     <div class="md-form md-outline my-0 pb-4 ">
                     <button type="submit" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></button>

@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customers;
 use App\Models\Product;
-use App\Models\catagaory;
-use App\Http\Requests\StoreCustomersRequest;
-use App\Http\Requests\UpdateCustomersRequest;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class CustomersController extends Controller
+class ShopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +20,6 @@ class CustomersController extends Controller
         return view('customer.shop', compact('products','cat','sizes'));
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -38,10 +33,10 @@ class CustomersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCustomersRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCustomersRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -49,23 +44,21 @@ class CustomersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Customers  $customers
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Customers $customers)
+    public function show(Product $product)
     {
-        $sizetag = DB::select('select * from products');
-        dd($sizetag);
-        return view('customer.shop', compact('sizetag'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Customers  $customers
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customers $customers)
+    public function edit(Product $product)
     {
         //
     }
@@ -73,11 +66,11 @@ class CustomersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCustomersRequest  $request
-     * @param  \App\Models\Customers  $customers
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCustomersRequest $request, Customers $customers)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -85,26 +78,11 @@ class CustomersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customers  $customers
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customers $customers)
+    public function destroy(Product $product)
     {
         //
     }
-
-    public function manage()
-    {
-        return view('customer.cus_dashboard');
-    }
-
-    public function contact()
-    {
-        return view('customer.contactus');
-    }
-
-    // public function csize(){
-    //     $product = Product::all();
-    //     return view('customer.shop', compact('product'));
-    // }
 }
