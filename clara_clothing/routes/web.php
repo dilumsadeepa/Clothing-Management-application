@@ -11,8 +11,9 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\CustormerproductsController;
-
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +92,12 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         if (Auth::user()->roll == 1){
-            return view('admin.admin');
+            $users= User::where('roll','1')->count();
+            $orders=Order::count(); 
+            $items=Product::count();
+            $rev = Order::sum('total');
+            
+            return view('admin.admin',compact('users','orders','items','rev'));
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){

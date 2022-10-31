@@ -221,8 +221,9 @@
               <i class="fas fa-gem me-3"></i>Clara Clothing
             </h6>
             <p>
-               Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+              Mon-Fri : 9.00 AM to 5.30 PM <br>
+              Saturday : 9.00 AM to 2.30 PM <br>
+              Sunday : Closed
             </p>
           </div>
           <!-- Grid column -->
