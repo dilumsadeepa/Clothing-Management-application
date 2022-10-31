@@ -8,12 +8,14 @@
         </div>
     </div>
 
-    <div class="product-info">
+    <div class="product-info pb-2">
         <div class="product-name">
             <h6>{{$product->name}}</h6>
+            
         </div>
-        <div class="product-price">
-            <h5>{{$product->price}}</h5>
+        <div class="product-price d-flex justify-content-between">
+            <h5>Rs. {{$product->price}}</h5>
+            <span><x-size-tags :tagsCsv="$product->size" /></span>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@
                   @foreach ($cart as $c)
 
                   <!-- Single item -->
-                  <div class="row">
+                  <div class="row mb-3">
                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                       <!-- Image -->
                       <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
