@@ -31,7 +31,7 @@
         <div class="val-box">
             <i class="fas fa-dollar-sign"></i>
             <div>
-                <h3>{{$rev}}</h3>
+                <h3>RS:{{$rev}}</h3>
                 <span>Revenue</span>
             </div>
         </div>
