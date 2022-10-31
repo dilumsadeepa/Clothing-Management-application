@@ -388,9 +388,14 @@
     </div>
 
     <section class="section dashboard">
-        <div class="container">
-            @yield('content')
-        </div>
+        @if (Auth::user()->id == 1 || Auth::user()->id == 2)
+            <div class="container">
+
+                @yield('content')
+
+            </div>
+        @endif
+
 
     </section>
 
