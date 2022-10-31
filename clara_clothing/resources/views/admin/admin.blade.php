@@ -7,7 +7,7 @@
         <div class="val-box">
             <i class="fas fa-users"></i>
             <div>
-                <h3>8273</h3>
+                <h3>{{$users}}</h3>
                 <span>New Users</span>
             </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="val-box">
             <i class="fas fa-shopping-cart"></i>
             <div>
-                <h3>8273</h3>
+                <h3>{{$orders}}</h3>
                 <span>New Orders</span>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="val-box">
             <i class="fas fa-box"></i>
             <div>
-                <h3>8273</h3>
+                <h3>{{$items}}</h3>
                 <span>Products</span>
             </div>
         </div>
