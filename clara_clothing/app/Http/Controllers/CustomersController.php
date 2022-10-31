@@ -18,10 +18,12 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->filter(request(['search']))->paginate(3);
+        $products = Product::latest()->filter(request(['cat','psearch','search','pmin','pmax','sizes']))->paginate(6);
         $cat = catagaory::all();
-        return view('customer.shop', compact('products','cat'));
+        $sizes = DB::select('select distinct size from products');
+        return view('customer.shop', compact('products','cat','sizes'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +54,9 @@ class CustomersController extends Controller
      */
     public function show(Customers $customers)
     {
-
+        $sizetag = DB::select('select * from products');
+        dd($sizetag);
+        return view('customer.shop', compact('sizetag'));
     }
 
     /**
@@ -98,4 +102,9 @@ class CustomersController extends Controller
     {
         return view('customer.contactus');
     }
+
+    // public function csize(){
+    //     $product = Product::all();
+    //     return view('customer.shop', compact('product'));
+    // }
 }

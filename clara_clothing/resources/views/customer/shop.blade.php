@@ -1,6 +1,6 @@
 <x-layout>
 <x-header href="#product">
-    {{ Breadcrumbs::render('contactus') }}
+    {{ Breadcrumbs::render('shop') }}
 </x-header>
 
 
@@ -25,7 +25,7 @@
                       Accessories</strong></a></p> --}}
 
                 @foreach ($cat as $c)
-                    <p class="mb-3"><a href="#!" class="text-secondary text-decoration-none">{{$c->catagoryname}}</a></p>
+                    <p class="mb-3"><a href="?cat={{$c->catagoryname}}" class="text-secondary text-decoration-none">{{$c->catagoryname}}</a></p>
                 @endforeach
 
               </div>
@@ -41,7 +41,7 @@
               <section class="mb-4">
 
                 <div class="md-form md-outline mt-0 d-flex justify-content-between align-items-center">
-                    <form action="/" class="d-flex">
+                    <form action="/customer/" class="d-flex">
                         <input type="text" id="search12" class="form-control mb-0" placeholder="Search..." name="psearch">
                         <button type="submit" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></button>
                     </form>
@@ -69,12 +69,12 @@
               <!-- Section: Condition -->
 
 
-              {{-- <!-- Section: Price -->
+               <!-- Section: Price -->
               <section class="mb-4">
 
                 <h6 class="font-weight-bold mb-3">Price</h6>
 
-                <div class="form-check pl-0 mb-3">
+                {{-- <div class="form-check pl-0 mb-3">
                   <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
                   <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under
                     Rs.1000</label>
@@ -94,17 +94,20 @@
                 <div class="form-check pl-0 mb-3">
                   <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
                   <label class="form-check-label small text-uppercase card-link-secondary" for="200above">Rs.5000 & Above</label>
-                </div>
-                <form>
-                  <div class="d-flex align-items-center mt-4 pb-1">
+                </div> --}}
+                <form action="/customer/">
+                  <div class="d-flex align-items-center mt-4 pb-1 ">
                     <div class="md-form md-outline my-0">
-                      <input id="from" type="text" class="form-control mb-0">
+                      <input id="from" type="text" class="form-control mb-0" name="pmin" style="max-width: 90px">
                       <label for="form">$ Min</label>
                     </div>
-                    <p class="px-2 mb-0 text-muted"> - </p>
+                    <p class="px-2 mb-0 text-muted mb-4"> - </p>
                     <div class="md-form md-outline my-0">
-                      <input id="to" type="text" class="form-control mb-0">
+                      <input id="to" type="text" class="form-control mb-0" name="pmax" style="max-width: 90px">
                       <label for="to">$ Max</label>
+                    </div>
+                    <div class="md-form md-outline my-0 pb-4 ">
+                    <button type="submit" class="btn btn-flat btn-md px-3 waves-effect"><i class="fas fa-search fa-lg"></i></button>
                     </div>
                   </div>
                 </form>
@@ -117,48 +120,33 @@
               <section class="mb-4">
 
                 <h6 class="font-weight-bold mb-3">Size</h6>
+ 
 
                 <div class="form-check pl-0 mb-3">
-                  <input type="checkbox" class="form-check-input filled-in" id="34">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="34">S</label>
-                </div>
-                <div class="form-check pl-0 mb-3">
-                  <input type="checkbox" class="form-check-input filled-in" id="36">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="36">M</label>
-                </div>
-                <div class="form-check pl-0 mb-3">
-                  <input type="checkbox" class="form-check-input filled-in" id="38">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="38">L</label>
-                </div>
-                <div class="form-check pl-0 mb-3">
-                  <input type="checkbox" class="form-check-input filled-in" id="40">
-                  <label class="form-check-label small text-uppercase card-link-secondary" for="40">XL</label>
-                </div>
-                {{-- <a class="btn btn-link text-muted p-0" data-toggle="collapse" href="#collapseExample"
-                  aria-expanded="false" aria-controls="collapseExample">
-                  More
-                </a> --}}
-                {{-- <div class="collapse pt-3" id="collapseExample">
-                  <div class="form-check pl-0 mb-3">
-                    <input type="checkbox" class="form-check-input filled-in" id="42">
-                    <label class="form-check-label small text-uppercase card-link-secondary" for="42">42</label>
+                    <form action="/customer/">
+                    <input type="checkbox" class="form-check-input filled-in" id="s" name="sizes" value="S">
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="s">S</label>
                   </div>
                   <div class="form-check pl-0 mb-3">
-                    <input type="checkbox" class="form-check-input filled-in" id="44">
-                    <label class="form-check-label small text-uppercase card-link-secondary" for="44">44</label>
+                    <input type="checkbox" class="form-check-input filled-in" id="m" name="sizes" value="M">
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="m">M</label>
                   </div>
                   <div class="form-check pl-0 mb-3">
-                    <input type="checkbox" class="form-check-input filled-in" id="46">
-                    <label class="form-check-label small text-uppercase card-link-secondary" for="46">46</label>
+                    <input type="checkbox" class="form-check-input filled-in" id="l" name="sizes" value="L">
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="l">L</label>
                   </div>
                   <div class="form-check pl-0 mb-3">
-                    <input type="checkbox" class="form-check-input filled-in" id="50">
-                    <label class="form-check-label small text-uppercase card-link-secondary" for="50">50</label>
+                    <input type="checkbox" class="form-check-input filled-in" id="xl" name="sizes" value="XL">
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="xl">XL</label>
                   </div>
-                </div>
+                  <div class="form-check pl-0 mb-3 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-secondary ">Apply</button>
+                  </div>
+                </form>
+  
 
               </section>
-              <!-- Section: Size -->  --}}
+              <!-- Section: Size --> 
 
             </section>
             <!-- Section: Filters -->
@@ -211,7 +199,7 @@
 
           <!-- Section: Block Content -->
           <section>
-            {{$products->links('pagination::bootstrap-5')}}
+            {{-- {{$products->links('pagination::bootstrap-5')}} --}}
             </div>
 
           </section>

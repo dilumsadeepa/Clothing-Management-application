@@ -24,6 +24,11 @@ Breadcrumbs::for('contactus', function ($trail){
     $trail->push('Contact Us', route( name:'contactus'));
 });
 
+Breadcrumbs::for('shop', function ($trail){
+    $trail->parent('home');
+    $trail->push('Shop', route( name: 'shop'));
+});
+
 Breadcrumbs::for('cusTheme', function ($trail){
     $trail->push('Customer', route( name:'cusTheme'));
 });
