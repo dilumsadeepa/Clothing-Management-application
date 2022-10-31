@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('cusid');
             $table->string('productid');
             $table->string('quntity');
+            $table->string('finish');
             $table->timestamps();
         });
     }

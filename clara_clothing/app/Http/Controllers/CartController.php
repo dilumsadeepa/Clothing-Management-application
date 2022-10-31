@@ -85,7 +85,8 @@ class CartController extends Controller
      */
     public function update(UpdateCartRequest $request, Cart $cart)
     {
-        //
+        $cart->update($request->all());
+        return redirect()->route('cart.index');
     }
 
     /**
@@ -96,6 +97,7 @@ class CartController extends Controller
      */
     public function destroy(Cart $cart)
     {
-        //
+        $cart->delete();
+        return redirect()->route('cart.index');
     }
 }
