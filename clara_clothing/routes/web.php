@@ -92,7 +92,9 @@ Route::middleware([
             $users= User::where('roll','1')->count();
             $orders=Order::count(); 
             $items=Product::count();
-            return view('admin.admin',compact('users','orders','items'));
+            $rev = Order::sum('total');
+            
+            return view('admin.admin',compact('users','orders','items','rev'));
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){
