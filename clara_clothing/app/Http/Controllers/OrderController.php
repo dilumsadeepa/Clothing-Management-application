@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,7 +18,22 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $users = DB::select('select * from customers where userid = ?',[$id]);
+        $product = Product::all();
+        $order = DB::select('select * from orders where cusid = ?',[$id]);
+        $carts = [];
+        foreach($order as $o){
+            $cat = json_decode($o->products);
+            foreach($cat as $po){
+                foreach($product as $p){
+                    if($po->cartid == $p->id){
+                        $carts[]['name'] = $p->name;
+                    }
+                }
+            }
+        }
+        return view('customer.checkout',compact('users','carts','order'));
     }
 
     /**
@@ -36,7 +54,16 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $order = new Order();
+
+        $order->cusid = $request->cus;
+        $order->products = $request->pro;
+        $order->total = $request->tot;
+        $order->confirm = 0;
+
+        $order->save();
+
+        return redirect()->route('order.index');
     }
 
     /**

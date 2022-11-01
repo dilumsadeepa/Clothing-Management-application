@@ -173,9 +173,9 @@ padding-top: 15px;
         @auth
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/customer/cart">
+          <a class="nav-link active" aria-current="page" href="{{route('cart.index')}}">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
+              <span class="badge rounded-pill badge-notification bg-danger mb-">{{$ccount}}</span>
   </a>
           </a>
       </li>

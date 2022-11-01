@@ -21,6 +21,7 @@ class CartController extends Controller
         $cart = DB::table('products')
                     ->join('carts', 'products.id', '=', 'carts.productid')
                     ->select('products.*', 'carts.*')
+                    ->where('cusid',[$id])
                     ->get();
         return view('customer.cart',compact('cart'));
     }

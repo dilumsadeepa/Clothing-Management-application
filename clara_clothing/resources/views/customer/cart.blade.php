@@ -2,6 +2,7 @@
 
     @php
         $total = 0;
+        $cids = [];
     @endphp
     <section class="h-100 gradient-custom">
         <div class="container py-5">
@@ -28,6 +29,9 @@
                       <!-- Image -->
                     </div>
 
+                    @php
+                        $cids[]['cartid'] = $c->id;
+                    @endphp
                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                       <!-- Data -->
                       <p><strong>{{$c->name}}</strong></p>
@@ -66,8 +70,8 @@
                         @csrf
                         @method('PUT')
                         <div class="form-outline">
-                          <input id="qu" min="1" onchange="calpri()" name="qun" value="{{$c->qun}}" type="number" class="form-control" />
-                          <label class="form-label" for="form1">Quantity </label>
+                          <input id="qu" min="1" name="qun" value="{{$c->qun}}" type="number" class="form-control" />
+                          <label class="form-label" for="form1">Quantity <button type="submit" class="btn btn-info">ADD</button></label>
                         </div>
 
                     </form>
@@ -94,10 +98,12 @@
 
                 </div>
               </div>
+
+
               <div class="card mb-4">
                 <div class="card-body">
                   <p><strong>Expected shipping delivery</strong></p>
-                  <p class="mb-0">12.10.2020 - 14.10.2020</p>
+
                 </div>
               </div>
               <div class="card mb-4 mb-lg-0">
@@ -146,9 +152,19 @@
                     </li>
                   </ul>
 
-                  <a type="button" class="btn btn-primary btn-md btn-block" href="/customer/checkout">
-                    Go to checkout
-                  </a>
+                @php
+                  $cartid = json_encode($cids);
+                @endphp
+
+                    <form action="{{route('order.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="cus" value="{{Auth::user()->id}}">
+                        <input type="hidden" name="pro" value="{{$cartid}}">
+                        <input type="hidden" name="tot" value="{{$total + 450}}">
+                        <button type="submit" class="btn btn-primary btn-md btn-block">
+                            Go to checkout
+                        </button>
+                    </form>
                 </div>
               </div>
             </div>

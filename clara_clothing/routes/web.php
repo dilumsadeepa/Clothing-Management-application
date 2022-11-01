@@ -11,9 +11,12 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\CustormerproductsController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,15 +96,16 @@ Route::middleware([
     Route::get('/dashboard', function () {
         if (Auth::user()->roll == 1){
             $users= User::where('roll','1')->count();
-            $orders=Order::count(); 
+            $orders=Order::count();
             $items=Product::count();
             $rev = Order::sum('total');
-            
+
             return view('admin.admin',compact('users','orders','items','rev'));
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){
-            return view('customer.cus_dashboard');
+            $ccount = DB::table('carts')->count();
+            return view('customer.cus_dashboard', compact('ccount'));
         }
 
     })->name('dashboard');
@@ -122,6 +126,8 @@ Route::resource('staff', StaffController::class);
 Route::resource('customer', CustomersController::class);
 Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
+Route::resource('pay', PaymentController::class);
+Route::resource('order', OrderController::class);
 
 
 
