@@ -21,6 +21,7 @@
                     Product Name
                 </th>
                 <th>Catagory</th>
+                <th>Main Catagory</th>
                 <th>Image</th>
                 <th>Price</th>
                 <th>Size</th>
@@ -32,6 +33,7 @@
                 <tr>
                     <td>{{$p->name}}</td>
                     <td>{{$p->catagory}}</td>
+                    <td>{{$p->main_catagory}}</td>
                     <td><img src="{{asset('uploads/'.$p->image1)}}" class="img-fluid" style="width: 50px;"></td>
                     <td>{{$p->price}}</td>
                     <td>{{$p->size}}</td>

@@ -45,6 +45,7 @@ class ProductController extends Controller
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8000',
             'name' => 'required|max:255',
             'catagory' => 'required|max:255',
+            'main_catagory' => 'required|max:255',
             'price' => 'required|max:255',
             'size' => 'required|max:255',
             'code' => 'required|max:255',
@@ -82,6 +83,7 @@ class ProductController extends Controller
 
         $product->name = $request->name;
         $product->catagory = $request->catagory;
+        $product->main_catagory = $request->main_catagory;
         $product->image1 = $image1;
         $product->image2 = $image2;
         $product->image3 = $image3;
@@ -132,6 +134,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'catagory' => 'required|max:255',
+            'main_catagory' => 'required|max:255',
             'image1' => 'required|max:255',
             'image2' => 'required|max:255',
             'image3' => 'required|max:255',

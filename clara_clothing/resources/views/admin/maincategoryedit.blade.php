@@ -17,15 +17,16 @@
         @endif
 
         <div class="col-sm-12">
-            @foreach ($cat as $c)
+            @foreach ($maincategories as $c)
 
-            <form action="{{route('catagory.update', $c->id)}}" method="POST">
+            <form action="{{route('maincategories.update', $c->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3 mt-3">
-                  <label for="catagoey" class="form-label">Catagory Name:</label>
-                  <input type="text" class="form-control mb-2" id="catagory" value="{{$c->catagoryname}}" placeholder="Enter Sub catagory" name="catagoryname">
-                  <input type="text" class="form-control" id="catagory" value="{{$c->main_catagoryname}}" placeholder="Enter Main catagory" name="main_catagoryname">
+                    <label for="catagoey" class="form-label">Main Catagory Name:</label>
+                    <input type="text" class="form-control" id="catagory" placeholder="Enter Main catagory" name="name">
+                    <label for="image" class="form-label">Catagory Image:</label>
+                    <input type="file" class="form-control" id="image" placeholder="Enter Main catagory" name="category_img">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -37,6 +37,17 @@
                   </div>
 
                   <div class="mb-3 mt-3">
+                    <label for="catagoey" class="form-label">Main Catagory Name:</label>
+                    <select class="form-select" name="catagory">
+                      <option value="selected disabled hidden">-- Select Main Catagory --</option>
+                        @foreach ($catagory as $c)
+                            <option value="{{$c->main_catagoryname}}">{{$c->main_catagoryname}}</option>
+                        @endforeach
+
+                      </select>
+                  </div>
+
+                  <div class="mb-3 mt-3">
                     <label for="image" class="form-label">Select first image:</label>
                     <input type="file" class="form-control" id="image1" name="images[]" multiple accept="image/*">
                   </div>

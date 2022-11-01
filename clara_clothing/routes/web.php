@@ -1,19 +1,20 @@
 <?php
 
-use App\Http\Controllers\CartController;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\Product;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\MaincatagoriesController;
 use App\Http\Controllers\CustormerproductsController;
-use App\Models\Order;
-use App\Models\Product;
-use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,7 @@ Route::resource('staff', StaffController::class);
 Route::resource('customer', CustomersController::class);
 Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
+Route::resource('maincatagories', MaincatagoriesController::class);
 
 
 

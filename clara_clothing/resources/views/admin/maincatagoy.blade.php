@@ -10,7 +10,7 @@
         @endif
 
         <div class="col-sm-12">
-            <a href="{{route('catagory.create')}}" class="btn btn-primary">Add Catagory</a>
+            <a href="{{route('maincatagories.create')}}" class="btn btn-primary">Add Catagory</a>
             <br>
             <hr>
 
@@ -20,19 +20,19 @@
                     <th>
                         Id
                     </th>
-                    <th>Sub Catagory Name</th>
                     <th>Main Catagory Name</th>
+                    <th>Catagory image</th>
                     <th>Action</th>
                   </tr>
-                  @foreach ($catagory as $c)
+                  @foreach ($maincatagories as $c)
                     <tr>
                         <td>{{$c->id}}</td>
-                        <td>{{$c->catagoryname}}</td>
-                        <td>{{$c->main_catagoryname}}</td>
+                        <td>{{$c->name}}</td>
+                        <td>{{$c->category_img}}</td>
                         <td>
-                            <form action="{{ route('catagory.destroy',$c->id) }}" method="POST">
+                            <form action="{{ route('maincatagories.destroy',$c->id) }}" method="POST">
 
-                                <a class="btn btn-primary" href="{{ route('catagory.edit',$c->id) }}">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('maincatagories.edit',$c->id) }}">Edit</a>
 
                                 @csrf
                                 @method('DELETE')

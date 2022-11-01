@@ -21,7 +21,8 @@
                 @csrf
                 <div class="mb-3 mt-3">
                   <label for="catagoey" class="form-label">Catagory Name:</label>
-                  <input type="text" class="form-control" id="catagory" placeholder="Enter catagory" name="catagoryname">
+                  <input type="text" class="form-control mb-2" id="catagory" placeholder="Enter Sub catagory" name="catagoryname">
+                  <input type="text" class="form-control" id="catagory" placeholder="Enter Main catagory" name="main_catagoryname">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

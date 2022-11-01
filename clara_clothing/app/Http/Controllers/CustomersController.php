@@ -55,7 +55,6 @@ class CustomersController extends Controller
     public function show(Customers $customers)
     {
         $sizetag = DB::select('select * from products');
-        dd($sizetag);
         return view('customer.shop', compact('sizetag'));
     }
 
