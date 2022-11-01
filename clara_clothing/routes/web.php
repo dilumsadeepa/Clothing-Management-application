@@ -13,6 +13,7 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\CustormerproductsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
+use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
@@ -104,8 +105,12 @@ Route::middleware([
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){
+            $id = Auth::user()->id;
             $ccount = DB::table('carts')->count();
-            return view('customer.cus_dashboard', compact('ccount'));
+            $cart = DB::select('select * from carts where cusid = ?',[$id]);
+            $orders = DB::select('select * from orders where cusid = ?',[$id]);
+
+            return view('customer.cus_dashboard', compact('ccount','cart','orders'));
         }
 
     })->name('dashboard');

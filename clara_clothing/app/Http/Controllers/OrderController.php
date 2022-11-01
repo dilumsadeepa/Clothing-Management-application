@@ -19,21 +19,12 @@ class OrderController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        $users = DB::select('select * from customers where userid = ?',[$id]);
+        $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
         $product = Product::all();
-        $order = DB::select('select * from orders where cusid = ?',[$id]);
-        $carts = [];
-        foreach($order as $o){
-            $cat = json_decode($o->products);
-            foreach($cat as $po){
-                foreach($product as $p){
-                    if($po->cartid == $p->id){
-                        $carts[]['name'] = $p->name;
-                    }
-                }
-            }
-        }
-        return view('customer.checkout',compact('users','carts','order'));
+
+        $order = DB::select('select * from orders where pay = 0 limit 1');
+
+        return view('customer.checkout',compact('users','product','order'));
     }
 
     /**
@@ -54,14 +45,19 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
+        $id = $request->cus;
+
         $order = new Order();
 
-        $order->cusid = $request->cus;
+        $order->cusid = $id;
         $order->products = $request->pro;
         $order->total = $request->tot;
+        $order->pay = 0;
         $order->confirm = 0;
 
         $order->save();
+
+        $deleted = DB::delete('delete from carts where cusid = ?',[$id]);
 
         return redirect()->route('order.index');
     }

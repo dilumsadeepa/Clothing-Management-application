@@ -38,7 +38,21 @@ class PaymentController extends Controller
      */
     public function store(StorePaymentRequest $request)
     {
-        //
+        $id = $request->orderid;
+        $pay = new Payment();
+
+        $pay->cusid = $request->cus;
+        $pay->orderid = $id;
+        $pay->payment = $request->payment;
+
+        $pay->save();
+
+        $affected = DB::update(
+            'update orders set pay = 1 where id = ?',
+            [$id]
+        );
+
+        return redirect()->route('dashboard');
     }
 
     /**

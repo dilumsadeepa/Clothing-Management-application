@@ -241,6 +241,25 @@ padding-top: 15px;
 
 {{-- --------------------------------------------------End of Header Section------------------------------------------------- --}}
 
+    @php
+
+        $comorder = 0;
+        $penorder = 0;
+        $allorder = 0;
+
+        foreach ($orders as $o) {
+            if ($o->confirm == 1) {
+                $comorder = $comorder + 1;
+            }
+            if ($o->confirm == 0) {
+                $penorder = $penorder + 1;
+            }
+            $allorder = $allorder + 1;
+        }
+
+    @endphp
+
+
 {{-- --------------------------------------------------Custormer Dashboard------------------------------------------------- --}}
 <div class="wrapper" id="dash">
     <header>Custormer dashboard</header>
@@ -279,11 +298,11 @@ padding-top: 15px;
                         </div>
                         <div>
                           <h4>Total Orders</h4>
-                          <p class="mb-0">Total Orders upto now</p>
+                          <p class="mb-0">Total Orders Comfirmed</p>
                         </div>
                       </div>
                       <div class="align-self-center">
-                        <h2 class="h1 mb-0">18</h2>
+                        <h2 class="h1 mb-0">{{$comorder}}</h2>
                       </div>
                     </div>
                   </div>
@@ -299,11 +318,11 @@ padding-top: 15px;
                         </div>
                         <div>
                           <h4>Completed Orders</h4>
-                          <p class="mb-0">Total Completed Orders</p>
+                          <p class="mb-0">Total Uncomfered Orders</p>
                         </div>
                       </div>
                       <div class="align-self-center">
-                        <h2 class="h1 mb-0">14</h2>
+                        <h2 class="h1 mb-0">{{$penorder}}</h2>
                       </div>
                     </div>
                   </div>
@@ -337,7 +356,7 @@ padding-top: 15px;
                     <div class="d-flex justify-content-between p-md-1">
                       <div class="d-flex flex-row">
                         <div class="align-self-center">
-                          <h2 class="h1 mb-0 me-4">24</h2>
+                          <h2 class="h1 mb-0 me-4">{{$allorder}}</h2>
                         </div>
                         <div>
                           <h4>Total Ordered Items</h4>
@@ -356,6 +375,10 @@ padding-top: 15px;
         </div>
 
       </div>
+
+
+
+
       <div class="content content-2">
         <div class="title">This is Orders</div>
 
@@ -364,146 +387,36 @@ padding-top: 15px;
         <table id="ordertabel" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Order ID</th>
+                    <th>Total</th>
+                    <th>Order Date</th>
+                    <th>Payment</th>
+                    <th>Order Confermation</th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011-07-25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009-01-12</td>
-                    <td>$86,000</td>
-                </tr>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011-04-25</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011-07-25</td>
-                    <td>$170,750</td>
-                </tr>
-                <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009-01-12</td>
-                    <td>$86,000</td>
-                </tr>
-                <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012-03-29</td>
-                    <td>$433,060</td>
-                </tr>
-                <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008-11-28</td>
-                    <td>$162,700</td>
-                </tr>
-                <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2012-12-02</td>
-                    <td>$372,000</td>
-                </tr>
-                <tr>
-                    <td>Herrod Chandler</td>
-                    <td>Sales Assistant</td>
-                    <td>San Francisco</td>
-                    <td>59</td>
-                    <td>2012-08-06</td>
-                    <td>$137,500</td>
-                </tr>
-                <tr>
-                    <td>Rhona Davidson</td>
-                    <td>Integration Specialist</td>
-                    <td>Tokyo</td>
-                    <td>55</td>
-                    <td>2010-10-14</td>
-                    <td>$327,900</td>
-                </tr>
-                <tr>
-                    <td>Colleen Hurst</td>
-                    <td>Javascript Developer</td>
-                    <td>San Francisco</td>
-                    <td>39</td>
-                    <td>2009-09-15</td>
-                    <td>$205,500</td>
-                </tr>
-                <tr>
-                    <td>Sonya Frost</td>
-                    <td>Software Engineer</td>
-                    <td>Edinburgh</td>
-                    <td>23</td>
-                    <td>2008-12-13</td>
-                    <td>$103,600</td>
-                </tr>
-                <tr>
-                    <td>Jena Gaines</td>
-                    <td>Office Manager</td>
-                    <td>London</td>
-                    <td>30</td>
-                    <td>2008-12-19</td>
-                    <td>$90,560</td>
-                </tr>
-                <tr>
-                    <td>Quinn Flynn</td>
-                    <td>Support Lead</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2013-03-03</td>
-                    <td>$342,000</td>
-                </tr>
+                @foreach ($orders as $or)
 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
+                    <tr>
+                        <td>{{$or->id}}</td>
+                        <td>{{$or->total}}</td>
+                        <td>{{$or->created_at}}</td>
+                        @if ($or->pay == 1)
+                            <td>Suuccess</td>
+                        @else
+                            <td>Not Paid</td>
+                        @endif
+                        @if ($or->confirm == 1)
+                            <td>Confiermed</td>
+                        @else
+                            <td>Not Confiermed</td>
+                        @endif
+
+                    </tr>
+
+                @endforeach
+
             </tfoot>
         </table>
 
@@ -639,8 +552,189 @@ padding-top: 15px;
       {{----------------------------------------------------End Of Order dashboard------------------------------------------------------------------------------ --}}
       <div class="content content-3">
         <div class="title">This is a cart</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, debitis nesciunt! Consectetur officiis, libero nobis dolorem pariatur quisquam temporibus. Labore quaerat neque facere itaque laudantium odit veniam consectetur numquam delectus aspernatur, perferendis repellat illo sequi excepturi quos ipsam aliquid est consequuntur.</p>
+
+        @php
+        $total = 0;
+        $cids = [];
+        @endphp
+
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h5 class="mb-0">Cart</h5>
+                </div>
+                <div class="card-body">
+                  @foreach ($cart as $c)
+
+                  <!-- Single item -->
+                  <div class="row mb-3">
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                      <!-- Image -->
+                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                        <img src="{{asset('uploads/'.$c->image1)}}"
+                          class="w-100" alt="Blue Jeans Jacket" />
+                        <a href="#!">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                        </a>
+                      </div>
+                      <!-- Image -->
+                    </div>
+
+                    @php
+                        $cids[]['cartid'] = $c->id;
+                    @endphp
+                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                      <!-- Data -->
+                      <p><strong>{{$c->name}}</strong></p>
+                      <p>Single price - RS. {{$c->price}}</p>
+                      <input type="hidden" id="pri" value="{{$c->price}}">
+                      <p>Size: {{$c->size}}</p>
+
+                        <form action="{{route('cart.destroy',$c->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                                title="Remove item">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+
+                      {{-- <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                        title="Move to the wish list">
+                        <i class="fas fa-heart"></i>
+                      </button> --}}
+                      <!-- Data -->
+                    </div>
+
+                    @php
+                        $total = $total+($c->price * $c->qun);
+                    @endphp
+
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                      <!-- Quantity -->
+                      <div class="d-flex mb-4" style="max-width: 300px">
+                        <!-- <button class="btn btn-primary px-1 me-2" style="max-height: 36px;"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                          <i class="fas fa-minus"></i>
+                        </button> -->
+                       <form action="{{route('cart.update',$c->id)}}" method="post" id="cartform">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-outline">
+                          <input id="qu" min="1" name="qun" value="{{$c->qun}}" type="number" class="form-control" />
+                          <label class="form-label" for="form1">Quantity <button type="submit" class="btn btn-info">ADD</button></label>
+                        </div>
+
+                    </form>
+                        <!-- <button class="btn btn-primary px-1 ms-2" style="max-height: 36px;"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                          <i class="fas fa-plus"></i>
+                        </button> -->
+                      </div>
+                      <!-- Quantity -->
+
+                      <!-- Price -->
+                      <p class="text-start text-md-center">
+                        <strong>Total Amount is RS. </strong><strong id="tot">{{$c->price * $c->qun}}</strong>
+                      </p>
+                      <!-- Price -->
+                    </div>
+                  </div>
+                  <!-- Single item -->
+                  <hr>
+                  @endforeach
+
+                  <hr class="my-4" />
+
+
+                </div>
+              </div>
+
+
+              <div class="card mb-4">
+                <div class="card-body">
+                  <p><strong>Expected shipping delivery</strong></p>
+
+                </div>
+              </div>
+              <div class="card mb-4 mb-lg-0">
+                <div class="card-body">
+                  <p><strong>We accept</strong></p>
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                    alt="Visa" />
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                    alt="American Express" />
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                    alt="Mastercard" />
+                  <img class="me-2" width="45px"
+                    src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg"
+                    alt="PayPal acceptance mark" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h5 class="mb-0">Summary</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                      Products
+                      <span>Rs.{{$total}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                      Delivery
+                      <span>Rs.450</span>
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                      <div>
+                        <strong>Total amount</strong>
+                        <strong>
+                          <p class="mb-0">(including VAT)</p>
+                        </strong>
+                      </div>
+                      @if ($total == 0)
+                        <span><strong>Rs.0</strong></span>
+                      @else
+                        <span><strong>Rs.{{$total + 450}}</strong></span>
+                      @endif
+
+                    </li>
+                  </ul>
+
+                @php
+                  $cartid = json_encode($cids);
+                @endphp
+
+                    <form action="{{route('order.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="cus" value="{{Auth::user()->id}}">
+                        <input type="hidden" name="pro" value="{{$cartid}}">
+                        <input type="hidden" name="tot" value="{{$total + 450}}">
+                        <button type="submit" class="btn btn-primary btn-md btn-block">
+                            Go to checkout
+                        </button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
+
+
+
+
       <div class="content content-4">
         <div class="title">This is Messages</div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim reprehenderit null itaq, odio repellat asperiores vel voluptatem magnam praesentium, eveniet iure ab facere officiis. Quod sequi vel, rem quam provident soluta nihil, eos. Illo oditu omnis cumque praesentium voluptate maxime voluptatibus facilis nulla ipsam quidem mollitia! Veniam, fuga, possimus. Commodi, fugiat aut ut quorioms stu necessitatibus, cumque laborum rem provident tenetur.</p>
