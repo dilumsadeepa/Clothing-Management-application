@@ -95,7 +95,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         if (Auth::user()->roll == 1){
-            $users= User::where('roll','1')->count();
+            $users= User::where('roll','3')->count();
             $orders=Order::count();
             $items=Product::count();
             $rev = Order::sum('total');
