@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Maincatagories;
+use App\Models\Product;
+use App\Models\catagaory;
 use Illuminate\Http\Request;
+use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 
 class MaincatagoriesController extends Controller
 {
@@ -14,9 +17,10 @@ class MaincatagoriesController extends Controller
      */
     public function index()
     {
-        $maincatagories = Maincatagories::latest();
+        $maincatagory = Maincatagories::all();
+        // dd($maincatagory);
     
-        return view('admin.maincatagoy',compact('maincatagories'));
+        return view('admin.maincatagoy',compact('maincatagory'));
     }
 
     /**
@@ -37,16 +41,17 @@ class MaincatagoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $formFields = $request->validate([
             'name' => 'required',
         ]);
 
         
         if($request->hasFile('catagory_img')){
-            $formFields['catagory_img'] = $request->file('catagory_img')->store('catagory_images' ,'public/images');
+            $formFields['catagory_img'] = $request->file('catagory_img')->store('catagory_images' ,'public');
         }
+        
     
-        Maincatagories::create($request->all());
+        Maincatagories::create($formFields);
      
         return redirect()->route('maincatagories.index')
                         ->with('success','Main Category created successfully.');
@@ -58,9 +63,15 @@ class MaincatagoriesController extends Controller
      * @param  \App\Models\Maincatagories  $maincatagories
      * @return \Illuminate\Http\Response
      */
-    public function show(Maincatagories $maincatagories)
+    public function show(Request $request, $name, Maincatagories  $maincatagories)
     {
-        //
+        $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
+        $cat = catagaory::all();
+        $sizes = DB::select('select distinct size from products');
+        $maincatagory = DB::select("select * from products where main_catagory = '$name'");
+        return view('customer.catagoryshop', [
+            'maincatagories' => $maincatagories,
+        ], compact('products','cat','sizes','maincatagory'));
     }
 
     /**
@@ -69,9 +80,10 @@ class MaincatagoriesController extends Controller
      * @param  \App\Models\Maincatagories  $maincatagories
      * @return \Illuminate\Http\Response
      */
-    public function edit(Maincatagories $maincatagories)
+    public function edit($id)
     {
-        return view('maincatagories.edit',compact('maincatagories'));
+        $maincatagories = Maincatagories::find($id);
+        return view('admin.maincategoryedit',compact('maincatagories'));
     }
 
     /**
@@ -81,18 +93,20 @@ class MaincatagoriesController extends Controller
      * @param  \App\Models\Maincatagories  $maincatagories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Maincatagories $maincatagories)
+    public function update(Request $request, $id)
     {
-        $request->validate([
+        $maincatagories = Maincatagories::find($id);
+        $formFields = $request->validate([
             'name' => 'required',
         ]);
 
         
         if($request->hasFile('catagory_img')){
-            $formFields['catagory_img'] = $request->file('catagory_img')->store('catagory_images' ,'public/images');
+            $formFields['catagory_img'] = $request->file('catagory_img')->store('catagory_images' ,'public');
         }
     
-        $maincatagories::update($request->all());
+        $maincatagories->update($formFields);
+    
      
         return redirect()->route('maincatagories.index')
                         ->with('success','Main Category updated successfully.');
@@ -104,11 +118,16 @@ class MaincatagoriesController extends Controller
      * @param  \App\Models\Maincatagories  $maincatagories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Maincatagories $maincatagories)
+    public function destroy($id)
     {
+        $maincatagories = Maincatagories::find($id);
         $maincatagories->delete();
     
         return redirect()->route('maincatagories.index')
                         ->with('success','Category deleted Successfully');
     }
+
+
+
+
 }

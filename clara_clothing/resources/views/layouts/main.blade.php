@@ -179,12 +179,12 @@
         </li>
 
         <li>
-          <a href="{{route('maincategories.index')}}">
+          <a href="{{route('maincatagories.index')}}">
           <i class="bi bi-circle"></i><span>All Main Catagories</span>
           </a>
       </li>
       <li>
-          <a href="{{route('maincategories.create')}}">
+          <a href="{{route('maincatagories.create')}}">
           <i class="bi bi-circle"></i><span>Add Main Catagory</span>
           </a>
       </li>

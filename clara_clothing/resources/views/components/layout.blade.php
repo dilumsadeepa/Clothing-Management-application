@@ -33,60 +33,21 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
+
+              @foreach ($maincatagory as $m)
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Men
+                  {{$m->main_catagoryname}}
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">All Clothing</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirt</a></li>
-                  <li><a class="dropdown-item" href="#">Formal Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Formal Trousers</a></li>
-                  <li><a class="dropdown-item" href="#">Casual Trousers</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  @foreach ($cat as $c)
+                  <li><a class="dropdown-item" href="#">{{$c->catagoryname}}</a></li>
+                  @endforeach
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Women
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
-                  <li><a class="dropdown-item" href="#">Dresses</a></li>
-                  <li><a class="dropdown-item" href="#">Tops</a></li>
-                  <li><a class="dropdown-item" href="#">pants</a></li>
-                  <li><a class="dropdown-item" href="#">Jeans</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Skirts</a></li>
-                  <li><a class="dropdown-item" href="#">Overcoats</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Kids
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Kids</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">All Boys</a></li>
-                  <li><a class="dropdown-item" href="#">Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Pants</a></li>
-                  <li><a class="dropdown-item" href="#">shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">All Girls</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">T-Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Dresses</a></li>
-                  <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
-                </ul>
-              </li>
+              @endforeach
+             
 
               @auth
 
@@ -159,7 +120,7 @@
             {{-- -------------------------------------------Main Content Goes Here------------------------------------ --}}
 
 
-            {{$slot}}
+        
 
 
 

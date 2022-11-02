@@ -27,18 +27,18 @@
 
                 <div class="mb-3 mt-3">
                     <label for="catagoey" class="form-label">Catagory Name:</label>
-                    <select class="form-select" name="catagory">
+                    <select class="form-select" name="main_catagory" id="catagoey">
                         <option value="{{$product->catagory}}">{{$product->catagory}}"</option>
-                        @foreach ($catagory as $c)
-                            <option value="{{$c->catagoryname}}">{{$c->catagoryname}}</option>
+                        @foreach ($maincat as $m)
+                            <option value="{{$m->name}}">{{$m->name}}</option>
                         @endforeach
 
                       </select>
                   </div>
 
                   <div class="mb-3 mt-3">
-                    <label for="catagoey" class="form-label">Main Catagory Name:</label>
-                    <select class="form-select" name="catagory">
+                    <label for="mcatagoey" class="form-label">Main Catagory Name:</label>
+                    <select class="form-select" name="catagory" id="mcatagoey">
                         <option value="{{$product->main_catagory}}">{{$product->main_catagory}}"</option>
                         @foreach ($catagory as $c)
                             <option value="{{$c->main_catagoryname}}">{{$c->main_catagoryname}}</option>
@@ -64,7 +64,7 @@
                   </div>
 
                   <div class="mb-3 mt-3">
-                    <label for="name" class="form-label">Product Size:</label>
+                    <label for="name" class="form-label">Product Size: <span class="text-muted">(Give as S, M, L, XL)</label>
                     <input type="text" class="form-control" id="size" placeholder="Enter Product Size" name="size">
                   </div>
 

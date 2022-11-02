@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('main_catagories', function (Blueprint $table) {
+        Schema::create('maincatagories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('catagory_img'); 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('main_catagories');
+        Schema::dropIfExists('maincatagories');
     }
 };

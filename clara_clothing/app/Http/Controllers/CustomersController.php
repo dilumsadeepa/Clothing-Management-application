@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customers;
 use App\Models\Product;
 use App\Models\catagaory;
+use App\Models\Customers;
+use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
-use Illuminate\Support\Facades\DB;
 
 class CustomersController extends Controller
 {

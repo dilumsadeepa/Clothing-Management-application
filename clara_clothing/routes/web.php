@@ -4,6 +4,7 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 
+use App\Models\Maincatagories;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\NavbaritemsController;
 use App\Http\Controllers\MaincatagoriesController;
 use App\Http\Controllers\CustormerproductsController;
 
@@ -33,8 +35,11 @@ use App\Http\Controllers\CustormerproductsController;
 
 Route::get('/', function(){
     $product = Product::all();
-    return view('customer.index', compact('product'));
+    $maincats = Maincatagories::all();
+    return view('customer.index', compact('product','maincats'));
 })->name('home');
+
+
 
 
 Route::get('/custormer', [CustomersController::class, 'index'])->name('shop');
@@ -111,6 +116,8 @@ Route::middleware([
 
 
 Route::get('/shop/product/{product}',[CustormerproductsController::class, 'show']);
+Route::get('/maincatagories/{{$maincatagories}}',[MaincatagoriesController::class, 'show']);
+Route::get('/',[NavbaritemsController::class, 'index']);
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
@@ -124,6 +131,7 @@ Route::resource('customer', CustomersController::class);
 Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
 Route::resource('maincatagories', MaincatagoriesController::class);
+Route::resource('navbaritems', NavbaritemsController::class);
 
 
 

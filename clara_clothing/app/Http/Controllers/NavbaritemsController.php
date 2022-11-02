@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\catagaory;
+use App\Models\Navbaritems;
 use Illuminate\Http\Request;
 use App\Models\Maincatagories;
 use Illuminate\Support\Facades\DB;
 
-class CustormerproductsController extends Controller
+class NavbaritemsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,11 @@ class CustormerproductsController extends Controller
      */
     public function index()
     {
-      
+        $product = Product::all();
+        $maincats = Maincatagories::all();
+        $cat = catagaory::all();
+        $maincatagory = DB::select("select distinct main_catagoryname from catagaories");
+        return view('components.layout',compact('product','maincats','cat','maincatagory'));
     }
 
     /**
@@ -43,23 +49,21 @@ class CustormerproductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Navbaritems  $navbaritems
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Navbaritems $navbaritems)
     {
-        $product = Product::find($id);
-        $all = DB::select('select * from products limit 10');
-        return view('customer.show', compact('product','all'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Navbaritems  $navbaritems
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Navbaritems $navbaritems)
     {
         //
     }
@@ -68,10 +72,10 @@ class CustormerproductsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Navbaritems  $navbaritems
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Navbaritems $navbaritems)
     {
         //
     }
@@ -79,10 +83,10 @@ class CustormerproductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Navbaritems  $navbaritems
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Navbaritems $navbaritems)
     {
         //
     }

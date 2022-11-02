@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\catagaory;
+use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -29,7 +30,8 @@ class ProductController extends Controller
     public function create()
     {
         $catagory = catagaory::all();
-        return view('admin.productadd', compact('catagory'));
+        $maincats = Maincatagories::all();
+        return view('admin.productadd', compact('catagory','maincats'));
     }
 
     /**
@@ -119,7 +121,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $catagory = catagaory::all();
-        return view('admin.productedit', compact('product','catagory'));
+        $maincat = Maincatagories::all();
+        return view('admin.productedit', compact('product','catagory','maincat'));
     }
 
     /**

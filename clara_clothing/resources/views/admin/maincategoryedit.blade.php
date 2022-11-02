@@ -17,21 +17,20 @@
         @endif
 
         <div class="col-sm-12">
-            @foreach ($maincategories as $c)
 
-            <form action="{{route('maincategories.update', $c->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('maincatagories.update',$maincatagories->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3 mt-3">
                     <label for="catagoey" class="form-label">Main Catagory Name:</label>
-                    <input type="text" class="form-control" id="catagory" placeholder="Enter Main catagory" name="name">
+                    <input type="text" class="form-control" id="catagory" placeholder="Enter Main catagory" name="name" value="{{$maincatagories->name}}">
                     <label for="image" class="form-label">Catagory Image:</label>
-                    <input type="file" class="form-control" id="image" placeholder="Enter Main catagory" name="category_img">
+                    <input type="file" class="form-control" id="image" placeholder="Enter Main catagory" name="catagory_img" value="{{$maincatagories->catagory_img}}">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
-              @endforeach
+ 
         </div>
     </div>
 

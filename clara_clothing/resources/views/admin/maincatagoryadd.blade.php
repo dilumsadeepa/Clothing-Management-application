@@ -21,9 +21,9 @@
                 @csrf
                 <div class="mb-3 mt-3">
                   <label for="catagoey" class="form-label">Main Catagory Name:</label>
-                  <input type="text" class="form-control" id="catagory" placeholder="Enter Main catagory" name="name">
-                  <label for="image" class="form-label">Catagory Image:</label>
-                  <input type="file" class="form-control" id="image" placeholder="Enter Main catagory" name="category_img">
+                  <input type="text" class="form-control" id="catagoey" placeholder="Enter Main catagory" name="name">
+                  <label for="images" class="form-label">Catagory Image:</label>
+                  <input type="file" class="form-control" id="images" placeholder="Add Catagory Image" name="catagory_img">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

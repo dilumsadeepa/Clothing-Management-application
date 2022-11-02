@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\catagaory;
-use App\Http\Requests\StorecatagaoryRequest;
-use App\Http\Requests\UpdatecatagaoryRequest;
+use App\Models\Maincatagories;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
+use App\Http\Requests\StorecatagaoryRequest;
+use App\Http\Requests\UpdatecatagaoryRequest;
 
 class CatagaoryController extends Controller
 {
@@ -28,7 +29,8 @@ class CatagaoryController extends Controller
      */
     public function create()
     {
-        return view('admin.catagoruadd');
+        $maincats = Maincatagories::all();
+        return view('admin.catagoruadd',compact('maincats'));
     }
 
     /**
@@ -63,7 +65,7 @@ class CatagaoryController extends Controller
      */
     public function show(catagaory $catagaory)
     {
-        //
+
     }
 
     /**
@@ -77,7 +79,8 @@ class CatagaoryController extends Controller
         // return $catagaory;
         // $cat = DB::select('select * from catagaories where id = ?', [$catagaory]);
         $cat = catagaory::all();
-        return view('admin.catagoryedit', compact('cat'));
+        $maincat = Maincatagories::all();
+        return view('admin.catagoryedit', compact('cat','maincat'));
         // dd($catagaory);
 
         // return view('admin.catagoryedit', ['catagaory' => $catagaory]);

@@ -23,9 +23,17 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3 mt-3">
-                  <label for="catagoey" class="form-label">Catagory Name:</label>
+                  <label for="catagory" class="form-label">Catagory Name:</label>
                   <input type="text" class="form-control mb-2" id="catagory" value="{{$c->catagoryname}}" placeholder="Enter Sub catagory" name="catagoryname">
-                  <input type="text" class="form-control" id="catagory" value="{{$c->main_catagoryname}}" placeholder="Enter Main catagory" name="main_catagoryname">
+                  <label for="maincatagoey" class="form-label">Main Catagory Name:</label>
+                  <input type="text" class="form-control" id="maincatagory" value="{{$c->main_catagoryname}}" placeholder="Enter Main catagory" name="main_catagoryname">
+                  <select class="form-select" name="main_catagoryname" id="maincatagory">
+                    <option value="selected disabled hidden">-- Select Main Catagory --</option>
+                      @foreach ($maincat as $c)
+                          <option value="{{$c->name}}">{{$c->name}}</option>
+                      @endforeach
+
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
