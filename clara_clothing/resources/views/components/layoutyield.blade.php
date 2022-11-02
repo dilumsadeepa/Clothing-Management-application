@@ -20,23 +20,6 @@
     </button>
 
 
-@php
-    use App\Models\catagaory;
-    // use App\Models\Product;
-    use App\Models\Navbaritems;
-    // use Illuminate\Http\Request;
-    // use App\Models\Maincatagories;
-    use Illuminate\Support\Facades\DB;
-        // $product = Product::all();
-        // $maincats = Maincatagories::all();
-        // $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
-        // $cat = catagaory::all();
-        // $sizes = DB::select('select distinct size from products');
-        $maincatss = DB::select("select distinct main_catagoryname from catagaories");
-        $subcats = DB::select("select * from catagaories");
-@endphp
-
-
     {{-----------------------------------------NAVBAR Start------------------------------------------------------------- --}}
 
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
@@ -51,28 +34,38 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
 
-
-
-              @foreach ($maincatss as $m)
+               @foreach ($maincatss as $m)
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-target="{{route('maincatagories.show',$m->main_catagoryname)}}" href="{{route('maincatagories.show',$m->main_catagoryname)}}" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <a class="nav-link dropdown-toggle" href="/maincatagories/{{$m->main_catagoryname}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{$m->main_catagoryname}}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{route('maincatagories.show',$m->main_catagoryname)}}">All Clothing</a></li>
-                  @foreach ($subcats as $c)
-                  @if ($c->main_catagoryname == $m->main_catagoryname)
-                  <li><a class="dropdown-item" href="{{route('navbaritems.show',$c->catagoryname)}}">{{$c->catagoryname}} </a></li>
-                  @endif
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  @foreach ($cat as $c)
+                  <li><a class="dropdown-item" href="#">{{$c->catagoryname}}</a></li>
                   @endforeach
                 </ul>
               </li>
               @endforeach 
+             
 
-               
+
+{{-- 
+              @foreach ($maincatss as $m)
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{$m->main_catagoryname}}
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
+                  @foreach ($cat as $c)
+                  <li><a class="dropdown-item" href="#">{{$c->catagoryname}}</a></li>
+                  @endforeach
+                </ul>
+              </li>
+              @endforeach  --}}
 
 
-           
 
               @auth
 
@@ -135,7 +128,7 @@
         </div>
       </nav>
 
-
+        {{-- ----------------------------------------------Scroll to top button -------------------------------------------------------- --}}
 
 
           {{-----------------------------------------NAVBAR END------------------------------------------------------------- --}}
@@ -146,7 +139,7 @@
 
 
         
-      {{$slot}}
+        @yield('content')
 
 
 

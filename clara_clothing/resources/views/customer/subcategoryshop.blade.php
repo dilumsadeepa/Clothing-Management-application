@@ -74,27 +74,6 @@
     
                     <h6 class="font-weight-bold mb-3">Price</h6>
     
-                    {{-- <div class="form-check pl-0 mb-3">
-                      <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under
-                        Rs.1000</label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="2550">Rs.1000 to Rs.2000</label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="50100">Rs.2000 to Rs.3000</label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="100200">Rs.3000 to Rs.5000</label>
-                    </div>
-                    <div class="form-check pl-0 mb-3">
-                      <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="200above">Rs.5000 & Above</label>
-                    </div> --}}
     
                     
                     <form action="/customer/">
@@ -187,7 +166,7 @@
                   <!-- Grid column -->
     
                     <!-- Card -->
-                    @foreach($maincatagory as $product)
+                    @foreach($subcatagory as $product)
                     <x-card :product="$product" />
                     @endforeach
                     <!-- Card -->
@@ -200,7 +179,7 @@
     
               <!-- Section: Block Content -->
               <section>
-                {{-- {{$products->links('pagination::bootstrap-5')}} --}}
+                {{$products->links('pagination::bootstrap-5')}}
                 </div>
     
               </section>

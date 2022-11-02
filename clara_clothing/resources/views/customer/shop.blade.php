@@ -201,7 +201,7 @@
 
           <!-- Section: Block Content -->
           <section>
-            {{-- {{$products->links('pagination::bootstrap-5')}} --}}
+            {{$products->links('pagination::bootstrap-5')}}
             </div>
 
           </section>

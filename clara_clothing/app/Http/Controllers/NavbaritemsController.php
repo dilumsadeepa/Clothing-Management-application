@@ -18,11 +18,19 @@ class NavbaritemsController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
+        // $product = Product::all();
+        // $maincats = Maincatagories::all();
+        // $cat = catagaory::all();
+        // $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+        // return view('partials.navbar',compact('product','maincats','cat','maincatss'));
+
+        $product = DB::select('select * from products limit 8');
         $maincats = Maincatagories::all();
+        $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
         $cat = catagaory::all();
-        $maincatagory = DB::select("select distinct main_catagoryname from catagaories");
-        return view('components.layout',compact('product','maincats','cat','maincatagory'));
+        $sizes = DB::select('select distinct size from products');
+        $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+        return view('customer.index', compact('product','maincats','products','cat','sizes','maincatss'));
     }
 
     /**
@@ -52,9 +60,15 @@ class NavbaritemsController extends Controller
      * @param  \App\Models\Navbaritems  $navbaritems
      * @return \Illuminate\Http\Response
      */
-    public function show(Navbaritems $navbaritems)
+    public function show(Request $request, $catagoryname, Navbaritems  $navbaritems)
     {
-        //
+        $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
+        $cat = catagaory::all();
+        $sizes = DB::select('select distinct size from products');
+        $subcatagory = DB::select("select * from products where catagory = '$catagoryname'");
+        return view('customer.subcategoryshop', [
+            'navbaritems' => $navbaritems,
+        ], compact('products','cat','sizes','subcatagory'));
     }
 
     /**

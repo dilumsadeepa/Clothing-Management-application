@@ -69,6 +69,7 @@ class MaincatagoriesController extends Controller
         $cat = catagaory::all();
         $sizes = DB::select('select distinct size from products');
         $maincatagory = DB::select("select * from products where main_catagory = '$name'");
+
         return view('customer.catagoryshop', [
             'maincatagories' => $maincatagories,
         ], compact('products','cat','sizes','maincatagory'));

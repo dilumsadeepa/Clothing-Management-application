@@ -4,7 +4,9 @@ use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 
+use App\Models\catagaory;
 use App\Models\Maincatagories;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -33,11 +35,22 @@ use App\Http\Controllers\CustormerproductsController;
 
 // Route::get('/',[CustomersController::class, 'index'])->name('home');
 
-Route::get('/', function(){
-    $product = Product::all();
-    $maincats = Maincatagories::all();
-    return view('customer.index', compact('product','maincats'));
-})->name('home');
+// Route::get('/', function(){
+//     $product = Product::all();
+//     $maincats = Maincatagories::all();
+//     return view('customer.index', compact('product','maincats'));
+// })->name('home');
+
+
+// Route::get('/', function(){
+//     $product = Product::all();
+//     $maincats = Maincatagories::all();
+//     $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
+//     $cat = catagaory::all();
+//     $sizes = DB::select('select distinct size from products');
+//     $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+//     return view('customer.index', compact('product','maincats','products','cat','sizes','maincatss'));
+// })->name('home');
 
 
 
@@ -116,8 +129,10 @@ Route::middleware([
 
 
 Route::get('/shop/product/{product}',[CustormerproductsController::class, 'show']);
+Route::get('/subcatagories/{{$navbaritems}}',[NavbaritemsController::class, 'show']);
 Route::get('/maincatagories/{{$maincatagories}}',[MaincatagoriesController::class, 'show']);
-Route::get('/',[NavbaritemsController::class, 'index']);
+// Route::get('/',[NavbaritemsController::class, 'index'])->name('home');
+
 
 Route::resource('suppliers', SupplierController::class);
 Route::resource('catagory', CatagaoryController::class);
@@ -133,5 +148,5 @@ Route::resource('cart', CartController::class);
 Route::resource('maincatagories', MaincatagoriesController::class);
 Route::resource('navbaritems', NavbaritemsController::class);
 
-
+Route::get('/',[NavbaritemsController::class, 'index'])->name('home');
 
