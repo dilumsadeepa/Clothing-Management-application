@@ -79,7 +79,7 @@
 <div class="container my-5 d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       
-      @foreach ($maincats as $maincat)
+      @foreach ($maincatsss as $maincat)
       <div class="col category-box">
           <div class="card card-image rounded-0" style="
             background:rgba(0, 0, 0, 0.5)url({{asset('storage/'.$maincat->catagory_img)}});

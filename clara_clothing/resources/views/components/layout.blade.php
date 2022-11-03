@@ -22,7 +22,7 @@
 
 @php
     use App\Models\catagaory;
-    // use App\Models\Product;
+    use App\Models\Product;
     use App\Models\Navbaritems;
     // use Illuminate\Http\Request;
     // use App\Models\Maincatagories;
@@ -33,6 +33,7 @@
         // $cat = catagaory::all();
         // $sizes = DB::select('select distinct size from products');
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+        $maincatsss = DB::select('SELECT * FROM maincatagories WHERE catagory_img IS NOT NULL');
         $subcats = DB::select("select * from catagaories");
 @endphp
 

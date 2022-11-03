@@ -25,12 +25,14 @@ class NavbaritemsController extends Controller
         // return view('partials.navbar',compact('product','maincats','cat','maincatss'));
 
         $product = DB::select('select * from products limit 8');
+        // $product = Product::paginate(8)->filter(request(['cat','psearch','search','sizes','pmin','pmax']));
         $maincats = Maincatagories::all();
+        $maincatsss = DB::select('SELECT * FROM maincatagories WHERE catagory_img IS NOT NULL');
         $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
         $cat = catagaory::all();
         $sizes = DB::select('select distinct size from products');
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
-        return view('customer.index', compact('product','maincats','products','cat','sizes','maincatss'));
+        return view('customer.index', compact('product','maincats','products','cat','sizes','maincatss','maincatsss'));
     }
 
     /**
