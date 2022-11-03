@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Maincatagories;
 use Illuminate\Support\Facades\DB;
 
 class CustormerproductsController extends Controller
@@ -15,7 +16,7 @@ class CustormerproductsController extends Controller
      */
     public function index()
     {
-
+      
     }
 
     /**

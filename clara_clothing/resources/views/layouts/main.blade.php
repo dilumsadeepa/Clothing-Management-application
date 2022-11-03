@@ -178,6 +178,17 @@
             </a>
         </li>
 
+        <li>
+          <a href="{{route('maincatagories.index')}}">
+          <i class="bi bi-circle"></i><span>All Main Catagories</span>
+          </a>
+      </li>
+      <li>
+          <a href="{{route('maincatagories.create')}}">
+          <i class="bi bi-circle"></i><span>Add Main Catagory</span>
+          </a>
+      </li>
+
         </ul>
     </li><!-- End supplier Nav -->
 
@@ -309,6 +320,7 @@
         <i class="bi bi-circle"></i><span>Add Catagory</span>
         </a>
     </li>
+
 
     </ul>
 </li><!-- End supplier Nav -->

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customers;
 use App\Models\Product;
 use App\Models\catagaory;
+use App\Models\Customers;
+use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
-use Illuminate\Support\Facades\DB;
 
 class CustomersController extends Controller
 {
@@ -18,7 +19,7 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->filter(request(['cat','psearch','search','pmin','pmax','sizes']))->paginate(6);
+        $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
         $cat = catagaory::all();
         $sizes = DB::select('select distinct size from products');
         return view('customer.shop', compact('products','cat','sizes'));
@@ -55,7 +56,6 @@ class CustomersController extends Controller
     public function show(Customers $customers)
     {
         $sizetag = DB::select('select * from products');
-        dd($sizetag);
         return view('customer.shop', compact('sizetag'));
     }
 

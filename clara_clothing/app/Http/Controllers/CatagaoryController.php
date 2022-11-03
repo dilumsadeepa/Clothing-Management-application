@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\catagaory;
-use App\Http\Requests\StorecatagaoryRequest;
-use App\Http\Requests\UpdatecatagaoryRequest;
+use App\Models\Maincatagories;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
+use App\Http\Requests\StorecatagaoryRequest;
+use App\Http\Requests\UpdatecatagaoryRequest;
 
 class CatagaoryController extends Controller
 {
@@ -28,7 +29,8 @@ class CatagaoryController extends Controller
      */
     public function create()
     {
-        return view('admin.catagoruadd');
+        $maincats = Maincatagories::all();
+        return view('admin.catagoruadd',compact('maincats'));
     }
 
     /**
@@ -41,11 +43,13 @@ class CatagaoryController extends Controller
     {
         $request->validate([
             'catagoryname' => 'required|max:255',
+            'main_catagoryname' => 'required|max:255',
         ]);
 
         $catagory = new catagaory();
 
         $catagory->catagoryname = $request->catagoryname;
+        $catagory->main_catagoryname = $request->main_catagoryname;
 
         $catagory->save();
 
@@ -61,7 +65,7 @@ class CatagaoryController extends Controller
      */
     public function show(catagaory $catagaory)
     {
-        //
+
     }
 
     /**
@@ -72,9 +76,14 @@ class CatagaoryController extends Controller
      */
     public function edit(catagaory $catagaory)
     {
-        return $catagaory;
-        //$cat = DB::select('select * from catagaories where id = ?', [$catagaory]);
-        //return view('admin.catagoryedit', compact('cat'));
+        // return $catagaory;
+        // $cat = DB::select('select * from catagaories where id = ?', [$catagaory]);
+        $cat = catagaory::all();
+        $maincat = Maincatagories::all();
+        return view('admin.catagoryedit', compact('cat','maincat'));
+        // dd($catagaory);
+
+        // return view('admin.catagoryedit', ['catagaory' => $catagaory]);
     }
 
     /**
@@ -86,8 +95,19 @@ class CatagaoryController extends Controller
      */
     public function update(UpdatecatagaoryRequest $request, catagaory $catagaory)
     {
-        //
+      
+        $request->validate([
+            'catagoryname' => 'required|max:255',
+            'main_catagoryname' => 'required|max:255',
+        ]);
+
+
+        $catagaory->update($request->all());
+
+        return redirect()->route('catagory.index')
+                        ->with('success','Catagory updated successfully');
     }
+    
 
     /**
      * Remove the specified resource from storage.

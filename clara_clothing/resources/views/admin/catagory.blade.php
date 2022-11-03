@@ -20,13 +20,15 @@
                     <th>
                         Id
                     </th>
-                    <th>Catagory Name</th>
+                    <th>Sub Catagory Name</th>
+                    <th>Main Catagory Name</th>
                     <th>Action</th>
                   </tr>
                   @foreach ($catagory as $c)
                     <tr>
                         <td>{{$c->id}}</td>
                         <td>{{$c->catagoryname}}</td>
+                        <td>{{$c->main_catagoryname}}</td>
                         <td>
                             <form action="{{ route('catagory.destroy',$c->id) }}" method="POST">
 

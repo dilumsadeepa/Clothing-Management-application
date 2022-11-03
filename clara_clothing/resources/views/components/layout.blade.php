@@ -20,6 +20,24 @@
     </button>
 
 
+@php
+    use App\Models\catagaory;
+    use App\Models\Product;
+    use App\Models\Navbaritems;
+    // use Illuminate\Http\Request;
+    // use App\Models\Maincatagories;
+    use Illuminate\Support\Facades\DB;
+        // $product = Product::all();
+        // $maincats = Maincatagories::all();
+        // $products = Product::latest()->filter(request(['cat','psearch','search','sizes','pmin','pmax']))->paginate(6);
+        // $cat = catagaory::all();
+        // $sizes = DB::select('select distinct size from products');
+        $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+        $maincatsss = DB::select('SELECT * FROM maincatagories WHERE catagory_img IS NOT NULL');
+        $subcats = DB::select("select * from catagaories");
+@endphp
+
+
     {{-----------------------------------------NAVBAR Start------------------------------------------------------------- --}}
 
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
@@ -33,60 +51,29 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
+
+
+
+              @foreach ($maincatss as $m)
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Men
+                <a class="nav-link dropdown-toggle" data-target="{{route('maincatagories.show',$m->main_catagoryname)}}" href="{{route('maincatagories.show',$m->main_catagoryname)}}" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  {{$m->main_catagoryname}}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirt</a></li>
-                  <li><a class="dropdown-item" href="#">Formal Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Formal Trousers</a></li>
-                  <li><a class="dropdown-item" href="#">Casual Trousers</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  <li><a class="dropdown-item" href="{{route('maincatagories.show',$m->main_catagoryname)}}">All Clothing</a></li>
+                  @foreach ($subcats as $c)
+                  @if ($c->main_catagoryname == $m->main_catagoryname)
+                  <li><a class="dropdown-item" href="{{route('navbaritems.show',$c->catagoryname)}}">{{$c->catagoryname}} </a></li>
+                  @endif
+                  @endforeach
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Women
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Clothing</a></li>
-                  <li><a class="dropdown-item" href="#">Dresses</a></li>
-                  <li><a class="dropdown-item" href="#">Tops</a></li>
-                  <li><a class="dropdown-item" href="#">pants</a></li>
-                  <li><a class="dropdown-item" href="#">Jeans</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Skirts</a></li>
-                  <li><a class="dropdown-item" href="#">Overcoats</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Kids
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Kids</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">All Boys</a></li>
-                  <li><a class="dropdown-item" href="#">Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Pants</a></li>
-                  <li><a class="dropdown-item" href="#">shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">All Girls</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">T-Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Dresses</a></li>
-                  <li><a class="dropdown-item" href="#">Pants & Leggings</a></li>
-                  <li><a class="dropdown-item" href="#">Shorts</a></li>
-                  <li><a class="dropdown-item" href="#">Nightwear</a></li>
-                </ul>
-              </li>
+              @endforeach 
+
+               
+
+
+           
 
               @auth
 
@@ -149,7 +136,7 @@
         </div>
       </nav>
 
-        {{-- ----------------------------------------------Scroll to top button -------------------------------------------------------- --}}
+
 
 
           {{-----------------------------------------NAVBAR END------------------------------------------------------------- --}}
@@ -159,8 +146,8 @@
             {{-- -------------------------------------------Main Content Goes Here------------------------------------ --}}
 
 
-            {{$slot}}
-
+        
+      {{$slot}}
 
 
 

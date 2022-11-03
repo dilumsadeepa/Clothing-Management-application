@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('catagory');
+            $table->string('main_catagory');
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('size');
             $table->string('code');
             $table->string('des');
-            $table->string('stockid');
+            $table->string('stockid')->nullable();
             $table->string('status');
             $table->timestamps();
         });
