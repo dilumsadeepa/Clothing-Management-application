@@ -187,7 +187,7 @@
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-          <a href="{{route('catagory.index')}}">
+          <a href="{{route('ordercon.index')}}">
           <i class="bi bi-circle"></i><span>All Orders</span>
           </a>
       </li>

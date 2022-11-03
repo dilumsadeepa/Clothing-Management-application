@@ -11,6 +11,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\CustormerproductsController;
+use App\Http\Controllers\Orderconform;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Models\Cart;
@@ -133,6 +134,6 @@ Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
 Route::resource('pay', PaymentController::class);
 Route::resource('order', OrderController::class);
-
+Route::resource('ordercon',Orderconform::class);
 
 
