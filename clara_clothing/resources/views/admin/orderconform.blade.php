@@ -23,22 +23,26 @@
                 <td>{{$o->cusid}}</td>
                 <td>{{$o->products}}</td>
                 <td>{{$o->total}}</td>
-                <td>{{$o->confirm}}</td>
-                
+                 @if($o->confirm==1)
+                    <td>Conform</td>
+                 @else
+                    <td>Pending</td>   
+                 @endif   
                 <td>
-                    <form action="{{ route('ordercon.destroy',$o->id) }}" method="POST">
-
+                    <form action="{{ route('ordercon.update',$o->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
                         <label for="color">Satatus</label>
-                    <select name="color" id="color">
-                        <option value="">Select</option>
-                        <option value="red">Red</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
+                    <select name="st" id="color">
+                        <option value="1">Conform</option>
+                        <option value="0">Pending</option>
+                        
                     </select>
 
-                        <a class="btn btn-primary" href="{{ route('ordercon.edit',$o->id) }}">Edit</a>
+                    <button type="submit" class="btn btn-success" >Edite</button>
+                        
 
-                        @csrf
+                        
                         
                     </form>
                 </td>

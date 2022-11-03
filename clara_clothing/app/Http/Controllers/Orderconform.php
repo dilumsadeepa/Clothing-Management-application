@@ -69,8 +69,12 @@ class Orderconform extends Controller
      */
     public function edit(Todo $todo)
     {
-        //
+        
+        return '111';
     }
+
+
+    
 
     /**
      * Update the specified resource in storage.
@@ -79,9 +83,13 @@ class Orderconform extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(Request $request, $id)
     {
         //
+        $stu=$request->st;
+        $update=DB::update('update orders set confirm = ? where id = ?',
+        [$stu,$id]);
+        return back();
     }
 
     /**
