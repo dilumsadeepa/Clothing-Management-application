@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,7 +18,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+        $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
+        $product = Product::all();
+
+        $order = DB::select('select * from orders where pay = 0 limit 1');
+
+        return view('customer.checkout',compact('users','product','order'));
     }
 
     /**
@@ -36,7 +45,21 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+        $id = $request->cus;
+
+        $order = new Order();
+
+        $order->cusid = $id;
+        $order->products = $request->pro;
+        $order->total = $request->tot;
+        $order->pay = 0;
+        $order->confirm = 0;
+
+        $order->save();
+
+        $deleted = DB::delete('delete from carts where cusid = ?',[$id]);
+
+        return redirect()->route('order.index');
     }
 
     /**

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use App\Http\Requests\StorePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -15,7 +17,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -36,7 +38,21 @@ class PaymentController extends Controller
      */
     public function store(StorePaymentRequest $request)
     {
-        //
+        $id = $request->orderid;
+        $pay = new Payment();
+
+        $pay->cusid = $request->cus;
+        $pay->orderid = $id;
+        $pay->payment = $request->payment;
+
+        $pay->save();
+
+        $affected = DB::update(
+            'update orders set pay = 1 where id = ?',
+            [$id]
+        );
+
+        return redirect()->route('dashboard');
     }
 
     /**

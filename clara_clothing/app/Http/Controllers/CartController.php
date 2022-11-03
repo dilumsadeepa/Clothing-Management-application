@@ -21,6 +21,7 @@ class CartController extends Controller
         $cart = DB::table('products')
                     ->join('carts', 'products.id', '=', 'carts.productid')
                     ->select('products.*', 'carts.*')
+                    ->where('cusid',[$id])
                     ->get();
         return view('customer.cart',compact('cart'));
     }
@@ -85,7 +86,8 @@ class CartController extends Controller
      */
     public function update(UpdateCartRequest $request, Cart $cart)
     {
-        //
+        $cart->update($request->all());
+        return redirect()->route('cart.index');
     }
 
     /**
@@ -96,6 +98,7 @@ class CartController extends Controller
      */
     public function destroy(Cart $cart)
     {
-        //
+        $cart->delete();
+        return redirect()->route('cart.index');
     }
 }

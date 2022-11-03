@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/product.css') }}">
- 
+
   </head>
   <body>
 
@@ -78,9 +78,9 @@
               @auth
 
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/customer/cart">
+                <a class="nav-link active" aria-current="page" href="{{route('cart.index')}}">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger mb-">3</span>
+                    <span class="badge rounded-pill badge-notification bg-danger mb-"></span>
         </a>
                 </a>
             </li>
@@ -124,15 +124,15 @@
             @endauth
 
             </ul>
- 
+
                   <form role="search" class="d-flex" action="{{url()->current()}}">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
             </div>
 
-         
-                
+
+
         </div>
       </nav>
 
@@ -170,7 +170,7 @@
         <span>Get connected with us on social networks:</span>
       </div>
       <!-- Left -->
-  
+
       <!-- Right -->
       <div>
         <a href="" class="me-4 text-reset">
@@ -195,7 +195,7 @@
       <!-- Right -->
     </section>
     <!-- Section: Social media -->
-  
+
     <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
@@ -214,7 +214,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -235,7 +235,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -258,7 +258,7 @@
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
@@ -277,7 +277,7 @@
       </div>
     </section>
     <!-- Section: Links  -->
-  
+
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
       © {{ date('Y') }} Copyright:
@@ -288,7 +288,7 @@
   <!-- Footer -->
 
 
-          
+
 
 
 

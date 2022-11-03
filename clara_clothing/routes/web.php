@@ -20,6 +20,15 @@ use App\Http\Controllers\NavbaritemsController;
 use App\Http\Controllers\MaincatagoriesController;
 use App\Http\Controllers\CustormerproductsController;
 
+
+use App\Http\Controllers\Orderconform;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
+use App\Models\Cart;
+
+use Illuminate\Support\Facades\DB;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,16 +120,21 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         if (Auth::user()->roll == 1){
-            $users= User::where('roll','1')->count();
-            $orders=Order::count(); 
+            $users= User::where('roll','3')->count();
+            $orders=Order::count();
             $items=Product::count();
             $rev = Order::sum('total');
-            
+
             return view('admin.admin',compact('users','orders','items','rev'));
         }elseif(Auth::user()->roll == 2){
             return view('admin.admin');
         }elseif (Auth::user()->roll == 3){
-            return view('customer.cus_dashboard');
+            $id = Auth::user()->id;
+            $ccount = DB::table('carts')->count();
+            $cart = DB::select('select * from carts where cusid = ?',[$id]);
+            $orders = DB::select('select * from orders where cusid = ?',[$id]);
+
+            return view('customer.cus_dashboard', compact('ccount','cart','orders'));
         }
 
     })->name('dashboard');
@@ -145,8 +159,15 @@ Route::resource('staff', StaffController::class);
 Route::resource('customer', CustomersController::class);
 Route::resource('cproduct', CustormerproductsController::class);
 Route::resource('cart', CartController::class);
+
 Route::resource('maincatagories', MaincatagoriesController::class);
 Route::resource('navbaritems', NavbaritemsController::class);
 
 Route::get('/',[NavbaritemsController::class, 'index'])->name('home');
+
+Route::resource('pay', PaymentController::class);
+Route::resource('order', OrderController::class);
+Route::resource('ordercon',Orderconform::class);
+
+
 
