@@ -144,10 +144,10 @@
 @if (Auth::user()->roll == 1)
 
     <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav1" data-bs-toggle="collapse" href="#">
         <i class="bi bi-menu-button-wide"></i><span>Suppliers</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
             <a href="{{route('suppliers.index')}}">
             <i class="bi bi-circle"></i><span>All Sppliers</span>
@@ -163,10 +163,10 @@
     </li><!-- End supplier Nav -->
 
     <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
         <i class="bi bi-menu-button-wide"></i><span>Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
             <a href="{{route('catagory.index')}}">
             <i class="bi bi-circle"></i><span>All Catagory</span>
@@ -182,30 +182,24 @@
     </li><!-- End supplier Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+      <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
       <i class="bi bi-menu-button-wide"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <ul id="components-nav3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
           <a href="{{route('ordercon.index')}}">
           <i class="bi bi-circle"></i><span>All Orders</span>
           </a>
       </li>
-      <li>
-          <a href="{{route('catagory.create')}}">
-          <i class="bi bi-circle"></i><span>Add Catagory</span>
-          </a>
-      </li>
-
       </ul>
   </li><!-- End supplier Nav -->
 
 
     <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav4" data-bs-toggle="collapse" href="#">
         <i class="bi bi-menu-button-wide"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav4" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
             <a href="{{route('product.index')}}">
             <i class="bi bi-circle"></i><span>All Products</span>
@@ -221,10 +215,10 @@
     </li><!-- End supplier Nav -->
 
     <li>
-      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+      <a class="nav-link collapsed" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
       <i class="bi bi-menu-button-wide"></i><span>Staff</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <ul id="components-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
           <a href="{{route('staff.index')}}">
           <i class="bi bi-circle"></i><span>All Staff</span>
@@ -240,10 +234,10 @@
     </li><!-- End supplier Nav -->
 
     <li><!-- End supplier Nav -->
-      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+      <a class="nav-link collapsed" data-bs-target="#components-nav6" data-bs-toggle="collapse" href="#">
       <i class="bi bi-menu-button-wide"></i><span>Staff</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+      <ul id="components-nav6" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
           <a href="{{route('staff.index')}}">
           <i class="bi bi-circle"></i><span>All Staff</span>
@@ -259,10 +253,10 @@
     </li><!-- End supplier Nav -->
 
     <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav7" data-bs-toggle="collapse" href="#">
         <i class="bi bi-menu-button-wide"></i><span>Stockes</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav7" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
             <a href="{{route('stocke.index')}}">
             <i class="bi bi-circle"></i><span>All Stockes</span>
