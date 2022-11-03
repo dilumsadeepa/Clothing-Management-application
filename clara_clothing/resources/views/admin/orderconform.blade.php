@@ -24,7 +24,7 @@
                 <td>{{$o->products}}</td>
                 <td>{{$o->total}}</td>
                  @if($o->confirm==1)
-                    <td>Conform</td>
+                    <td>Confirm</td>
                  @else
                     <td>Pending</td>   
                  @endif   
@@ -34,7 +34,7 @@
                         @method('PUT')
                         <label for="color">Satatus</label>
                     <select name="st" id="color">
-                        <option value="1">Conform</option>
+                        <option value="1">Confirm</option>
                         <option value="0">Pending</option>
                         
                     </select>
