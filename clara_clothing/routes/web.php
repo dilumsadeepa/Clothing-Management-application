@@ -1,32 +1,34 @@
 <?php
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Order;
-use App\Models\Product;
 
+use App\Models\Product;
 use App\Models\catagaory;
 use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Orderconform;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\Customerdashboard;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
+
+
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\NavbaritemsController;
 use App\Http\Controllers\MaincatagoriesController;
+
+use App\Http\Controllers\CustomerdashboardController;
 use App\Http\Controllers\CustormerproductsController;
-
-
-use App\Http\Controllers\Orderconform;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\PaymentController;
-use App\Models\Cart;
-
-use Illuminate\Support\Facades\DB;
 
 
 /*
@@ -113,6 +115,8 @@ Route::get('/components/layout', function () {
 
 
 
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -131,10 +135,23 @@ Route::middleware([
         }elseif (Auth::user()->roll == 3){
             $id = Auth::user()->id;
             $ccount = DB::table('carts')->count();
-            $cart = DB::select('select * from carts where cusid = ?',[$id]);
-            $orders = DB::select('select * from orders where cusid = ?',[$id]);
+            // $cart = DB::select('select * from carts where cusid = ?',[$id]);
+            // $orders = DB::select('select * from orders where cusid = ?',[$id]);
 
-            return view('customer.cus_dashboard', compact('ccount','cart','orders'));
+            $cart = DB::table('products')
+                        ->join('carts', 'products.id', '=', 'carts.productid')
+                        ->select('products.*', 'carts.*')
+                        ->where('cusid',[$id])
+                        ->get();
+    
+            $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
+            $cusorder = DB::select('select count(*) from orders where cusid = ? ',[$id]);
+            $cusorderitems = DB::select("select products from orders where cusid = ? and confirm = '1' ",[$id]);
+            $product = Product::all();
+    
+            $orders = DB::select('select * from orders where pay = 0 limit 1');
+
+            return view('customer.cus_dashboard', compact('ccount','cart','orders','cusorder','cusorderitems','users','product'));
         }
 
     })->name('dashboard');
@@ -168,6 +185,9 @@ Route::get('/',[NavbaritemsController::class, 'index'])->name('home');
 Route::resource('pay', PaymentController::class);
 Route::resource('order', OrderController::class);
 Route::resource('ordercon',Orderconform::class);
+Route::resource('cusdash',CustomerdashboardController::class);
+
+// Route::get('/dashboard',[CustomerdashboardController::class, 'index']);
 
 
 

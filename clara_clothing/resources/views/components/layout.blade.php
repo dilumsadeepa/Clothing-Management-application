@@ -24,6 +24,7 @@
     use App\Models\catagaory;
     use App\Models\Product;
     use App\Models\Navbaritems;
+    use App\Models\Cart;
     // use Illuminate\Http\Request;
     // use App\Models\Maincatagories;
     use Illuminate\Support\Facades\DB;
@@ -35,6 +36,9 @@
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
         $maincatsss = DB::select('SELECT * FROM maincatagories WHERE catagory_img IS NOT NULL');
         $subcats = DB::select("select * from catagaories");
+        $cartitems = DB::select("select count(*) from carts");
+        $toJSON = json_encode($cartitems);
+        $items =  preg_replace('/[^0-9.]+/', '', $toJSON);
 @endphp
 
 
@@ -80,7 +84,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('cart.index')}}">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger mb-"></span>
+                    <span class="badge rounded-pill badge-notification bg-danger mb-"><?php echo $items ?></span>
         </a>
                 </a>
             </li>
