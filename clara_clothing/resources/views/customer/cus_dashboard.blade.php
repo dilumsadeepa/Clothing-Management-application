@@ -109,6 +109,9 @@ padding-top: 15px;
         $sizes = DB::select('select distinct size from products');
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
         $subcats = DB::select("select * from catagaories");
+        $cartitems = DB::select("select count(*) from carts");
+        $toJSON = json_encode($cartitems);
+        $items =  preg_replace('/[^0-9.]+/', '', $toJSON);
 @endphp
 
 
@@ -154,7 +157,7 @@ padding-top: 15px;
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('cart.index')}}">
               <i class="fa-solid fa-cart-shopping"></i>
-              <span class="badge rounded-pill badge-notification bg-danger mb-">{{$ccount}}</span>
+              <span class="badge rounded-pill badge-notification bg-danger mb-">{{$items}}</span>
   </a>
           </a>
       </li>

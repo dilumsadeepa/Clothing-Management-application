@@ -1,32 +1,34 @@
 <?php
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Order;
-use App\Models\Product;
 
+use App\Models\Product;
 use App\Models\catagaory;
 use App\Models\Maincatagories;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Orderconform;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\Customerdashboard;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
+
+
 use App\Http\Controllers\CatagaoryController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\NavbaritemsController;
 use App\Http\Controllers\MaincatagoriesController;
+
+use App\Http\Controllers\CustomerdashboardController;
 use App\Http\Controllers\CustormerproductsController;
-
-
-use App\Http\Controllers\Orderconform;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\PaymentController;
-use App\Models\Cart;
-
-use Illuminate\Support\Facades\DB;
 
 
 /*
@@ -168,6 +170,9 @@ Route::get('/',[NavbaritemsController::class, 'index'])->name('home');
 Route::resource('pay', PaymentController::class);
 Route::resource('order', OrderController::class);
 Route::resource('ordercon',Orderconform::class);
+Route::resource('cusdash',CustomerdashboardController::class);
+
+Route::get('/dashboard',[CustomerdashboardController::class, 'index']);
 
 
 

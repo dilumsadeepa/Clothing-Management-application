@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
-class Customerdashboard extends Controller
+class CustomerdashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +24,12 @@ class Customerdashboard extends Controller
                     ->select('products.*', 'carts.*')
                     ->where('cusid',[$id])
                     ->get();
-        return view('customer.cus_dashboard',compact('cart'));
+
+        $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
+        $product = Product::all();
+
+        $orders = DB::select('select * from orders where pay = 0 limit 1');
+        return view('customer.cus_dashboard',compact('cart','users','product','orders'));
     }
 
     /**
