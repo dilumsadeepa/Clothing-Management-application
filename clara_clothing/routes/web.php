@@ -115,6 +115,8 @@ Route::get('/components/layout', function () {
 
 
 
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -133,10 +135,23 @@ Route::middleware([
         }elseif (Auth::user()->roll == 3){
             $id = Auth::user()->id;
             $ccount = DB::table('carts')->count();
-            $cart = DB::select('select * from carts where cusid = ?',[$id]);
-            $orders = DB::select('select * from orders where cusid = ?',[$id]);
+            // $cart = DB::select('select * from carts where cusid = ?',[$id]);
+            // $orders = DB::select('select * from orders where cusid = ?',[$id]);
 
-            return view('customer.cus_dashboard', compact('ccount','cart','orders'));
+            $cart = DB::table('products')
+                        ->join('carts', 'products.id', '=', 'carts.productid')
+                        ->select('products.*', 'carts.*')
+                        ->where('cusid',[$id])
+                        ->get();
+    
+            $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
+            $cusorder = DB::select('select count(*) from orders where cusid = ? ',[$id]);
+            $cusorderitems = DB::select("select products from orders where cusid = ? and confirm = '1' ",[$id]);
+            $product = Product::all();
+    
+            $orders = DB::select('select * from orders where pay = 0 limit 1');
+
+            return view('customer.cus_dashboard', compact('ccount','cart','orders','cusorder','cusorderitems','users','product'));
         }
 
     })->name('dashboard');
@@ -172,7 +187,7 @@ Route::resource('order', OrderController::class);
 Route::resource('ordercon',Orderconform::class);
 Route::resource('cusdash',CustomerdashboardController::class);
 
-Route::get('/dashboard',[CustomerdashboardController::class, 'index']);
+// Route::get('/dashboard',[CustomerdashboardController::class, 'index']);
 
 
 

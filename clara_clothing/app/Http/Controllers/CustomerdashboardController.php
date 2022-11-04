@@ -26,10 +26,12 @@ class CustomerdashboardController extends Controller
                     ->get();
 
         $users = DB::select('select * from customers where userid = ? limit 1',[$id]);
+        $cusorder = DB::select('select count(*) from orders where cusid = ? ',[$id]);
+        $cusorderitems = DB::select("select products from orders where cusid = ? and confirm = '1' ",[$id]);
         $product = Product::all();
 
         $orders = DB::select('select * from orders where pay = 0 limit 1');
-        return view('customer.cus_dashboard',compact('cart','users','product','orders'));
+        return view('customer.cus_dashboard',compact('cart','users','product','orders','cusorder','cusorderitems'));
     }
 
     /**

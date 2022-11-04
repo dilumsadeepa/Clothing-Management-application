@@ -109,9 +109,23 @@ padding-top: 15px;
         $sizes = DB::select('select distinct size from products');
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
         $subcats = DB::select("select * from catagaories");
+
         $cartitems = DB::select("select count(*) from carts");
         $toJSON = json_encode($cartitems);
         $items =  preg_replace('/[^0-9.]+/', '', $toJSON);
+
+        $totorders = DB::select("select count(*) from orders");
+        $toJSONS = json_encode($totorders);
+        $totorder =  preg_replace('/[^0-9.]+/', '', $toJSONS);
+
+        $conorders = DB::select("select count(*) from orders where confirm='1'");
+        $toJSONSS = json_encode($conorders);
+        $conorder =  preg_replace('/[^0-9.]+/', '', $toJSONSS);
+
+        $toJSONSSS = json_encode($cusorder);
+        $cusorderss =  preg_replace('/[^0-9.]+/', '', $toJSONSSS);
+
+        $itemcount = sizeof($cusorderitems);
 @endphp
 
 
@@ -748,11 +762,11 @@ padding-top: 15px;
           <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">
               <div>
-                <p class="mb-1 h5">15</p>
+                <p class="mb-1 h5">{{$itemcount}}</p>
                 <p class="small text-muted mb-0">Total Ordered Items</p>
               </div>
               <div class="px-3">
-                <p class="mb-1 h5">3</p>
+                <p class="mb-1 h5">{{$cusorderss}}</p>
                 <p class="small text-muted mb-0">No Of Orders</p>
               </div>
               <div>
