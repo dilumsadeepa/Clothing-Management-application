@@ -108,6 +108,7 @@ padding-top: 15px;
         $cat = catagaory::all();
         $sizes = DB::select('select distinct size from products');
         $maincatss = DB::select("select distinct main_catagoryname from catagaories");
+        $subcats = DB::select("select * from catagaories");
 @endphp
 
 
