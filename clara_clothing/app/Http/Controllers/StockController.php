@@ -116,9 +116,10 @@ class StockController extends Controller
      * @param  \App\Models\Stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stock $stock)
+    public function destroy($id)
     {
-        $deleted = DB::delete('delete from stocks where id = ?',[$stock]);
+        
+        $deleted = DB::delete('delete from stocks where id = ?',[$id]);
 
         return redirect()->route('stocke.index')
                         ->with('success','stock deleted successfully');

@@ -79,10 +79,10 @@
 <div class="container my-5 d-flex justify-content-center">
     <div class="row row-cols-1 row-cols-md-3 g-4">
       
-      @foreach ($maincatsss as $maincat)
+      
       <div class="col category-box">
           <div class="card card-image rounded-0" style="
-            background:rgba(0, 0, 0, 0.5)url({{asset('storage/'.$maincat->catagory_img)}});
+            background:rgba(0, 0, 0, 0.5)url({{asset('images/Categories/men.jpg')}});
             background-size: cover;
             background-position: center center;
             width: 100%;
@@ -93,13 +93,52 @@
 
             </div>
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
-                <h3><strong>{{$maincat->name}}</strong></h3>
-                <div><a type="button" class="btn btn-outline-light" href="/maincatagories/{{$maincat->name}}">View Collection</a></div>
+                <h3><strong></strong></h3>
+                <div><a type="button" class="btn btn-outline-light">View Collection</a></div>
             </div>
           </div>
       </div>
 
-      @endforeach
+      <div class="col category-box">
+        <div class="card card-image rounded-0" style="
+          background:rgba(0, 0, 0, 0.5)url({{asset('images/Categories/women.jpg')}});
+          background-size: cover;
+          background-position: center center;
+          width: 100%;
+          height: 100%;
+          background-blend-mode: darken;">
+          <!-- Content -->
+          <div class="inner-line">
+
+          </div>
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
+              <h3><strong></strong></h3>
+              <div><a type="button" class="btn btn-outline-light">View Collection</a></div>
+          </div>
+        </div>
+    </div>
+
+    
+    <div class="col category-box">
+      <div class="card card-image rounded-0" style="
+        background:rgba(0, 0, 0, 0.5)url({{asset('images/Categories/kids.jpg')}});
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        background-blend-mode: darken;">
+        <!-- Content -->
+        <div class="inner-line">
+        </div>
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 card-title" style="flex-direction: column;">
+            <h3><strong></strong></h3>
+            <div><a type="button" class="btn btn-outline-light">View Collection</a></div>
+        </div>
+      </div>
+  </div>
+
+  
+    
 
      
 

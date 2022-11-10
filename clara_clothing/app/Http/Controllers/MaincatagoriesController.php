@@ -41,8 +41,12 @@ class MaincatagoriesController extends Controller
      */
     public function store(Request $request)
     {
+
+       
+
         $formFields = $request->validate([
             'name' => 'required',
+            'catagory_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:8000',
         ]);
 
         
